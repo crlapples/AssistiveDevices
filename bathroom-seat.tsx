@@ -110,7 +110,7 @@ const ShowerSeat: React.FC = () => {
 
       {/* Trust Elements */}
       <div className={styles.trustSection}>
-        <h2>Why Choose GoAid?</h2>
+        <h2>Experience the GoAid Difference</h2>
         <ul>
           <li>🔹 100% Satisfaction Guarantee</li>
           <li>🔹 Fast & Reliable Shipping</li>
