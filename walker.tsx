@@ -97,7 +97,7 @@ const Walker = () => {
 
       {/* Detailed Product Description */}
       <div className={styles.description}>
-        <h2>Why Choose the GoAid Foldable Walker?</h2>
+        <h2>The GoAid Advantage</h2>
         <p>
           Experience greater mobility and independence with the GoAid Foldable Walker. Designed for ease of use, 
           this lightweight and durable walker provides stability and comfort for everyday movement. 
