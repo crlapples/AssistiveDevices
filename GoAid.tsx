@@ -6,7 +6,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "GoAid - Your Trusted Assitive Devices Store",
+  title: "GoAid - Premium Walker & Bathroom Seat for Safety and Comfort",
   description: "Shop high-quality, affordable "
 }
 
