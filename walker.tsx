@@ -63,8 +63,8 @@ const Walker = () => {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Shower Seat",
-          "item": "https://yourwebsite.com/shower-seat"
+          "name": "Walker",
+          "item": "https://yourwebsite.com/walker"
         }
       ]
     })
