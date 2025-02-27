@@ -25,32 +25,34 @@ export const metadata: Metadata = {
 
 const ShowerSeat: React.FC = () => {
 
-  <Head>
   <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "GoAid Bathroom Safety Seat",
-        "image": "https://yourwebsite.com/images/shower-seat.jpg",
-        "description": "Secure and comfortable shower seat for enhanced bathroom safety.",
-        "brand": {
-          "@type": "Brand",
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "GoAid Bathroom Safety Seat",
+      "image": "https://yourwebsite.com/images/shower-seat.jpg",
+      "description": "Secure and comfortable shower seat with a stable design for added bathroom safety.",
+      "brand": {
+        "@type": "Brand",
+        "name": "GoAid"
+      },
+      "sku": "SHOWERSEAT123",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://yourwebsite.com/shower-seat",
+        "priceCurrency": "USD",
+        "price": "79.99",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
           "name": "GoAid"
-        },
-        "sku": "GA-SS-001",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://yourwebsite.com/shower-seat",
-          "priceCurrency": "USD",
-          "price": "79.99",
-          "availability": "https://schema.org/InStock"
         }
-      })
-    }}
-  />
-</Head>
+      }
+    })
+  }}
+/>
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
