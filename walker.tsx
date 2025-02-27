@@ -21,32 +21,34 @@ export const metadata: Metadata = {
 };
 
 const Walker = () => {
-  <Head>
   <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "GoAid Mobility Walker",
-        "image": "https://yourwebsite.com/images/walker.jpg",
-        "description": "Lightweight, foldable mobility walker for enhanced support and stability.",
-        "brand": {
-          "@type": "Brand",
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "GoAid Mobility Walker",
+      "image": "https://yourwebsite.com/images/walker.jpg",
+      "description": "Lightweight, foldable walker designed for comfort, stability, and mobility support.",
+      "brand": {
+        "@type": "Brand",
+        "name": "GoAid"
+      },
+      "sku": "WALKER123",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://yourwebsite.com/walker",
+        "priceCurrency": "USD",
+        "price": "99.99",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
           "name": "GoAid"
-        },
-        "sku": "GA-WLK-001",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://yourwebsite.com/walker",
-          "priceCurrency": "USD",
-          "price": "99.99",
-          "availability": "https://schema.org/InStock"
         }
-      })
-    }}
-  />
-</Head>
+      }
+    })
+  }}
+/>
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
