@@ -122,11 +122,6 @@
     align-items: center;
 }
 
-.whyChooseUs p {
-    width: 90%;
-    height: 90%;
-}
-
 @media (prefers-color-scheme: dark) {
     .topContainer {
         border-bottom: solid white;
