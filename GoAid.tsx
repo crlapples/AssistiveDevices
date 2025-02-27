@@ -4,7 +4,6 @@ import styles from "./GoAid.module.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import Image from 'next/image';
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: "GoAid - Premium Walker & Bathroom Seat for Safety and Comfort",
@@ -33,31 +32,22 @@ export const metadata: Metadata = {
 
 const Home: React.FC = () => {
   return (
-    <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "GoAid",
-              "url": "https://yourwebsite.com",
-              "description": "GoAid offers premium mobility walkers and bathroom safety seats for seniors and individuals with mobility challenges.",
-              "publisher": {
-                "@type": "Organization",
-                "name": "GoAid",
-                "logo": "https://yourwebsite.com/logo.png"
-              }
-            })
-          }}
-        />
-      </Head>
-      {/* Your existing homepage content */}
-    </>
-  );
-};
-
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GoAid",
+      "url": "https://yourwebsite.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yourwebsite.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })
+  }}
+/>
   return (
     <div className={styles.homeContainer}>
       <nav className={styles.navBar}>
