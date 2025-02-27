@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import styles from './LetterFromTopAnimation.module.css'; // Assuming you have a CSS module
 
-const LetterFromTopAnimation: React.FC = () => {
+interface LetterFromTopAnimationProps {
+  text: string; // Add a text prop to allow dynamic text input
+}
+
+const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text }) => {
   const [mounted, setMounted] = useState(false);
 
   // Set the mounted state to true after the component is mounted
@@ -26,13 +30,13 @@ const LetterFromTopAnimation: React.FC = () => {
 
   return (
     <div className={styles.textContainer}>
-      <h1>
-        {"Hello World".split("").map((letter, index) => (
+      <p>
+        {text.split("").map((letter, index) => (
           <span key={index} className={`animatedLetter ${styles.letter}`}>
             {letter}
           </span>
         ))}
-      </h1>
+      </p>
     </div>
   );
 };
