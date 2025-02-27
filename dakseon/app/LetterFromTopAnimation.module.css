@@ -12,16 +12,17 @@
 /* Animation and styling for each letter */
 .letter {
   position: absolute;      /* Ensure each letter is positioned relative to the viewport */
-  top: -30px;              /* Initially position the letter above the viewport */
+  top: -50px;              /* Initially position the letter outside the viewport (above) */
+  right: -50px;
   opacity: 0;              /* Initially hide the letter */
   transition: opacity 0.3s ease, transform 0.5s ease; /* Smooth animation */
-  transform: translateY(0); /* Start from the top of the screen */
+  transform: translateY(0) translateX(100%); /* Start from the top of the screen */
 }
 
 /* When the animation triggers, the letter moves down */
 .moveDown {
   opacity: 1;
-  transform: translateY(30px); /* Animate down to its normal position */
+  transform: translateY(50px) translateX(50px); /* Animate down to its normal position */
 }
 
 /* Optional: Styling for the <p> tag */
