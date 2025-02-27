@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from "./GoAid.module.css";
+import styles from "./Dakseon.module.css";
 import "./globals.css";
 import type { Metadata } from "next";
 import Image from 'next/image';
