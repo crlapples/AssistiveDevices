@@ -100,7 +100,7 @@ const Home: React.FC = () => {
 
       {/* ✅ Why Choose Us? */}
       <section className={styles.whyChooseUs}>
-        <h2>Why Choose GoAid?</h2>
+        <h2>Make the Smart Choice with GoAid</h2>
         <ul>
           <li>🔹 100% Satisfaction Guarantee</li>
           <li>🔹 Fast & Reliable Shipping</li>
