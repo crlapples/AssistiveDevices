@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Image from 'next/image';
 import CompanyIntro from './CompanyIntro';
 import Dropdown from "./Dropdown";
+import LetterFromTopAnimation from "./LetterFromTopAnimation";
 
 export const metadata: Metadata = {
   title: "Dakseon - Premium Walker & Bathroom Seat for Safety and Comfort",
@@ -76,7 +77,7 @@ const Home: React.FC = () => {
 
         {/* ✅ Make the Smart Choice with GoAid */}
         <section className={styles.whyChooseUs}>
-          <p>At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day.</p>
+          <LetterFromTopAnimation text="At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day." />
           <div className={styles.imageContainer2}>
             <Image 
               src="/images/happy-senior.jpg" 
