@@ -42,6 +42,7 @@
     animation: slideIn 2s ease-out, underlineGrow 2s ease-out 2s forwards;
     height: 15%;
     width: 100%;
+    text-align: center;
 }
 
 .heroSection h1::after {
@@ -120,6 +121,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.imageContainer2 {
+    width: 100%;
+    height: 50%;
+}
+
+.heroImage2 {
+    width: 100%;
+    height: 100%;
+}
+
+.whyChooseUs h2 {
+    width: 100%;
+    height: 15%;
+    font-size: 3vh;
+    margin: auto;
+    text-align: center;
+}
+
+.whyChooseUs ul {
+    width: 100%;
+    height: 35%;
 }
 
 @media (prefers-color-scheme: dark) {
