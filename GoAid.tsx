@@ -92,7 +92,7 @@ const Home: React.FC = () => {
 
           {/* Shower Seat */}
           <div className={styles.productCard}>
-            <img src="/images/shower-seat.jpg" alt="GoAid Bathroom Safety Seat" />
+            <img src="/images/shower-seat.jpg" alt="GoAid Shower Safety Seat" />
             <h3>GoAid Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
             <button><Link href="/shower-seat">View Product</Link></button>

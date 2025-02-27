@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "next2",
+			"path": "../next2"
+		},
+		{
+			"name": "next",
+			"path": "../../next"
+		},
+		{
+			"name": "AssistiveDevices",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
