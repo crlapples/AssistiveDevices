@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from "./GoAid.module.css";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -14,17 +15,15 @@ const Home: React.FC = () -> {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.topContainer}>
-        <img className={styles.logo} src="" />
+        <Image
+          className={styles.logo} 
+          src=""
+          alt="GoAid Logo - Trusted Assistive Devices"
+        />
         <ul className={styles.navBar}>
-          <Link href="/">
-            <li>Home</li>
-          </Link>
-          <Link href="/About">
-            <li>About</li>
-          </Link>
-          <Link href="/Contact">
-            <li>Contact Us</li>
-          </Link>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/About">About Us</Link></li>
+          <li><Link href="/Contact">Contact Us</Link></li>
         </ul>
       </div>
     </div>
