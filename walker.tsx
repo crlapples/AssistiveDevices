@@ -47,6 +47,29 @@ const Walker = () => {
     }}
   />
 </Head>
+  <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yourwebsite.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shower Seat",
+          "item": "https://yourwebsite.com/shower-seat"
+        }
+      ]
+    })
+  }}
+/>
   return (
     <div className={styles.container}>
       {/* Hero Section */}
