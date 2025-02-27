@@ -18,7 +18,7 @@ const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text })
     return null;
   }
 
-  // Animate text letters from the top
+  // Animate text letters from the top of the screen
   useEffect(() => {
     const letters = document.querySelectorAll('.animatedLetter');
     letters.forEach((letter, index) => {
