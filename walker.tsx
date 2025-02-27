@@ -21,6 +21,32 @@ export const metadata: Metadata = {
 };
 
 const Walker = () => {
+  <Head>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "GoAid Mobility Walker",
+        "image": "https://yourwebsite.com/images/walker.jpg",
+        "description": "Lightweight, foldable mobility walker for enhanced support and stability.",
+        "brand": {
+          "@type": "Brand",
+          "name": "GoAid"
+        },
+        "sku": "GA-WLK-001",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://yourwebsite.com/walker",
+          "priceCurrency": "USD",
+          "price": "99.99",
+          "availability": "https://schema.org/InStock"
+        }
+      })
+    }}
+  />
+</Head>
   return (
     <div className={styles.container}>
       {/* Hero Section */}
