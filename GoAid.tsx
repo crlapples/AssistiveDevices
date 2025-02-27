@@ -49,6 +49,15 @@ const Home: React.FC = () => {
         <h1>Reliable Mobility & Safety Products</h1>
         <p>Enhance your independence and safety with GoAid’s top-quality walker and shower seat.</p>
         <button className={styles.shopButton}><Link href="/walker">Shop Now</Link></button>
+        <div className={styles.imageContainer}>
+          <Image 
+            src="/images/happy-seniors.jpg" 
+            alt="Happy seniors enjoying mobility support" 
+            width={800} 
+            height={500} 
+            className={styles.heroImage}
+          />
+        </div>
       </header>
 
       {/* ✅ Featured Products */}
