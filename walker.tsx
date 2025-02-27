@@ -1,11 +1,11 @@
 
 
 export const metadata: Metadata = {
-  title: "GoAid Walker - Lightweight & Foldable Mobility Aid",
-  description: "Improve your mobility with the GoAid Walker. Lightweight, foldable, and adjustable for maximum comfort and support. Order now for secure and stable movement.",
+  title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
+  description: "Stay mobile with the GoAid Foldable Walker. Sturdy, lightweight, and easy to fold for storage and transport. Designed for stability and ease of use.",
   openGraph: {
-    title: "GoAid Walker - Lightweight & Foldable Mobility Aid",
-    description: "Experience safe and comfortable movement with the GoAid Walker. Designed for stability with a foldable, adjustable design for easy use.",
+    title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
+    description: "A reliable foldable walker designed for comfort and stability. Features an aluminum frame, easy folding mechanism, and non-slip rubber feet.",
     url: "https://goaid.com/walker",
     type: "website",
     images: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         url: "https://goaid.com/walker.jpg", // Replace with actual walker image URL
         width: 1200,
         height: 630,
-        alt: "GoAid Walker - Lightweight & Foldable Mobility Aid",
+        alt: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
       },
     ],
   },
