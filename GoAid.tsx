@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from "./GoAid.module.css";
 import "./globals.css";
 import type { Metadata } from "next";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "GoAid - Premium Walker & Bathroom Seat for Safety and Comfort",
@@ -30,22 +30,76 @@ export const metadata: Metadata = {
   }
 };
 
-const Home: React.FC = () -> {
-  
+const Home: React.FC = () => {
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.topContainer}>
-        <Image
-          className={styles.logo} 
-          src=""
-          alt="GoAid Logo - Trusted Assistive Devices"
-        />
-        <ul className={styles.navBar}>
+    <div className={styles.homeContainer}>
+      <nav className={styles.navBar}>
+        <img src="/logo.png" alt="GoAid Logo" className={styles.logo} />
+        <ul>
           <li><Link href="/">Home</Link></li>
-          <li><Link href="/About">About Us</Link></li>
-          <li><Link href="/Contact">Contact Us</Link></li>
+          <li><Link href="/walker">Walker</Link></li>
+          <li><Link href="/shower-seat">Shower Seat</Link></li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
         </ul>
-      </div>
+      </nav>
+
+      {/* ✅ Hero Section */}
+      <header className={styles.heroSection}>
+        <h1>Reliable Mobility & Safety Products</h1>
+        <p>Enhance your independence and safety with GoAid’s top-quality walker and shower seat.</p>
+        <button className={styles.shopButton}><Link href="/walker">Shop Now</Link></button>
+      </header>
+
+      {/* ✅ Featured Products */}
+      <section className={styles.featuredProducts}>
+        <h2>Our Bestsellers</h2>
+        
+        {/* Walker */}
+        <div className={styles.productCard}>
+          <img src="/images/walker.jpg" alt="GoAid Mobility Walker" />
+          <h3>GoAid Mobility Walker</h3>
+          <p>Lightweight, foldable support for everyday mobility.</p>
+          <button><Link href="/walker">View Product</Link></button>
+        </div>
+
+        {/* Shower Seat */}
+        <div className={styles.productCard}>
+          <img src="/images/shower-seat.jpg" alt="GoAid Bathroom Safety Seat" />
+          <h3>GoAid Bathroom Safety Seat</h3>
+          <p>Secure and comfortable shower seating for added safety.</p>
+          <button><Link href="/shower-seat">View Product</Link></button>
+        </div>
+      </section>
+
+      {/* ✅ Why Choose Us? */}
+      <section className={styles.whyChooseUs}>
+        <h2>Why Choose GoAid?</h2>
+        <ul>
+          <li>🔹 100% Satisfaction Guarantee</li>
+          <li>🔹 Fast & Reliable Shipping</li>
+          <li>🔹 Designed for Comfort & Safety</li>
+        </ul>
+      </section>
+
+      {/* ✅ Customer Testimonials */}
+      <section className={styles.testimonials}>
+        <h2>What Our Customers Say</h2>
+        <div className={styles.review}>
+          <p>⭐⭐⭐⭐⭐ "Amazing quality, my dad loves the walker!" – <strong>Sarah K.</strong></p>
+        </div>
+        <div className={styles.review}>
+          <p>⭐⭐⭐⭐⭐ "The shower seat is stable and comfortable." – <strong>James L.</strong></p>
+        </div>
+      </section>
+
+      {/* ✅ Call to Action */}
+      <section className={styles.ctaSection}>
+        <h2>Ready to Improve Your Mobility & Safety?</h2>
+        <button className={styles.shopButton}><Link href="/walker">Shop Now</Link></button>
+      </section>
     </div>
   );
 };
+
+export default Home;
