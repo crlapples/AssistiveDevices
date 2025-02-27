@@ -7,7 +7,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GoAid - Premium Walker & Bathroom Seat for Safety and Comfort",
-  description: "Shop high-quality, affordable "
+  description: "Discover GoAid's high-quality walker and bathroom seat designed for stability, safety, and comfort. Affordable pricing with reliable shipping.",
+  
 }
 
 const Home: React.FC = () -> {
