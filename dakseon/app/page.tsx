@@ -62,8 +62,8 @@ const Home: React.FC = () => {
           <h1>Reliable Mobility & Safety Products</h1>
           <div className={styles.imageContainer1}>
             <Image 
-              src="/images/happy-senior.jpg" 
-              alt="Happy senior enjoying mobility support" 
+              src="/happy-senior1.jpg" 
+              alt="First happy senior enjoying mobility support" 
               width={1600} 
               height={902} 
               className={styles.heroImage1}
@@ -74,53 +74,43 @@ const Home: React.FC = () => {
             <button className={styles.shopButton}><Link href="/walker">Shop Now</Link></button>
           </div>
         </header>
-
-        {/* ✅ Make the Smart Choice with GoAid */}
         <section className={styles.whyChooseUs}>
           <LetterFromTopAnimation text="At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day." />
           <div className={styles.imageContainer2}>
             <Image 
-              src="/images/happy-senior.jpg" 
-              alt="Happy senior enjoying mobility support" 
+              src="/happy-senior2.jpg" 
+              alt="Second happy senior enjoying mobility support" 
               width={1600} 
               height={902} 
               className={styles.heroImage2}
             />
           </div>
-          <h2>Make the Smart Choice with GoAid</h2>
+          <h2>Make the Smart Choice with Dakseon</h2>
           <ul>
             <li>100% Satisfaction Guarantee</li>
             <li>Minimal Expenses</li>
             <li>Designed for Comfort & Safety</li>
           </ul>
         </section>
-
-        {/* ✅ Featured Products */}
         <section className={styles.featuredProducts}>
           <h2>Our Bestsellers</h2>
           <div className={styles.seperatorLineA} />
-          {/* Walker */}
           <div className={styles.productCard}>
-            <img src="/images/walker.jpg" alt="GoAid Mobility Walker" />
+            <img src="/walker.png" alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p>
-            <button><Link href="/walker">View Product</Link></button>
+            <button><Link href="/Walker">View Product</Link></button>
             <div className={styles.seperatorLineB} />
           </div>
-
-          {/* Shower Seat */}
           <div className={styles.productCard}>
-            <img src="/images/shower-seat.jpg" alt="GoAid Shower Safety Seat" />
+            <img src="/shower-seat.png" alt="Dakseon Shower Safety Seat" />
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
-            <button><Link href="/shower-seat">View Product</Link></button>
+            <button><Link href="/Shower-Seat">View Product</Link></button>
             <div className={styles.seperatorLineB} />
           </div>
         </section>
-
         <LetterFromTopAnimation className={styles.letters} text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand." />
-
-        {/* ✅ Customer Testimonials */}
         <section className={styles.testimonials}>
           <h2>What Our Customers Say</h2>
           <div className={styles.review}>
@@ -130,13 +120,10 @@ const Home: React.FC = () => {
             <p>⭐⭐⭐⭐⭐ "The shower seat is stable and comfortable." – <strong>James L.</strong></p>
           </div>
         </section>
-
-        {/* ✅ Call to Action */}
         <section className={styles.ctaSection}>
           <h2>Ready to Improve Your Mobility & Safety?</h2>
-          <button className={styles.shopButton}><Link href="/walker">Shop Now</Link></button>
+          <button className={styles.shopButton}><Link href="/Walker">Shop Now</Link></button>
         </section>
-
         <footer>
           <div className={styles.verticalOri}>
             <strong><p>Return to Top</p></strong>
