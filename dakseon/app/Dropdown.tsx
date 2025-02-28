@@ -6,10 +6,14 @@ import styles from './Dropdown.module.css';
 import "./globals.css";
 
 const Dropdown: React.FC = () => {
+  console.log("Dropdown component loaded");
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log("Dropdown state:", isOpen);
+  
   // Toggle the dropdown menu
-  const toggleDropdown = () => {
+  const toggleDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevents the click event from propagating to the document
+    console.log("Menu clicked!");
     setIsOpen((prevState) => !prevState);
   };
 
@@ -21,19 +25,12 @@ const Dropdown: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    // Attach event listener to close dropdown when clicked outside
-    document.addEventListener('click', closeDropdown);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      document.removeEventListener('click', closeDropdown);
-    };
-  }, []);
-
   return (
     <div className={styles.dropdown}>
-      <img src="/menu.png" alt="Menu" className={styles.menu} onClick={toggleDropdown} />
+      <img src="/menu.png" alt="Menu" className={styles.menu} onClick={(e) => {
+    console.log("Menu clicked!");
+    toggleDropdown(e);
+  }} />
       {isOpen && ( 
         <div className={`${styles.dropdownList} ${isOpen ? styles.open : ''}`}>
           <Link href="/">Home</Link>

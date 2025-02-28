@@ -5,9 +5,10 @@ import styles from './LetterFromTopAnimation.module.css'; // Assuming you have a
 
 interface LetterFromTopAnimationProps {
   text: string; // Allow dynamic text input
+  className?: string;
 }
 
-const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text }) => {
+const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text, className }) => {
   const [mounted, setMounted] = useState(false);
   const [animate, setAnimate] = useState(false);
 
@@ -28,7 +29,7 @@ const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text })
   }
 
   return (
-    <div className={styles.textContainer}>
+    <div className={`${styles.textContainer} ${className || ''}`}>
       <p>
         {text.split("").map((letter, index) => (
           <span

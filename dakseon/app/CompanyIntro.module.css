@@ -33,10 +33,9 @@
 
 .companyName {
   font-size: 8vh;
-  animation: fadeIn 2s ease-in-out forwards;
+  animation: fadeIn 1s ease-in-out forwards;
   opacity: 0;
   color: white;
-  margin-bottom: 20%;
 }
 
 /* New fade-out class for the company name */
@@ -46,5 +45,11 @@
 
 /* Fade out the whole container */
 .container.hidden {
-  animation: fadeOut 1s ease-in-out forwards;
+  animation: fadeOut 3.9s ease-in-out forwards;
+}
+
+/* Add styles when fade-out is fully completed */
+.container.onFadeComplete {
+  display: none; /* Or any other final styling you want */
+  z-index: 0;
 }

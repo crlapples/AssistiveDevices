@@ -14,7 +14,7 @@
   width: 100%;
   height: 20vw;
   border-bottom: 1vw solid black;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
   left: 0;
   padding: 3vw;
@@ -33,29 +33,29 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
   margin-top: 20vw;
 }
 
 .heroSection h1 {
   font-size: 6.5vh;
-  position: relative;
   display: inline-block;
   opacity: 0;
-  animation: slideIn 2s ease-out forwards, underlineGrow 2s ease-out 6s forwards;
+  animation: slideIn 2s ease-out forwards;
+  animation-delay: 3.9s;
   height: 20%;
   width: 100%;
   text-align: center;
-  padding-bottom: 10vh;
   padding-top: 10vh;
+  padding-bottom: 10vh;
   padding-left: 3vh;
   padding-right: 3vh;
 }
 
 .heroSection h1::after {
   content: "";
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
@@ -65,7 +65,7 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateX(1000%);
+    transform: translateX(300%);
     opacity: 0;
   }
   100% {
@@ -115,7 +115,7 @@
 }
 
 .shopButton {
-  border-radius: 1vw;
+  border-radius: 2vh;
   padding-top: 2vw;
   padding-right: 2vw;
   padding-bottom: 2vw;
@@ -128,7 +128,8 @@
   color: white;
   background-color: black;
   font-weight: bold;
-  box-shadow: 8px 8px 15px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
 }
 
 .whyChooseUs {
@@ -197,7 +198,6 @@
   height: 0.5vh;
   width: 100vw;
   border-bottom: 0.5vh solid black;
-  margin-top: 2vw;
   margin-bottom: 2vw;
 }
 
@@ -232,7 +232,7 @@
 }
 
 .productCard button {
-  border-radius: 1vw;
+  border-radius: 2vh;
   padding-top: 3vw;
   padding-right: 3.5vw;
   padding-bottom: 3vw;
@@ -243,7 +243,8 @@
   color: white;
   background-color: black;
   font-weight: bold;
-  box-shadow: 8px 8px 15px 5px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
 }
 
 .seperatorLineB {
@@ -356,18 +357,19 @@
   .shopButton {
     color: white;
     background-color: black;
-    box-shadow: 8px 8px 15px 5px white;
+    box-shadow: 2px 2px 5px 1px gray;
   }
 
   .ctaSection button {
     color: black;
     background-color: white;
+    box-shadow: 2px 2px 5px 1px gray;
   }
 
   .productCard button {
     color: black;
     background-color: white;
-    box-shadow: 8px 8px 15px 5px white;
+    box-shadow: 2px 2px 5px 1px gray;
   }
 
   .seperatorLineA {
@@ -385,4 +387,18 @@
   .review p {
     color: black;
   }
+}
+
+@media (max-width: 800px) {
+    .topContainer {
+        height: 20vw;
+    }
+
+    .heroSection {
+        margin-top: 20vw;
+    }
+
+    .logo {
+        width: 25%;
+    }
 }
