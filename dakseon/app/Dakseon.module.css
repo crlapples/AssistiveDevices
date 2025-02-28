@@ -12,17 +12,17 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 20%;
+  height: 20vw;
   border-bottom: 1vw solid black;
   z-index: 1000;
-  margin: 1vw;
   top: 0;
   left: 0;
-  background-color: inherit;
+  padding: 3vw;
+  background-color: white;
 }
 
 .logo {
-  width: 30%;
+  width: 25%;
   height: 100%;
   display: block;
   border-radius: 3vw;
@@ -35,6 +35,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20vw;
 }
 
 .heroSection h1 {
@@ -94,14 +95,20 @@
   height: 20%;
   text-align: center;
   margin: auto;
-  font-size: 3vh;
+  font-size: 3.9vh;
   background-color: rgb(155, 248, 140);
+  color: black;
+  padding: 5vh;
+  margin-top: -0.5vh;
 }
 
 .buttonContainer {
   width: 100%;
-  height: 15%;
+  height: 30%;
   background-color: rgb(155, 248, 140);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shopButton {
@@ -109,9 +116,12 @@
   padding-top: 2vw;
   padding-right: 2vw;
   padding-bottom: 2vw;
-  padding-left: 3.5vw;
-  margin: auto;
+  padding-left: 2vw;
+  margin-bottom: 5vh;
   font-size: 3vh;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
   background-color: black;
   font-weight: bold;
@@ -140,10 +150,12 @@
 .whyChooseUs h2 {
   width: 100%;
   height: 15%;
-  font-size: 3.5vh;
-  margin: auto;
+  font-size: 5vh;
+  margin-top: -0.5vh;
   text-align: center;
   background-color: rgb(155, 248, 140);
+  padding: 7vh;
+  color: black;
 }
 
 .whyChooseUs ul {
@@ -151,12 +163,14 @@
   height: 35%;
   display: flex;
   flex-direction: column;
-  padding: 5vw;
   background-color: rgb(155, 248, 140);
+  padding: 6vh;
 }
 
 .whyChooseUs ul li {
-  font-size: 2.5vh;
+  font-size: 3vh;
+  color: black;
+  margin-left: 17%;
 }
 
 .featuredProducts {
@@ -169,15 +183,17 @@
 }
 
 .featuredProducts h2 {
-  font-size: 3.5vh;
+  font-size: 5.5vh;
   width: 100%;
   height: 15%;
+  text-align: center;
+  padding: 7vh;
 }
 
 .seperatorLineA {
-  height: 1vh;
+  height: 0.5vh;
   width: 100vw;
-  border: 1vh solid black;
+  border-bottom: 0.5vh solid black;
   margin-top: 2vw;
   margin-bottom: 2vw;
 }
@@ -201,6 +217,7 @@
   height: 15%;
   text-align: center;
   font-size: 3.5vh;
+  padding: 1vh;
 }
 
 .productCard p {
@@ -208,15 +225,17 @@
   height: 15%;
   text-align: center;
   font-size: 3vh;
+  padding: 2vh;
 }
 
 .productCard button {
   border-radius: 1vw;
-  padding-top: 2vw;
-  padding-right: 2vw;
-  padding-bottom: 2vw;
+  padding-top: 3vw;
+  padding-right: 3.5vw;
+  padding-bottom: 3vw;
   padding-left: 3.5vw;
-  margin: auto;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
   font-size: 3vh;
   color: white;
   background-color: black;
@@ -225,9 +244,9 @@
 }
 
 .seperatorLineB {
-  height: 1vh;
+  height: 0.5vh;
   width: 95vw;
-  border: 1vh solid black;
+  border-color: 0.5vh solid black;
   margin-top: 2vw;
   margin-bottom: 2vw;
 }
@@ -245,21 +264,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 7vh;
 }
 
 .testimonials h2 {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 6vh;
   height: 23%;
   width: 100%;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-bottom: 10vh;
+  padding-top: 0vh;
 }
 
 .review {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 5vw;
-  width: 35%;
+  padding: 0vh;
+  width: 45vh;
   height: 38.5%;
 }
 
@@ -276,16 +300,53 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 6vh;
 }
 
 .ctaSection h2 {
-  font-size: 3vh;
+  font-size: 5vh;
   width: 100%;
-  height: 15%;
+  height: 20%;
+  padding: 2vh;
+}
+
+.ctaSection button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 60%;
+  padding: 10vh;
+}
+
+.verticalOri {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 3vh;
+}
+
+.horizontalOri {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   .topContainer {
+    background-color: black;
     border-bottom: solid white;
   }
 
@@ -294,9 +355,14 @@
   }
 
   .shopButton {
+    color: white;
+    background-color: black;
+    box-shadow: 8px 8px 15px 5px white;
+  }
+
+  .ctaSection button {
     color: black;
     background-color: white;
-    box-shadow: 8px 8px 15px 5px white;
   }
 
   .productCard button {
@@ -306,6 +372,18 @@
   }
 
   .seperatorLineA {
-    border: solid white;
+    border-bottom: solid white;
+  }
+
+  .seperatorLineB {
+    border-bottom: solid white;
+  }
+
+  .testimonials h2 {
+    color: black;
+  }
+
+  .review p {
+    color: black;
   }
 }

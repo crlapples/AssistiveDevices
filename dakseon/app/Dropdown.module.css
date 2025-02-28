@@ -4,9 +4,10 @@
 }
 
 .menu {
-  width: 5vw;
-  height: 5vw;
-  margin-right: 2vw;
+  width: 3.5vh;
+  height: 3.5vh;
+  margin-right: 3.5vh;
+  margin-top: 2vh;
 }
 
 .dropdownList {

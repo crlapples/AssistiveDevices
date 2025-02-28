@@ -1,20 +1,20 @@
 /* Style for the text container */
 .textContainer {
-  width: 100%;             /* Take up 100% width of the parent */
-  height: 100vh;           /* Take up 100% height of the viewport */
+  width: 100%; /* Take up 100% width of the parent */
+  height: 100vh; /* Take up 100% height of the viewport */
   display: flex;
   justify-content: center; /* Horizontally center the text */
-  align-items: center;     /* Vertically center the text */
-  position: relative;      /* Keep relative positioning for the container */
-  overflow: hidden;        /* Prevent any overflow of the animation */
+  align-items: center; /* Vertically center the text */
+  position: relative; /* Keep relative positioning for the container */
+  overflow: hidden; /* Prevent any overflow of the animation */
 }
 
 /* Animation and styling for each letter */
 .letter {
-  position: absolute;      /* Ensure each letter is positioned relative to the viewport */
-  top: -50px;              /* Initially position the letter outside the viewport (above) */
+  position: absolute; /* Ensure each letter is positioned relative to the viewport */
+  top: -50px; /* Initially position the letter outside the viewport (above) */
   right: -50px;
-  opacity: 0;              /* Initially hide the letter */
+  opacity: 0; /* Initially hide the letter */
   transition: opacity 0.3s ease, transform 0.5s ease; /* Smooth animation */
   transform: translateY(0) translateX(100%); /* Start from the top of the screen */
 }
@@ -26,9 +26,15 @@
 }
 
 /* Optional: Styling for the <p> tag */
-.p {
+.textContainer p {
   margin: 0; /* Remove default margin */
   font-size: 2rem; /* Adjust text size */
   color: #333; /* Text color */
   text-align: center; /* Ensure text is centered */
+}
+
+@media (prefers-color-scheme: dark) {
+  .textContainer p {
+    color: white;
+  }
 }
