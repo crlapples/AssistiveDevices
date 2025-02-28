@@ -1,32 +1,32 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import styles from './CompanyIntro.module.css';
+import { useEffect, useState } from "react";
+import styles from "./CompanyIntro.module.css"; // Import your CSS module
 
 const CompanyIntro: React.FC = () => {
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
-  const [fadeOut, setFadeOut] = useState<boolean>(false);
+  const [hideContent, setHideContent] = useState<boolean>(false);
 
   useEffect(() => {
-    // Set a timer to mark animation as complete after 1 second (fade-in)
+    // Set a timer to mark animation as complete after 1 second
     const timer = setTimeout(() => {
-      setAnimationComplete(true);
-    }, 1000);
+      setAnimationComplete(true); // Animation complete (fade-in)
+    }, 5); // 1000ms = 1 second (fade-in)
 
-    // Set another timer to fade out everything after 3 seconds
+    // Set another timer to hide the content after 3 seconds
     const hideTimer = setTimeout(() => {
-      setFadeOut(true);
-    }, 3000);
+      setHideContent(true); // Hide the entire content
+    }, 5); // 3000ms = 3 seconds
 
     return () => {
       clearTimeout(timer);
       clearTimeout(hideTimer);
-    };
+    }; // Cleanup timers
   }, []);
 
   return (
-    <div className={`${styles.container} ${fadeOut ? styles.hidden : ''}`}>
-      <p className={`${styles.companyName} ${fadeOut ? styles.fadeOut : ''}`}>
+    <div className={`${styles.container} ${hideContent ? styles.hidden : ""}`}>
+      <p className={styles.companyName}>
         Da<span style={{ color: "rgb(155, 248, 140)" }}>k</span>seon
       </p>
     </div>
