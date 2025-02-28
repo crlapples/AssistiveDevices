@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import styles from './CompanyIntro.module.css'; // Import your CSS module
 

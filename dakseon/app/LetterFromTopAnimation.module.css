@@ -26,7 +26,7 @@
 }
 
 /* Optional: Styling for the <p> tag */
-p {
+.p {
   margin: 0; /* Remove default margin */
   font-size: 2rem; /* Adjust text size */
   color: #333; /* Text color */

@@ -118,7 +118,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <LettersFromTopAnimation className={styles.letters} text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand." />
+        <LetterFromTopAnimation className={styles.letters} text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand." />
 
         {/* ✅ Customer Testimonials */}
         <section className={styles.testimonials}>
