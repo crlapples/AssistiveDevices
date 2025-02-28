@@ -86,7 +86,7 @@ const Home: React.FC = () => {
           </div>
         </header>
         <section className={styles.whyChooseUs}>
-          <LetterFromTopAnimation text="At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day." />
+          <LetterFromTopAnimation className={styles.letters1} text="At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day." />
           <div className={styles.imageContainer2}>
             <Image
               src="/image_fx_ (7).jpg"
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
           </div>
         </section>
         <LetterFromTopAnimation
-          className={styles.letters}
+          className={styles.letters2}
           text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand."
         />
         <section className={styles.testimonials}>

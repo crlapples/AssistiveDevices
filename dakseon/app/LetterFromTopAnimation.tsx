@@ -1,43 +1,49 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styles from './LetterFromTopAnimation.module.css'; // Assuming you have a CSS module
+import { useEffect, useState, useRef } from 'react';
+import styles from './LetterFromTopAnimation.module.css';
 
 interface LetterFromTopAnimationProps {
-  text: string; // Allow dynamic text input
+  text: string;
   className?: string;
 }
 
 const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text, className }) => {
-  const [mounted, setMounted] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  // Set the mounted state to true after the component is mounted
   useEffect(() => {
-    setMounted(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        }
+      },
+      { threshold: 0.2 } // Adjust threshold for when animation should trigger
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
-  // Trigger animation after component mounts once and prevent unnecessary state changes
-  useEffect(() => {
-    if (mounted) {
-      setAnimate(true); // This triggers the animation once mounted
-    }
-  }, [mounted]); // Depend on `mounted` state to ensure only one effect is called
-
-  if (!mounted) {
-    return null; // Ensuring component is not rendered before mounted
-  }
-
   return (
-    <div className={`${styles.textContainer} ${className || ''}`}>
+    <div ref={ref} className={`${styles.textContainer} ${className || ''}`}>
       <p>
-        {text.split("").map((letter, index) => (
-          <span
-            key={index}
-            className={`${styles.letter} ${animate ? styles.moveDown : ''}`}
-            style={{ transitionDelay: `${index * 100}ms` }} // Optional for staggered animation
-          >
-            {letter}
+        {text.split(" ").map((word, wordIndex) => (
+          <span key={wordIndex} className={styles.word}>
+            {word.split("").map((letter, letterIndex) => (
+              <span
+                key={letterIndex}
+                className={`${styles.letter} ${animate ? styles.moveDown : ''}`}
+                style={{ transitionDelay: `${(wordIndex * 100) + (letterIndex * 15)}ms` }}
+              >
+                {letter}
+              </span>
+            ))}
+            <span>&nbsp;</span> {/* Preserve space between words */}
           </span>
         ))}
       </p>

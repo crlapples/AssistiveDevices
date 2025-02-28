@@ -11,26 +11,34 @@
 
 /* Animation and styling for each letter */
 .letter {
-  position: absolute; /* Ensure each letter is positioned relative to the viewport */
-  top: -50px; /* Initially position the letter outside the viewport (above) */
-  right: -50px;
-  opacity: 0; /* Initially hide the letter */
-  transition: opacity 0.3s ease, transform 0.5s ease; /* Smooth animation */
-  transform: translateY(0) translateX(100%); /* Start from the top of the screen */
+  position: relative; /* Instead of absolute */
+  display: inline-block; /* Ensure letters are inline */ /* Ensure each letter is positioned relative to the viewport */
+  top: -100vh; /* Initially position the letter outside the viewport (above) */
+  right: -100vw;
+  transition: top 0.1s ease, right 0.1s ease; /* Smooth animation */
+}
+
+.word {
+  display: inline-block; /* Keeps words together */
+  white-space: nowrap; /* Prevents breaking inside words */
 }
 
 /* When the animation triggers, the letter moves down */
 .moveDown {
-  opacity: 1;
-  transform: translateY(50px) translateX(50px); /* Animate down to its normal position */
+  top: 0;
+  right: 0;
 }
 
 /* Optional: Styling for the <p> tag */
 .textContainer p {
   margin: 0; /* Remove default margin */
-  font-size: 2rem; /* Adjust text size */
-  color: #333; /* Text color */
-  text-align: center; /* Ensure text is centered */
+  font-size: 3.9vh; /* Adjust text size */
+  color: black; /* Text color */
+  text-align: center;
+  padding-right: 10vw; /* Ensure text is centered */
+  padding-left: 10vw;
+  padding-top: 15vw;
+  padding-bottom: 15vw;
 }
 
 @media (prefers-color-scheme: dark) {

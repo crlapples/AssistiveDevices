@@ -16,28 +16,28 @@
 }
 
 .dropdownList {
-  display: none;
+  display: flex;
   position: absolute;
   flex-direction: column;
   justify-content: center;
   border: 1vw solid black;
-  width: 50%;
+  width: 55vw;
   height: 50vh;
   z-index: 9999;
   padding: 5vw;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: scale(0.1);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: scale(0) translateX(200%) translateY(200%);
+  transition: transform 1s ease, top 5s ease, right 5s ease;
   background-color: white;
-  right: 35vw;
-  top: 15vw;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
 }
 
 .dropdownList.open {
-  display: flex;
-  opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateX(0) translateY(0);
+  right: 5vw;
+  top: 20vw;
 }
 
 .dropdownList a {
@@ -45,6 +45,7 @@
   text-decoration: none;
   padding: 1vw;
   font-size: 3.5vh;
+  width: 100%;
 }
 
 .dropdownList a:hover {
@@ -63,5 +64,11 @@
 
   .dropdownList a:hover {
     background-color: rgb(0, 79, 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dropdownList.open {
+    top: 10vh;
   }
 }
