@@ -98,13 +98,14 @@ const Home: React.FC = () => {
         {/* ✅ Featured Products */}
         <section className={styles.featuredProducts}>
           <h2>Our Bestsellers</h2>
-          
+          <div className={styles.seperatorLineA} />
           {/* Walker */}
           <div className={styles.productCard}>
             <img src="/images/walker.jpg" alt="GoAid Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p>
             <button><Link href="/walker">View Product</Link></button>
+            <div className={styles.seperatorLineB} />
           </div>
 
           {/* Shower Seat */}
@@ -113,6 +114,7 @@ const Home: React.FC = () => {
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
             <button><Link href="/shower-seat">View Product</Link></button>
+            <div className={styles.seperatorLineB} />
           </div>
 
           <p>Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand.</p>
