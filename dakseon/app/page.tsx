@@ -139,10 +139,16 @@ const Home: React.FC = () => {
 
         <footer>
           <div className={styles.verticalOri}>
-
+            <strong><p>Return to Top</p></strong>
+            <p>Los Angeles, CA</p>
+            <p>Copyright</p>
           </div>
           <div className={styles.verticalOri}>
-
+            <div className={styles.horizontalOri}>
+              <Image src="" alt="" />
+              <Image src="" alt="" />
+              <Image src="" alt="" />
+            </div>
           </div>
         </footer>
       </div>
