@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Dropdown.module.css';
 import "./globals.css";
+import Image from "next/image";
 
 const Dropdown: React.FC = () => {
   console.log("Dropdown component loaded");
@@ -32,11 +33,26 @@ const Dropdown: React.FC = () => {
         toggleDropdown(e);
       }} />
       <div className={`${styles.dropdownList} ${isOpen ? styles.open : ''}`}>
-        <Link href="/">Home</Link>
-        <Link href="/walker">Walker</Link>
-        <Link href="/shower-seat">Shower Seat</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="/"><div className={styles.horizOri}>
+          <p>Home</p>
+          <Image src="" alt="" className={styles.icon} />
+        </div></Link>
+        <Link href="/walker"><div className={styles.horizOri}>
+          <p>Walker</p>
+          <Image src="" alt="" className={styles.icon} />
+        </div></Link>
+        <Link href="/shower-seat"><div className={styles.horizOri}>
+          <p>Shower Seat</p>
+          <Image src="" alt="" className={styles.icon} />
+        </div></Link>
+        <Link href="/about"><div className={styles.horizOri}>
+          <p>About Us</p>
+          <Image src="" alt="" className={styles.icon} />
+        </div></Link>
+        <Link href="/contact"><div className={styles.horizOri}>
+          <p>Contact Us</p>
+          <Image src="" alt="" className={styles.icon} />
+        </div></Link>
       </div>
     </div>
   );

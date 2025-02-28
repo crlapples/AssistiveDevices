@@ -61,7 +61,8 @@ const Home: React.FC = () => {
       <CompanyIntro />
       <div className={styles.homeContainer}>
         <div className={styles.topContainer}>
-          <img src="/logo.png" alt="Dakseon Logo" className={styles.logo} />
+          <Image src="/logo.png" alt="Dakseon Logo" className={styles.logo} />
+          <Image src="" alt="" className={styles.fda} />
           <Dropdown />
         </div>
         <header className={styles.heroSection}>
@@ -104,10 +105,13 @@ const Home: React.FC = () => {
           </ul>
         </section>
         <section className={styles.featuredProducts}>
-          <h2>Our Bestsellers</h2>
+          <div className={styles.horizOriA}>
+            <h2>Our Bestsellers</h2>
+            <Image src="" alt="" className={styles.arrowIcon} />
+          </div>
           <div className={styles.seperatorLineA} />
           <div className={styles.productCard}>
-            <img src="/Image1.png" alt="Dakseon Mobility Walker" />
+            <Image src="/Image1.png" alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p>
             <button>
@@ -116,7 +120,7 @@ const Home: React.FC = () => {
             <div className={styles.seperatorLineB} />
           </div>
           <div className={styles.productCard}>
-            <img src="/Image3.png" alt="Dakseon Shower Safety Seat" />
+            <Image src="/Image3.png" alt="Dakseon Shower Safety Seat" />
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
             <button>
@@ -151,14 +155,14 @@ const Home: React.FC = () => {
           </button>
         </section>
         <footer>
-          <div className={styles.verticalOri}>
+          <div className={styles.verticalOriA}>
             <strong>
               <p>Return to Top</p>
             </strong>
-            <p>Los Angeles, CA</p>
+            <Image src="" alt="" className={styles.wheelchairIcon} />
             <p>Copyright</p>
           </div>
-          <div className={styles.verticalOri}>
+          <div className={styles.verticalOriB}>
             <div className={styles.horizontalOri}>
               <Image src="" alt="" />
               <Image src="" alt="" />
