@@ -164,6 +164,10 @@ const Home: React.FC = () => {
               <Image src="" alt="" />
               <Image src="" alt="" />
             </div>
+            <div className={styles.attributions}>
+              <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by Freepik - Flaticon</a>
+              <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by edt.im - Flaticon</a>
+            </div>
           </div>
         </footer>
       </div>
