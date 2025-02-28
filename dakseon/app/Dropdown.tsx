@@ -35,23 +35,23 @@ const Dropdown: React.FC = () => {
       <div className={`${styles.dropdownList} ${isOpen ? styles.open : ''}`}>
         <Link href="/"><div className={styles.horizOri}>
           <p>Home</p>
-          <Image src="" alt="" className={styles.icon} />
+          <Image src="/home-icon.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
         <Link href="/walker"><div className={styles.horizOri}>
           <p>Walker</p>
-          <Image src="" alt="" className={styles.icon} />
+          <Image src="/walker.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
         <Link href="/shower-seat"><div className={styles.horizOri}>
           <p>Shower Seat</p>
-          <Image src="" alt="" className={styles.icon} />
+          <Image src="/disabled-person.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
         <Link href="/about"><div className={styles.horizOri}>
           <p>About Us</p>
-          <Image src="" alt="" className={styles.icon} />
+          <Image src="/building-icon.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
         <Link href="/contact"><div className={styles.horizOri}>
           <p>Contact Us</p>
-          <Image src="" alt="" className={styles.icon} />
+          <Image src="/landline-line-icon.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
       </div>
     </div>

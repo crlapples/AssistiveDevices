@@ -61,8 +61,8 @@ const Home: React.FC = () => {
       <CompanyIntro />
       <div className={styles.homeContainer}>
         <div className={styles.topContainer}>
-          <Image src="/logo.png" alt="Dakseon Logo" className={styles.logo} />
-          <Image src="" alt="" className={styles.fda} />
+          <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+          <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
           <Dropdown />
         </div>
         <header className={styles.heroSection}>
@@ -107,11 +107,11 @@ const Home: React.FC = () => {
         <section className={styles.featuredProducts}>
           <div className={styles.horizOriA}>
             <h2>Our Bestsellers</h2>
-            <Image src="" alt="" className={styles.arrowIcon} />
+            <Image src="" width={512} height={512} alt="" className={styles.arrowIcon} />
           </div>
           <div className={styles.seperatorLineA} />
           <div className={styles.productCard}>
-            <Image src="/Image1.png" alt="Dakseon Mobility Walker" />
+            <Image src="/Image1.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p>
             <button>
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
             <div className={styles.seperatorLineB} />
           </div>
           <div className={styles.productCard}>
-            <Image src="/Image3.png" alt="Dakseon Shower Safety Seat" />
+            <Image src="/Image3.png" width={902} height={1600} alt="Dakseon Shower Safety Seat" />
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
             <button>
@@ -159,14 +159,14 @@ const Home: React.FC = () => {
             <strong>
               <p>Return to Top</p>
             </strong>
-            <Image src="" alt="" className={styles.wheelchairIcon} />
+            <Image src="" width={512} height={512} alt="" className={styles.wheelchairIcon} />
             <p>Copyright</p>
           </div>
           <div className={styles.verticalOriB}>
             <div className={styles.horizontalOri}>
-              <Image src="" alt="" />
-              <Image src="" alt="" />
-              <Image src="" alt="" />
+              <Image src="" width={512} height={512} alt="" />
+              <Image src="" width={512} height={512} alt="" />
+              <Image src="" width={512} height={512} alt="" />
             </div>
             <div className={styles.attributions}>
               <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by Freepik - Flaticon</a>
