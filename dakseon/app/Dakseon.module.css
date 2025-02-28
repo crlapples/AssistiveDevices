@@ -49,6 +49,8 @@
   text-align: center;
   padding-bottom: 10vh;
   padding-top: 10vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
 }
 
 .heroSection h1::after {
