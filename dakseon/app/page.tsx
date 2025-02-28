@@ -9,7 +9,7 @@ import Dropdown from "./Dropdown";
 import LetterFromTopAnimation from "./LetterFromTopAnimation";
 
 export const metadata: Metadata = {
-  title: "Dakseon - Premium Walker & Bathroom Seat for Safety and Comfort",
+  title: "Dakseon - Premium Walker & Shower Seat for Safety and Comfort",
   description: "Discover Dakseon's high-quality walker and bathroom seat designed for stability, safety, and comfort. Affordable pricing with reliable shipping.",
   openGraph: {
     title: "Mobility Walker & Shower Seat for Independent Living",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
         url: "",
         width: 1200,
         height: 600,
-        alt: "GoAid Mobility Walker"
+        alt: "Dakseon Mobility Walker"
       },
       {
         url: "",
         width: 1200,
         height: 600,
-        alt: "GoAid Shower Seat"
+        alt: "Dakseon Shower Seat"
       }
     ]
   }
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "GoAid",
+            "name": "Dakseon",
             "url": "https://yourwebsite.com",
             "potentialAction": {
               "@type": "SearchAction",
