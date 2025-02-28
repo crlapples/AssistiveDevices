@@ -116,9 +116,9 @@ const Home: React.FC = () => {
             <button><Link href="/shower-seat">View Product</Link></button>
             <div className={styles.seperatorLineB} />
           </div>
-
-          <p>Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand.</p>
         </section>
+
+        <LettersFromTopAnimation className={styles.letters} text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand." />
 
         {/* ✅ Customer Testimonials */}
         <section className={styles.testimonials}>
