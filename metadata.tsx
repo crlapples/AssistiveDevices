@@ -1,6 +1,14 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { mData } from "./mData.ts";
+import Image from 'next/image';
+
+interface Image {
+  url: string;
+  width: number;
+  height: number;
+  alt: string!
+}
 
 interface MData {
   title: string;
@@ -13,7 +21,7 @@ interface MData {
     description: string;
     url: string;
     type: string;
-    images: 
+    images: Image[];
   }
 }
 
