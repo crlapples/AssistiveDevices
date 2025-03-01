@@ -1,3 +1,7 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import 
+
 export const metadata: Metadata = {
   title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
   description: "Stay mobile with the GoAid Foldable Walker. Sturdy, lightweight, and easy to fold for storage and transport. Designed for stability and ease of use."
