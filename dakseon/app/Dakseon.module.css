@@ -28,6 +28,12 @@
   border-radius: 2vh;
 }
 
+.fda {
+  width: 5%;
+  height: 100%;
+  margin-left: 2vw;
+}
+
 .heroSection {
   width: 100%;
   height: 100%;
@@ -44,7 +50,7 @@
   display: inline-block;
   opacity: 0;
   animation: slideIn 2s ease-out forwards;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   height: 20%;
   width: 100%;
   text-align: center;
@@ -169,12 +175,15 @@
   flex-direction: column;
   background-color: rgb(155, 248, 140);
   padding: 6vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .whyChooseUs ul li {
   font-size: 3vh;
   color: black;
-  margin-left: 17%;
+  text-align: left;
+  width: 33%;
 }
 
 .featuredProducts {
@@ -186,12 +195,30 @@
   height: 100%;
 }
 
+.horizOriA {
+  position: relative;
+}
+
 .featuredProducts h2 {
   font-size: 5.5vh;
   width: 100%;
   height: 15%;
   text-align: center;
   padding: 7vh;
+}
+
+.arrowIcon {
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  right: 3vh;
+  top: 20vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .arrowIcon {
+    filter: invert(1);
+  }
 }
 
 .seperatorLineA {
@@ -256,7 +283,7 @@
 }
 
 .letters1 {
-    height: 95vh !important;
+    height: 100vh !important;
     width: 100%;
 }
 
@@ -400,6 +427,14 @@
 
     .logo {
         width: 20%;
+    }
+
+    .fda {
+      width: 20%;
+    }
+
+    .whyChooseUs ul li {
+      width: 75%;
     }
 }
 

@@ -107,9 +107,9 @@ const Home: React.FC = () => {
         <section className={styles.featuredProducts}>
           <div className={styles.horizOriA}>
             <h2>Our Bestsellers</h2>
-            <Image src="" width={512} height={512} alt="" className={styles.arrowIcon} />
+            <Image src="/curved-arrow-right-to-bottom-outline-icon.png" width={512} height={512} alt="" className={styles.arrowIcon} />
           </div>
-          <div className={styles.seperatorLineA} />
+          <div className={styles.seperatorLineB} />
           <div className={styles.productCard}>
             <Image src="/Image1.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
             <button>
               <Link href="/Walker">View Product</Link>
             </button>
-            <div className={styles.seperatorLineB} />
+            <div className={styles.seperatorLineA} />
           </div>
           <div className={styles.productCard}>
             <Image src="/Image3.png" width={902} height={1600} alt="Dakseon Shower Safety Seat" />
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
             <button>
               <Link href="/Shower-Seat">View Product</Link>
             </button>
-            <div className={styles.seperatorLineB} />
+            <div className={styles.seperatorLineA} />
           </div>
         </section>
         <LetterFromTopAnimation
