@@ -9,9 +9,9 @@ interface BreadcrumbMetadataProps {
 
 interface ItemList {
   "@type": string;
-  position: number;
-  name: string;
-  item: string;
+  "position": number;
+  "name": string;
+  "item": string;
 }
 
 interface BreadcrumbMetaData {
