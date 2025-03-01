@@ -5,7 +5,16 @@ import { mData } from "./mData.ts";
 interface MData {
   title: string;
   description: string;
-  other:
+  other: {
+    keywords: string;
+  };
+  openGraph: {
+    title: string;
+    description: string;
+    url: string;
+    type: string;
+    images: 
+  }
 }
 
 export const metadata: Metadata = {
