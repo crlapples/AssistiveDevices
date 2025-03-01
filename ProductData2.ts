@@ -1,0 +1,42 @@
+export const productPageData = {
+    "Walker": {
+        image: "",
+        imageAlt: "Dakseon Foldable Walker",
+        title: "Dakseon Foldable Walker – Lightweight & Portable Mobility Aid",
+        tagline: "Walk with confidence – stable, secure, and easy to fold.",
+        icon1: "",
+        benefit1: "Lightweight & Sturdy: Durable aluminum frame",
+        icon2: "",
+        benefit2: "Foldable & Portable: Quick folding mechanism",
+        icon3: "",
+        benefit3: "Comfortable Hand Grips: Secure, non-slip grip",
+        icon4: "",
+        benefit4: "Smooth Movement: Two front wheels & anti-slip feet",
+        descriptionTagline: "The Dakseon Advantage",
+        description: "Experience greater mobility and independence with the GoAid Foldable Walker. Designed for ease of use, this lightweight and durable walker provides stability and comfort for everyday movement. Whether indoors or outdoors, its sturdy aluminum frame and foldable design ensure convenience and reliability.",
+        review1: "⭐⭐⭐⭐⭐ 'This walker is a lifesaver! Lightweight yet sturdy.' – Jane D.",
+        review2: "⭐⭐⭐⭐⭐ 'Folds easily and is very stable. Great for my mom!' – Mark S.",
+        q1: "Q: Is the walker adjustable?",
+        a1: "A: No, this model is foldable but has a fixed height.",
+        q2: "Q: How fast is shipping?",
+        a2: "A: We ship within 2 business days with fast delivery options available."
+    },
+    "ShowerSeat": {
+        image: "",
+        imageAlt: "Dakseon Foldable Walker",
+        title: "Dakseon Foldable Walker – Lightweight & Portable Mobility Aid",
+        tagline: "Walk with confidence – stable, secure, and easy to fold.",
+        benefit1: "Lightweight & Sturdy: Durable aluminum frame",
+        benefit2: "Foldable & Portable: Quick folding mechanism",
+        benefit3: "Comfortable Hand Grips: Secure, non-slip grip",
+        benefit4: "Smooth Movement: Two front wheels & anti-slip feet",
+        descriptionTagline: "The Dakseon Advantage",
+        description: "Experience greater mobility and independence with the GoAid Foldable Walker. Designed for ease of use, this lightweight and durable walker provides stability and comfort for everyday movement. Whether indoors or outdoors, its sturdy aluminum frame and foldable design ensure convenience and reliability.",
+        review1: "⭐⭐⭐⭐⭐ 'This walker is a lifesaver! Lightweight yet sturdy.' – Jane D.",
+        review2: "⭐⭐⭐⭐⭐ 'Folds easily and is very stable. Great for my mom!' – Mark S.",
+        q1: "Q: Is the walker adjustable?",
+        a1: "A: No, this model is foldable but has a fixed height.",
+        q2: "Q: How fast is shipping?",
+        a2: "A: We ship within 2 business days with fast delivery options available."
+    }
+};

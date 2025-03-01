@@ -1,41 +1,95 @@
 import React from 'react';
 import styles from './ProductPage.module.css';
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
 import { generateMetadata } from "./metadata";
 import ProductMetadata from "./ProductMetadata";
 import BreadcrumbMetadata from "./Breadcrumb";
+import { productPageData } from "./ProductData2";
 
 export { generateMetadata };
 
-const Walker = () => {
+interface ProductPageProps {
+  params: {
+    productName: string;
+  }
+}
+
+interface ProductPageData {
+  image: string;
+  imageAlt: string;
+  title: string;
+  tagline: string;
+  benefit1: string;
+  benefit2: string;
+  benefit3: string;
+  benefit4: string;
+  descriptionTagline: string;
+  description: string;
+  review1: string;
+  review2: string;
+  q1: string;
+  a1: string;
+  q2: string;
+  a2: string;
+}
+
+export function generateStaticParams() {
+
+  return Object.keys(productPageData).map((productName) => ({
+    productName
+  }));
+}
+
+const ProductPage = ({ params }: ProductPageProps ) => {
+  const { productName } = params;
+  const product = productPageData[productName as keyof typeof productPageData];
+
   <ProductMetadata />
   <BreadcrumbMetadata />
   return (
     <div className={styles.container}>
       {/* Hero Section */}
       <div className={styles.hero}>
-        <img src="/images/walker.jpg" alt="GoAid Foldable Walker" className={styles.productImage} />
-        <h1>GoAid Foldable Walker – Lightweight & Portable Mobility Aid</h1>
-        <p className={styles.tagline}>Walk with confidence – stable, secure, and easy to fold.</p>
+        <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
+        <h1>{product.title}</h1>
+        <p className={styles.tagline}>{product.tagline}</p>
       </div>
 
       {/* Key Benefits */}
-      <ul className={styles.benefits}>
-        <li>✅ Lightweight & Sturdy: Durable aluminum frame</li>
-        <li>✅ Foldable & Portable: Quick folding mechanism</li>
-        <li>✅ Comfortable Hand Grips: Secure, non-slip grip</li>
-        <li>✅ Smooth Movement: Two front wheels & anti-slip feet</li>
-      </ul>
+      <div className={styles.benefits}>
+        <div className={styles.benefitBlock}>
+          <Image src={product.icon1} width={512} height={512} alt="" className={styles.icon} />
+          <p>Lightweight & Sturdy: Durable aluminum frame</p>
+          <div className={styles.seperatorLineA} />
+        </div>
+        <div className={styles.benefitBlock}>
+          <Image src="" width={512} height={512} alt="" className={styles.icon} />
+          <p>Foldable & Portable: Quick folding mechanism</p>
+          <div className={styles.seperatorLineA} />
+        </div>
+        <div className={styles.benefitBlock}>
+          <Image src="" width={512} height={512} alt="" className={styles.icon} />
+          <p>Comfortable Hand Grips: Secure, non-slip grip</p>
+          <div className={styles.seperatorLineA} />
+        </div>
+        <div className={styles.benefitBlock}>
+          <Image src="" width={512} height={512} alt="" className={styles.icon} />
+          <p>Smooth Movement: Two front wheels & anti-slip feet</p>
+          <div className={styles.seperatorLineA} />
+        </div>
+      </div>
 
       {/* Call to Action */}
       <div className={styles.cta}>
-        <button className={styles.buyButton}>Buy Now</button>
+        <Link href=""><button className={styles.buyButton}>Buy Now</button></Link>
         <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
       </div>
 
       {/* Detailed Product Description */}
       <div className={styles.description}>
-        <h2>The GoAid Advantage</h2>
+        <h2>The Dakseon Advantage</h2>
         <p>
           Experience greater mobility and independence with the GoAid Foldable Walker. Designed for ease of use, 
           this lightweight and durable walker provides stability and comfort for everyday movement. 
@@ -63,4 +117,4 @@ const Walker = () => {
   );
 };
 
-export default Walker;
+export default ProductPage;

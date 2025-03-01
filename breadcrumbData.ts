@@ -1,5 +1,5 @@
-export breadcrumbMData {
-  Walker: {
+export const breadcrumbMData = {
+  "Walker": {
     "@type": "BreadcrumbList",
     itemListElement: [
       {
@@ -16,7 +16,7 @@ export breadcrumbMData {
       }
     ]
   },
-  ShowerSeat: {
+  "ShowerSeat": {
     "@type": "BreadcrumbList",
     itemListElement: [
       {

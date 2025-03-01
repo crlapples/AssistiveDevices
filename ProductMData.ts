@@ -1,5 +1,5 @@
-export const productMData {
-  Walker: {
+export const productMData = {
+  "Walker": {
     "@type": "Product",
     name: "Dakseon Mobility Walker",
     image: "",
@@ -21,7 +21,7 @@ export const productMData {
       }
     }
   },
-  ShowerSeat: {
+  "ShowerSeat": {
     "@type": "Product",
     name: "Dakseon Bathroom Safety Seat",
     image: "",

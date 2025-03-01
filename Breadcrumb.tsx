@@ -1,9 +1,9 @@
 import React from "react";
-import breadcrumbMData from "./breadcrumbData";
+import { breadcrumbMData } from "./breadcrumbData";
 
 interface BreadcrumbMetadataProps {
   params: {
-    pageName: string;
+    breadPageName: string;
   }
 }
 
@@ -20,14 +20,14 @@ interface BreadcrumbMetaData {
 }
 
 export function generateStaticParams() {
-  return Object.keys(breadcrumbMData).map((pageName) => ({
-    pageName
+  return Object.keys(breadcrumbMData).map((breadPageName) => ({
+    breadPageName
   }));
 }
 
 const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
-  const { pageName } = params;
-  const bread = breadcrumbMData[pageName as keyof typeof breadcrumbMData];
+  const { breadPageName } = params;
+  const bread = breadcrumbMData[breadPageName as keyof typeof breadcrumbMData];
   
   return (
     <>
