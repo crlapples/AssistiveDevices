@@ -19,7 +19,7 @@ interface Image {
 interface MData {
   title: string;
   description: string;
-  keywords: string;
+  keywords: string[];
   openGraph: {
     title: string;
     description: string;
@@ -41,7 +41,7 @@ export const generateMetadata = ({ params }: metadataProps): Metadata => {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: meta.other.keywords,
+    keywords: meta.keywords,
     openGraph: {
       title: meta.openGraph.title,
       description: meta.openGraph.description,
