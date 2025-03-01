@@ -1,77 +1,15 @@
 import React from 'react';
 import styles from './ProductPage.module.css';
+import "./globals.css";
+import generateMetadata from "./metadata";
+import ProductMetadata from "./ProductMetadata";
+import BreadcrumbMetadata from "./Breadcrumb";
 
-export const metadata: Metadata = {
-  title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
-  description: "Stay mobile with the GoAid Foldable Walker. Sturdy, lightweight, and easy to fold for storage and transport. Designed for stability and ease of use.",
-  openGraph: {
-    title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
-    description: "A reliable foldable walker designed for comfort and stability. Features an aluminum frame, easy folding mechanism, and non-slip rubber feet.",
-    url: "https://goaid.com/walker",
-    type: "website",
-    images: [
-      {
-        url: "https://goaid.com/walker.jpg", // Replace with actual walker image URL
-        width: 1200,
-        height: 630,
-        alt: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
-      },
-    ],
-  },
-};
+generateMetadata();
 
 const Walker = () => {
-  <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "GoAid Mobility Walker",
-      "image": "https://yourwebsite.com/images/walker.jpg",
-      "description": "Lightweight, foldable walker designed for comfort, stability, and mobility support.",
-      "brand": {
-        "@type": "Brand",
-        "name": "GoAid"
-      },
-      "sku": "WALKER123",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://yourwebsite.com/walker",
-        "priceCurrency": "USD",
-        "price": "99.99",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "GoAid"
-        }
-      }
-    })
-  }}
-/>
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://yourwebsite.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Walker",
-          "item": "https://yourwebsite.com/walker"
-        }
-      ]
-    })
-  }}
-/>
+  <ProductMetadata />
+  <BreadcrumbMetadata />
   return (
     <div className={styles.container}>
       {/* Hero Section */}
