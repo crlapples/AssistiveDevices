@@ -8,6 +8,7 @@ interface ProductMetadataProps {
 }
 
 interface ProductMetaData {
+  "@type": string;
   name: string;
   image: string;
   description: string;
@@ -46,23 +47,23 @@ const ProductMetadata = ({ params }: ProductMetadataProps) => {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
+            "@type": product["@type"],
             "name": product.name,
             "image": product.image,
             "description": product.description,
             "brand": {
-              "@type": product.brand.@type,
+              "@type": product.brand["@type"],
               "name": product.brand.name
             },
             "sku": product.sku,
             "offers": {
-              "@type": product.offers.@type,
+              "@type": product.offers["@type"],
               "url": product.offers.url,
               "priceCurrency": product.offers.priceCurrency,
               "price": product.offers.price,
               "availability": product.offers.availability,
               "seller": {
-                "@type": product.offers.seller.@type,
+                "@type": product.offers.seller.["@type"],
                 "name": product.offers.seller.name
               }
             }
