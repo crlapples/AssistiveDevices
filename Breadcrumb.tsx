@@ -23,8 +23,7 @@ export function generateStaticParams() {
   }));
 }
 
-const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
-  const { breadPageName } = params;
+const BreadcrumbMetadata = ({ breadPageName }: BreadcrumbMetadataProps) => {
   const bread = breadcrumbMData[breadPageName as keyof typeof breadcrumbMData];
   
   return (

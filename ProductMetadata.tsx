@@ -34,8 +34,7 @@ export function generateStaticParams() {
   }));
 }
 
-const ProductMetadata = ({ params }: ProductMetadataProps) => {
-  const { productName } = params;
+const ProductMetadata = ({ productName }: ProductMetadataProps) => {
   const product = productMData[productName as keyof typeof productMData];
   
   return (

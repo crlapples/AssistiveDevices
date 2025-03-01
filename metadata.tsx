@@ -33,9 +33,9 @@ export function generateStaticParams() {
   }));
 }
 
-export const generateMetadata = ({ params }: metadataProps): Metadata => {
-  const { pageName } = params;
+export const generateMetadata = ({ pageName }: metadataProps): Metadata => {
   const meta = mData[pageName as keyof typeof mData];
+  
   return {
     title: meta.title,
     description: meta.description,

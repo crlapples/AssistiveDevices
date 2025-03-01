@@ -3,12 +3,10 @@ import styles from './ProductPage.module.css';
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import { generateMetadata } from "./metadata";
+import { generateMetadata as getMetadata } from "./metadata";
 import ProductMetadata from "./ProductMetadata";
 import BreadcrumbMetadata from "./Breadcrumb";
 import { productPageData } from "./ProductData2";
-
-export { generateMetadata };
 
 interface ProductPageProps {
   params: {
@@ -50,9 +48,11 @@ export function generateStaticParams() {
     breadPageName
   }));
 
-  const generateMetadataParams = Object.keys()
-
   return [...productParams, ...productMetaParams, ...breadcrumbParams];
+}
+
+export const generateMetadata = ({ params }: { params: { pageName: string } }) => {
+  return getMetadata(params);
 }
 
 const ProductPage = ({ params }: ProductPageProps ) => {
