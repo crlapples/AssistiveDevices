@@ -51,7 +51,7 @@ export const mData = {
           url: "",
           width: 902,
           height: 1600,
-          alt: "Dakseon Foldable Walker - Lightweight & Portable Mobility Aid"
+          alt: "Dakseon Shower Seat - Secure & Stable Shower Chair",
         }
       ]
     }
