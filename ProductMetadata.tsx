@@ -12,18 +12,18 @@ interface ProductMetaData {
   image: string;
   description: string;
   brand: {
-    @type: string,
+    "@type": string,
     name: string
   },
   sku: string,
   offers: {
-    @type: string,
+    "@type": string,
     url: string,
     priceCurrency: string,
     price: string,
     availability: string,
     seller: {
-      @type: string,
+      "@type": string,
       name: string
     }
   }
@@ -35,8 +35,8 @@ export function generateStaticParams() {
   }));
 }
 
-const ProductMetadata = ({ params }: { ProductMetadataProps } => {
-  const productName = params;
+const ProductMetadata = ({ params }: ProductMetadataProps) => {
+  const { productName } = params;
   const product = productMData[productName as keyof typeof productMData];
   
   return (
