@@ -90,3 +90,9 @@
     top: 10vh;
   }
 }
+
+@media (max-width: 800px) {
+  .dropdownList {
+    width: 75vw;
+  }
+}

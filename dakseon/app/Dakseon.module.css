@@ -360,29 +360,36 @@
   justify-content: space-between;
   width: 100%;
   height: 60%;
-  padding: 10vh;
+  padding: 3vh;
+  border-top: 0.5vh solid black;
 }
 
 .verticalOriA {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 50%;
+  align-items: flex-start;
+  width: 39%;
   height: 100%;
-  padding: 3vh;
+  padding: 1vh;
   gap: 5vh;
+}
+
+.verticalOriA p {
+  width: 100%;
+  height: 25%;
 }
 
 .verticalOriB {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 61%;
   height: 100%;
-  padding: 3vh;
+  padding: 1vh;
   gap: 5vh;
+  margin-top: 25%;
 }
 
 .wheelchairIcon {
@@ -392,11 +399,11 @@
 
 .horizontalOri {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 100%;
-  gap: 5vh;
+  height: 50%;
+  gap: 3vh;
 }
 
 .horizontalOri img {
@@ -408,9 +415,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 50%;
+  gap: 1vh;
+}
+
+.attributions a {
+  width: 100%;
+  height: 50%;
+  text-align: right;
 }
 
 @media (prefers-color-scheme: dark) {
+  .heroSection {
+    border-top: solid white;
+  }
+
   .shopButton {
     color: white;
     background-color: black;
@@ -443,6 +464,18 @@
 
   .review p {
     color: black;
+  }
+
+  .footer {
+    border-top: solid white;
+  }
+
+  .wheelchairIcon {
+    filter: invert(1);
+  }
+
+  .x {
+    filter: invert(1);
   }
 }
 
