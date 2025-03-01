@@ -45,9 +45,8 @@ export function generateStaticParams() {
 const ProductPage = ({ params }: ProductPageProps ) => {
   const { productName } = params;
   const product = productPageData[productName as keyof typeof productPageData];
-
-  <ProductMetadata />
-  <BreadcrumbMetadata />
+    <ProductMetadata />
+    <BreadcrumbMetadata />
   return (
     <div className={styles.container}>
       {/* Hero Section */}
@@ -57,61 +56,57 @@ const ProductPage = ({ params }: ProductPageProps ) => {
         <p className={styles.tagline}>{product.tagline}</p>
       </div>
 
+            {/* Detailed Product Description */}
+      <div className={styles.description}>
+        <h2>{product.descriptionTagline}</h2>
+        <p>{product.description}</p>
+      </div>
+
       {/* Key Benefits */}
       <div className={styles.benefits}>
         <div className={styles.benefitBlock}>
-          <Image src={product.icon1} width={512} height={512} alt="" className={styles.icon} />
-          <p>Lightweight & Sturdy: Durable aluminum frame</p>
+          <Image src={product.icon1} width={512} height={512} alt={product.icon1Alt} className={styles.icon} />
+          <p>{product.benefit1}</p>
           <div className={styles.seperatorLineA} />
         </div>
         <div className={styles.benefitBlock}>
-          <Image src="" width={512} height={512} alt="" className={styles.icon} />
-          <p>Foldable & Portable: Quick folding mechanism</p>
+          <Image src={product.icon2} width={512} height={512} alt={product.icon2Alt} className={styles.icon} />
+          <p>{product.benefit2}</p>
           <div className={styles.seperatorLineA} />
         </div>
         <div className={styles.benefitBlock}>
-          <Image src="" width={512} height={512} alt="" className={styles.icon} />
-          <p>Comfortable Hand Grips: Secure, non-slip grip</p>
+          <Image src={product.icon3} width={512} height={512} alt={product.icon3Alt} className={styles.icon} />
+          <p>{product.benefit3}</p>
           <div className={styles.seperatorLineA} />
         </div>
         <div className={styles.benefitBlock}>
-          <Image src="" width={512} height={512} alt="" className={styles.icon} />
-          <p>Smooth Movement: Two front wheels & anti-slip feet</p>
+          <Image src={product.icon4} width={512} height={512} alt={product.icon4Alt} className={styles.icon} />
+          <p>{product.benefit4}</p>
           <div className={styles.seperatorLineA} />
         </div>
       </div>
 
       {/* Call to Action */}
       <div className={styles.cta}>
-        <Link href=""><button className={styles.buyButton}>Buy Now</button></Link>
+        <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
         <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
-      </div>
-
-      {/* Detailed Product Description */}
-      <div className={styles.description}>
-        <h2>The Dakseon Advantage</h2>
-        <p>
-          Experience greater mobility and independence with the GoAid Foldable Walker. Designed for ease of use, 
-          this lightweight and durable walker provides stability and comfort for everyday movement. 
-          Whether indoors or outdoors, its sturdy aluminum frame and foldable design ensure convenience and reliability.
-        </p>
       </div>
 
       {/* Customer Reviews */}
       <div className={styles.reviews}>
         <h2>What Our Customers Say</h2>
-        <p>⭐⭐⭐⭐⭐ "This walker is a lifesaver! Lightweight yet sturdy." – Jane D.</p>
-        <p>⭐⭐⭐⭐⭐ "Folds easily and is very stable. Great for my mom!" – Mark S.</p>
+        <p>{product.review1}</p>
+        <p>{product.review2}</p>
       </div>
 
       {/* FAQs */}
       <div className={styles.faq}>
         <h2>Frequently Asked Questions</h2>
-        <p><strong>Q: Is the walker adjustable?</strong></p>
-        <p>A: No, this model is foldable but has a fixed height.</p>
+        <p><strong>{product.q1}</strong></p>
+        <p>{product.a1}</p>
 
-        <p><strong>Q: How fast is shipping?</strong></p>
-        <p>A: We ship within 2 business days with fast delivery options available.</p>
+        <p><strong>{product.q2}</strong></p>
+        <p>{product.a2}</p>
       </div>
     </div>
   );
