@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ProductPage.module.css';
 import "./globals.css";
-import generateMetadata from "./metadata";
+import { generateMetadata } from "./metadata";
 import ProductMetadata from "./ProductMetadata";
 import BreadcrumbMetadata from "./Breadcrumb";
 
-generateMetadata();
+export { generateMetadata };
 
 const Walker = () => {
   <ProductMetadata />
