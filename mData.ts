@@ -42,8 +42,8 @@ export const mData = {
     description: "Stay safe and comfortable in the shower with the GoAid Bathroom Seat. Designed for stability with a non-slip base and durable, water-resistant materials.",
     keywords: ["Shower seat", "Waterproof shower chair", "Shower seat for elderly", "Shower bench for disabled", "Handicap shower chair", "Shower chair for seniors", "Medical shower seat", "Shower stool", "Foldable shower seat", "Adjustable shower chair", "Anti-slip shower seat", "Durable shower chair", "Lightweight shower stool", "Comfortable shower bench", "Safety shower chair", "Sturdy shower seat", "Mobility aid shower chair", "ADA-compliant shower seat", "DME", "DME chair", "Shower chair for arthritis", "Shower bench for stroke patients", "Shower seat for limited mobility", "Shower chair for knee surgery recovery"]
     openGraph: {
-      title: "Dakseon Foldable Walker - Lightweight & Portable Mobility Aid",
-      description: "A reliable foldable walker designed for comfort and stability. Features an aluminum frame, easy folding mechanism, and non-slip rubber feet.",
+      title: "Dakseon Bathroom Seat - Secure & Stable Shower Chair",
+      description: "A reliable shower seat designed for safety and stability. Features a sturdy, rust-resistant frame with non-slip feet for maximum support.",
       url: "",
       type: "website",
       images: [
