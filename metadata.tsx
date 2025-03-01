@@ -2,7 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { mData } from "./mData.ts";
 
-interface 
+interface MData {
+  title: string;
+  description: string;
+  other:
+}
 
 export const metadata: Metadata = {
   title: "GoAid Foldable Walker - Lightweight & Portable Mobility Aid",
