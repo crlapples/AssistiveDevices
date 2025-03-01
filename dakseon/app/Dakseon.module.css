@@ -500,6 +500,10 @@
       width: 90%;
       margin-left: 7vh;
     }
+
+    .letters2 {
+      padding-bottom: 5vw !important;
+    }
 }
 
 @media (min-width: 1024px) {
