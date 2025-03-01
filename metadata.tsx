@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { mData } from "./mData.ts";
+import { mData } from "./mData";
 import Image from 'next/image';
 
 interface metadataProps {
@@ -32,12 +32,12 @@ interface MData {
 }
 
 export function generateStaticParams() {
-  return Object.keys(mData).map((pageName) ({
+  return Object.keys(mData).map((pageName) => ({
     pageName
   }));
 }
 
-export const metadata: Metadata = ({ params }: { metadataProps }) => {
+export const generateMetadata = ({ params }: metadataProps): Metadata => {
   const { pageName } = params;
   const meta = mData[pageName as keyof typeof mData];
   {
