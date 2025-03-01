@@ -4,9 +4,7 @@ import { mData } from "./mData";
 import Image from 'next/image';
 
 interface metadataProps {
-  params: {
-    pageName: string;
-  }
+  pageName: string;
 }
 
 interface Image {

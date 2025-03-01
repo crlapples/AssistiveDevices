@@ -2,9 +2,7 @@ import React from 'react';
 import { productMData } from "./ProductMData";
 
 interface ProductMetadataProps {
-  params: {
-    productName: string;
-  }
+  productName: string;
 }
 
 interface ProductMetaData {
@@ -63,7 +61,7 @@ const ProductMetadata = ({ params }: ProductMetadataProps) => {
               "price": product.offers.price,
               "availability": product.offers.availability,
               "seller": {
-                "@type": product.offers.seller.["@type"],
+                "@type": product.offers.seller["@type"],
                 "name": product.offers.seller.name
               }
             }

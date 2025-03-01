@@ -2,9 +2,7 @@ import React from "react";
 import { breadcrumbMData } from "./breadcrumbData";
 
 interface BreadcrumbMetadataProps {
-  params: {
-    breadPageName: string;
-  }
+  breadPageName: string;
 }
 
 interface ItemList {
