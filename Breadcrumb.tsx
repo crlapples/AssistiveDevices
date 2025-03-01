@@ -9,7 +9,7 @@ interface BreadcrumbMetadataProps {
 
 interface BreadcrumbMetaData {
   "@type": string;
-  name: string;
+  itemListElement: ;
   image: string;
   description: string;
   brand: {
@@ -42,31 +42,26 @@ const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
   
   return (
     <>
-      <script
+      <script>
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": product["@type"],
-            "name": product.name,
-            "image": product.image,
-            "description": product.description,
-            "brand": {
-              "@type": product.brand["@type"],
-              "name": product.brand.name
-            },
-            "sku": product.sku,
-            "offers": {
-              "@type": product.offers["@type"],
-              "url": product.offers.url,
-              "priceCurrency": product.offers.priceCurrency,
-              "price": product.offers.price,
-              "availability": product.offers.availability,
-              "seller": {
-                "@type": product.offers.seller.["@type"],
-                "name": product.offers.seller.name
-              }
-            }
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://yourwebsite.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Walker",
+                "item": "https://yourwebsite.com/walker"
+              } 
+            ]
           })
         }}
       />
