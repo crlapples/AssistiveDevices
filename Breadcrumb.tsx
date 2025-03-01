@@ -16,7 +16,7 @@ interface ItemList {
 
 interface BreadcrumbMetaData {
   "@type": string;
-  itemListElement: itemList[];
+  itemListElement: ItemList[];
 }
 
 export function generateStaticParams() {
@@ -37,20 +37,7 @@ const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": bread["@type"],
-            "itemListElement": [
-              {
-                "@type": ItemList["@type"],
-                "position": ItemList.position,
-                "name": ItemList.name,
-                "item": ItemList.item
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Walker",
-                "item": "https://yourwebsite.com/walker"
-              } 
-            ]
+            "itemListElement": bread.itemListElement
           })
         }}
       />
