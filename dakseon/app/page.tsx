@@ -12,10 +12,7 @@ export const metadata: Metadata = {
   title: "Dakseon - Premium Walker & Shower Seat for Safety and Comfort",
   description:
     "Discover Dakseon's high-quality walker and bathroom seat designed for stability, safety, and comfort. Affordable pricing with reliable shipping.",
-  other: {
-    keywords:
-      "walker, wheeled walker, foldable walker, walking frame, E0141, E0143, E0149, durable medical equipment, DME, mobility aid",
-  },
+  keywords: ["walker", "wheeled walker", "foldable walker", "walking frame", "E0141", "E0143", "E0149", "durable medical equipment", "DME", "mobility aid"],
   openGraph: {
     title: "Mobility Walker & Shower Seat for Independent Living",
     description:
