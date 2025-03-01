@@ -31,7 +31,7 @@ const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
   
   return (
     <>
-      <script>
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
