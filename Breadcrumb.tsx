@@ -7,27 +7,16 @@ interface BreadcrumbMetadataProps {
   }
 }
 
+interface ItemList {
+  "@type": string;
+  position: number;
+  name: string;
+  item: string;
+}
+
 interface BreadcrumbMetaData {
   "@type": string;
-  itemListElement: ;
-  image: string;
-  description: string;
-  brand: {
-    "@type": string,
-    name: string
-  },
-  sku: string,
-  offers: {
-    "@type": string,
-    url: string,
-    priceCurrency: string,
-    price: string,
-    availability: string,
-    seller: {
-      "@type": string,
-      name: string
-    }
-  }
+  itemListElement: itemList[];
 }
 
 export function generateStaticParams() {
@@ -47,13 +36,13 @@ const BreadcrumbMetadata = ({ params }: BreadcrumbMetadataProps) => {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
+            "@type": bread["@type"],
             "itemListElement": [
               {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://yourwebsite.com"
+                "@type": ItemList["@type"],
+                "position": ItemList.position,
+                "name": ItemList.name,
+                "item": ItemList.item
               },
               {
                 "@type": "ListItem",
