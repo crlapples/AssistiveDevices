@@ -367,6 +367,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: 60%;
   padding: 3vh;
@@ -491,7 +492,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .topContainer {
         height: 20vw;
     }
