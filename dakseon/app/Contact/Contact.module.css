@@ -1,3 +1,7 @@
+contactContainer {
+  width: 100%;
+}
+
 .topContainer {
   position: fixed;
   display: flex;
