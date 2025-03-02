@@ -145,10 +145,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
               <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
               <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
             </div>
-            <div className={styles.attributions}>
-              <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by Freepik - Flaticon</a>
-              <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by edt.im - Flaticon</a>
-            </div>
           </div>
         </footer>
       </div>
