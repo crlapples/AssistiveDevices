@@ -1,6 +1,6 @@
 export const productPageData = {
     "Walker": {
-        image: "",
+        image: "Image1.png",
         imageAlt: "Dakseon Foldable Walker",
         title: "Dakseon Foldable Walker – Lightweight & Portable Mobility Aid",
         tagline: "Walk with confidence – stable, secure, and easy to fold.",
@@ -26,7 +26,7 @@ export const productPageData = {
         q2: "Q: How fast is shipping?",
         a2: "A: We ship within 2 business days with fast delivery options available."
     },
-    "ShowerSeat": {
+    "Shower-Seat": {
         image: "",
         imageAlt: "Dakseon Bathroom Safety Seat",
         title: "Secure & Comfortable Bathroom Safety Seat – Stability Where It Matters Most",

@@ -55,7 +55,7 @@
 }
 
 .title p {
-  font-size: 6vh;
+  font-size: 8vh;
   width: 100%;
   height: 30%;
   padding: 5vh;
@@ -68,7 +68,7 @@
 }
 
 .hero h1 {
-  font-size: 5vh;
+  font-size: 6vh;
   width: 100%;
   height: 15%;
   padding: 5vh;
@@ -76,7 +76,7 @@
 }
 
 .tagline {
-  font-size: 3.9vh;
+  font-size: 6vh;
   width: 100%;
   height: 15%;
   padding: 5vh;
@@ -88,7 +88,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center:
+  justify-content: center;
   align-items: center;
 }
 
@@ -96,6 +96,7 @@
   width: 100%;
   height: 10%;
   text-align: center;
+  font-size: 7vh;
 }
 
 .description p {
@@ -104,9 +105,11 @@
   height: 100%;
   transform: translateX(-50%);
   left: 50%;
+  padding: 5vh;
+  font-size: 5vh;
 }
 
-.shopButton {
+.buyButton {
   border-radius: 2vh;
   padding-top: 2vw;
   padding-right: 2vw;
@@ -124,11 +127,100 @@
   z-index: 0;
 }
 
+.buyButton:hover {
+  cursor: pointer;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 39%;
+}
+
+.shippingInfo {
+  font-size: 3.9vh;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  padding: 7vh;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.benefitBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  width: 15vh;
+  height: 15vh;
+}
+
+.benefitBlock p {
+  width: 100%;
+  height: 20%;
+  font-size: 6vh;
+  text-align: center;
+  font-weight: bold;
+}
+
 .seperatorLineA {
   height: 0.5vh;
   width: 100vw;
   border-bottom: 0.5vh solid black;
   margin-bottom: 2vw;
+}
+
+.testimonials {
+  background-color: #2f7ab6;
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7vh;
+}
+
+.testimonials h2 {
+  text-align: center;
+  font-size: 6vh;
+  height: 23%;
+  width: 100%;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-bottom: 10vh;
+  padding-top: 0vh;
+}
+
+.review {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0vh;
+  width: 45vh;
+  height: 38.5%;
+}
+
+.review p {
+  font-size: 3vh;
+  width: 100%;
+  height: 100%;
 }
 
 .letters1 {
@@ -141,9 +233,40 @@
   width: 100%;
 }
 
+.faq {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7vh;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 6vh;
+  height: 23%;
+  width: 100%;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-bottom: 10vh;
+  padding-top: 0vh;
+}
+
+.faq p {
+  position: relative;
+  font-size: 3vh;
+  width: 100%;
+  height: 38.5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: 60%;
   padding: 3vh;
@@ -218,14 +341,26 @@
     border-top: solid white;
   }
   
-  .shopButton {
+  .buyButton {
     color: white;
     background-color: black;
     box-shadow: 2px 2px 5px 1px gray;
   }
 
+  .icon {
+    filter: invert(1);
+  }
+
   .seperatorLineA {
     border-bottom: solid white;
+  }
+
+  .testimonials h2 {
+    color: black;
+  }
+
+  .review p {
+    color: black;
   }
 
   .footer {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ProductPage.module.css';
+import styles from './Products.module.css';
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +7,8 @@ import { generateMetadata as getMetadata } from "./metadata";
 import ProductMetadata from "./ProductMetadata";
 import BreadcrumbMetadata from "./Breadcrumb";
 import { productPageData } from "./ProductData2";
+import Dropdown from './Dropdown';
+import LetterFromTopAnimation from './LetterFromTopAnimation';
 
 interface ProductPageProps {
   params: {
@@ -51,19 +53,22 @@ export function generateStaticParams() {
   return [...productParams, ...productMetaParams, ...breadcrumbParams];
 }
 
-export const generateMetadata = ({ params }: { params: { pageName: string } }) => {
-  return getMetadata(params);
-}
-
 const ProductPage = ({ params }: ProductPageProps ) => {
   const { productName, breadPageName, pageName } = params;
   const product = productPageData[productName as keyof typeof productPageData];
+  const metadata = getMetadata({ pageName: productName });
 
   return (
     <>
       <ProductMetadata productName={productName} />
-      <BreadcrumbMetadata breadPageName={breadPageName} />
+      <BreadcrumbMetadata breadPageName={productName} />
       <div className={styles.container}>
+        <div className={styles.topContainer}>
+          <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+          <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+          <Dropdown />
+        </div>
+
        {/* Hero Section */}
         <div className={styles.hero}>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
@@ -74,7 +79,13 @@ const ProductPage = ({ params }: ProductPageProps ) => {
             {/* Detailed Product Description */}
         <div className={styles.description}>
           <h2>{product.descriptionTagline}</h2>
-          <p>{product.description}</p>
+          <LetterFromTopAnimation className={styles.letters1} text={product.description} />
+        </div>
+
+                      {/* Call to Action */}
+        <div className={styles.cta}>
+          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
+          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
 
       {/* Key Benefits */}
@@ -101,17 +112,15 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           </div>
         </div>
 
-      {/* Call to Action */}
-        <div className={styles.cta}>
-          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
-          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
-        </div>
-
       {/* Customer Reviews */}
-        <div className={styles.reviews}>
+        <div className={styles.testimonials}>
           <h2>What Our Customers Say</h2>
-          <p>{product.review1}</p>
-          <p>{product.review2}</p>
+          <div className={styles.review}>
+            <p>{product.review1}</p>
+          </div>
+          <div className={styles.review}>
+            <p>{product.review2}</p>
+          </div>
         </div>
 
       {/* FAQs */}
