@@ -41,6 +41,10 @@
   border-top: 0.5vh solid black;
 }
 
+.aboutContainer {
+  
+}
+
 .aboutContainer p {
   padding: 5vh;
   font-size: 5.5vh;
