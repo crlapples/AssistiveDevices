@@ -45,7 +45,7 @@
 
 /* Fade out the whole container */
 .container.hidden {
-  animation: fadeOut 3.9s ease-in-out forwards;
+  animation: fadeOut 2.7s ease-in-out forwards;
 }
 
 /* Add styles when fade-out is fully completed */

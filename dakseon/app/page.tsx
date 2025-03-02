@@ -149,7 +149,7 @@ const Home: React.FC = () => {
               <p>Return to Top</p>
             </strong>
             <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
-            <p>Copyright</p>
+            <p>© Copyright</p>
           </div>
           <div className={styles.verticalOriB}>
             <div className={styles.horizontalOri}>
