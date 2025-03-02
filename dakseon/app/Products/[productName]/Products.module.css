@@ -46,6 +46,14 @@
   border-top: 1vh solid black;
 }
 
+.pageTitle {
+  width: 100%;
+  height: 20%;
+  font-size: 8vh;
+  text-align: center;
+  font-weight: bold;
+}
+
 .title {
   display: flex;
   justify-content: center;
