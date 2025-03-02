@@ -69,11 +69,11 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
           <Dropdown />
         </div>
-        <div className={styles.title}>
-          <p>Featured</p>
-        </div>
        {/* Hero Section */}
         <div className={styles.hero}>
+          <div className={styles.title}>
+            <p>Featured</p>
+          </div>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
           <h1>{product.title}</h1>
           <p className={styles.tagline}>{product.tagline}</p>
