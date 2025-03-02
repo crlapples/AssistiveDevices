@@ -59,11 +59,13 @@
 }
 
 .secondh2 {
-  
+  background-color: rgb(155, 248, 140);
+  color: black;
 }
 
 .thirdp {
-  
+  background-color: rgb(155, 248, 140);
+  color: black;
 }
 
 .imageContainer {
@@ -139,6 +141,14 @@
 @media (prefers-color-scheme: dark) {
   .aboutContainer h1 {
     border-top: solid white;
+  }
+
+  .secondh2 {
+    color: black;
+  }
+
+  .thirdp {
+    color: black;
   }
 
   .footer {
