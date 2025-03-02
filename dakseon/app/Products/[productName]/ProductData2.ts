@@ -1,6 +1,6 @@
 export const productPageData = {
     "Walker": {
-        image: "Image1.png",
+        image: "/Image1.png",
         imageAlt: "Dakseon Foldable Walker",
         title: "Dakseon Foldable Walker – Lightweight & Portable Mobility Aid",
         tagline: "Walk with confidence – stable, secure, and easy to fold.",
