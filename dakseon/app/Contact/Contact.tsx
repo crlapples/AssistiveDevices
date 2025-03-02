@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         <Dropdown />
       </div>
       <h1>Contact Us</h1>
-      <p>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
+      <p className={styles.query}>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <label>Name</label>
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
       </form>
 
       <h2>Direct Contact</h2>
-      <p>Email: support@goaid.com</p>
+      <p className={styles.contactEmail}>Email: support@goaid.com</p>
       <footer className={styles.footer}>
         <div className={styles.verticalOriA}>
           <strong>
