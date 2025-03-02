@@ -99,16 +99,6 @@
   font-size: 7vh;
 }
 
-.description p {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-50%);
-  left: 50%;
-  padding: 5vh;
-  font-size: 5vh;
-}
-
 .buyButton {
   border-radius: 2vh;
   padding-top: 2vw;
@@ -260,7 +250,19 @@
   width: 100%;
   height: 38.5%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-26%);
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .faq p {
+    transform: translateX(-35%);
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .faq p {
+    transform: translateX(-50%);
+  }
 }
 
 .footer {
