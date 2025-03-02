@@ -34,7 +34,7 @@
   margin-left: 2vw;
 }
 
-.heroSection {
+.hero {
   width: 100%;
   height: 100%;
   display: flex;
@@ -154,7 +154,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .heroSection {
+  .hero {
     border-top: solid white;
   }
   
@@ -186,7 +186,7 @@
         height: 20vw;
     }
 
-    .heroSection {
+    .hero {
         margin-top: 20vw;
     }
 
@@ -212,7 +212,7 @@
         height: 50vh !important;
     }
 
-    .heroSection {
+    .hero {
         margin-top: 10vh;
     }
 }
