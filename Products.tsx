@@ -85,6 +85,12 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           <p>{product.description}</p>
         </div>
 
+         {/* Call to Action */}
+        <div className={styles.cta}>
+          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
+          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
+        </div>
+
       {/* Key Benefits */}
         <div className={styles.benefits}>
           <div className={styles.benefitBlock}>
@@ -107,12 +113,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
             <p>{product.benefit4}</p>
             <div className={styles.seperatorLineA} />
           </div>
-        </div>
-
-      {/* Call to Action */}
-        <div className={styles.cta}>
-          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
-          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
 
       {/* Customer Reviews */}
