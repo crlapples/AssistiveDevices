@@ -77,10 +77,8 @@ const ProductPage = ({ params }: ProductPageProps ) => {
         </div>
 
             {/* Detailed Product Description */}
-        <div className={styles.description}>
-          <h2>{product.descriptionTagline}</h2>
-          <LetterFromTopAnimation className={styles.letters1} text={product.description} />
-        </div>
+        <h2>{product.descriptionTagline}</h2>
+        <LetterFromTopAnimation className={styles.letters1} text={product.description} />
 
                       {/* Call to Action */}
         <div className={styles.cta}>
