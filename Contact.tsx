@@ -39,6 +39,22 @@ const Contact: React.FC = () => {
 
       <h2>Direct Contact</h2>
       <p>Email: support@goaid.com</p>
+      <footer className={styles.footer}>
+        <div className={styles.verticalOriA}>
+          <strong>
+            <p>Return to Top</p>
+          </strong>
+          <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
+          <p>© Copyright</p>
+        </div>
+        <div className={styles.verticalOriB}>
+          <div className={styles.horizontalOri}>
+            <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
+            <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
+            <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
