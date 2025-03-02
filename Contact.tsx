@@ -16,6 +16,11 @@ const Contact: React.FC = () => {
 
   return (
     <div className={styles.contactContainer}>
+      <div className={styles.topContainer}>
+        <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+        <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+        <Dropdown />
+      </div>
       <h1>Contact Us</h1>
       <p>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
 
