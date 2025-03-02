@@ -114,6 +114,10 @@
   .contactContainer h1 {
     border-top: solid white;
   }
+
+  .query {
+    color: black;
+  }
   
   .footer {
     border-top: solid white;
