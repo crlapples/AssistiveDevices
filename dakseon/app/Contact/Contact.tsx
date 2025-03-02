@@ -26,13 +26,13 @@ const Contact: React.FC = () => {
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <label>Name</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input className={styles.name} type="text" name="name" value={formData.name} onChange={handleChange} required />
 
         <label>Email</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input className={styles.email} type="email" name="email" value={formData.email} onChange={handleChange} required />
 
         <label>Message</label>
-        <textarea name="message" value={formData.message} onChange={handleChange} required />
+        <textarea className={styles.message} name="message" value={formData.message} onChange={handleChange} required />
 
         <button type="submit">Send Message</button>
       </form>
