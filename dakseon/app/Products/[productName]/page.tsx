@@ -71,6 +71,7 @@ const ProductPage = ({ params }: ProductPageProps ) => {
 
        {/* Hero Section */}
         <div className={styles.hero}>
+          <p className={styles.pageTitle}>Featured</p>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
           <h1>{product.title}</h1>
           <p className={styles.tagline}>{product.tagline}</p>
