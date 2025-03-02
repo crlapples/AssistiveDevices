@@ -64,8 +64,16 @@ const ProductPage = ({ params }: ProductPageProps ) => {
       <ProductMetadata productName={productName} />
       <BreadcrumbMetadata breadPageName={breadPageName} />
       <div className={styles.container}>
+        <div className={styles.topContainer}>
+          <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+          <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+          <Dropdown />
+        </div>
        {/* Hero Section */}
         <div className={styles.hero}>
+          <div className={styles.title}>
+            <p>Featured</p>
+          </div>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
           <h1>{product.title}</h1>
           <p className={styles.tagline}>{product.tagline}</p>
@@ -75,6 +83,12 @@ const ProductPage = ({ params }: ProductPageProps ) => {
         <div className={styles.description}>
           <h2>{product.descriptionTagline}</h2>
           <p>{product.description}</p>
+        </div>
+
+         {/* Call to Action */}
+        <div className={styles.cta}>
+          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
+          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
 
       {/* Key Benefits */}
@@ -101,12 +115,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           </div>
         </div>
 
-      {/* Call to Action */}
-        <div className={styles.cta}>
-          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
-          <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
-        </div>
-
       {/* Customer Reviews */}
         <div className={styles.reviews}>
           <h2>What Our Customers Say</h2>
@@ -123,6 +131,22 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           <p><strong>{product.q2}</strong></p>
           <p>{product.a2}</p>
         </div>
+        <footer className={styles.footer}>
+          <div className={styles.verticalOriA}>
+            <strong>
+              <p>Return to Top</p>
+            </strong>
+            <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
+            <p>Copyright</p>
+          </div>
+          <div className={styles.verticalOriB}>
+            <div className={styles.horizontalOri}>
+              <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
+              <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
+              <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );

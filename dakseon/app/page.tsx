@@ -78,9 +78,7 @@ const Home: React.FC = () => {
             walker and shower seat.
           </p>
           <div className={styles.buttonContainer}>
-            <button className={styles.shopButton}>
-              <Link href="/walker">Shop Now</Link>
-            </button>
+            <Link href="/walker"><button className={styles.shopButton}>Shop Now</button></Link>
           </div>
         </header>
         <section className={styles.whyChooseUs}>
@@ -111,18 +109,14 @@ const Home: React.FC = () => {
             <Image src="/Image1.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p>
-            <button>
-              <Link href="/Walker">View Product</Link>
-            </button>
+            <Link href="/Walker"><button>View Product</button></Link>
             <div className={styles.seperatorLineA} />
           </div>
           <div className={styles.productCard}>
             <Image src="/Image3.png" width={902} height={1600} alt="Dakseon Shower Safety Seat" />
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p>
-            <button>
-              <Link href="/Shower-Seat">View Product</Link>
-            </button>
+            <Link href="/Shower-Seat"><button>View Product</button></Link>
             <div className={styles.seperatorLineA} />
           </div>
         </section>
@@ -147,9 +141,7 @@ const Home: React.FC = () => {
         </section>
         <section className={styles.ctaSection}>
           <h2>Ready to Improve Your Mobility & Safety?</h2>
-          <button className={styles.shopButton}>
-            <Link href="/Walker">Shop Now</Link>
-          </button>
+          <Link href="/Walker"><button className={styles.shopButton}>Shop Now</button></Link>
         </section>
         <footer className={styles.footer}>
           <div className={styles.verticalOriA}>
@@ -157,7 +149,7 @@ const Home: React.FC = () => {
               <p>Return to Top</p>
             </strong>
             <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
-            <p>Copyright</p>
+            <p>© Copyright</p>
           </div>
           <div className={styles.verticalOriB}>
             <div className={styles.horizontalOri}>
