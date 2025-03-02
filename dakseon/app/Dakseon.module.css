@@ -217,8 +217,15 @@
   position: absolute;
   width: 5vh;
   height: 5vh;
-  right: 3vh;
-  top: 20vh;
+  right: 1%;
+  top: 35%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .arrowIcon {
+    right: 5%;
+    top: 55%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -530,5 +537,22 @@
 
     .heroSection {
         margin-top: 10vh;
+    }
+
+    .footer {
+      height: 40%;
+    }
+
+    .verticalOriA {
+      margin-top: 2%;
+    }
+
+    .verticalOriB {
+      margin-top: 2%;
+    }
+
+    .horizontalOri {
+      margin-bottom: 2%;
+      justify-content: flex-end;
     }
 }

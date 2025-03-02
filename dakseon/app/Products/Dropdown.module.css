@@ -91,7 +91,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .dropdownList {
     width: 75vw;
   }
