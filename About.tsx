@@ -7,6 +7,11 @@ import Link from "next/link";
 const About: React.FC = () => {
   return (
     <div className={styles.aboutContainer}>
+      <div className={styles.topContainer}>
+        <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+        <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+        <Dropdown />
+      </div>
       <h1>About Dakseon</h1>
       <p>At Dakseon, we are committed to providing high-quality mobility and safety products that help individuals live with greater independence and confidence.</p>
       
@@ -24,7 +29,7 @@ const About: React.FC = () => {
       <h2>Our Story</h2>
       <p>With a decade of experience in the assistive device industry, we understand the importance of reliable and well-designed products. Our carefully selected mobility and bathroom safety solutions are built to enhance everyday life, ensuring both safety and comfort.</p>
 
-      <h2>Our Commitment</h2>
+      <h2 className={styles.secondh2}>Our Commitment</h2>
       <p>We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike.</p>
 
       <h2>Need Help?</h2>
