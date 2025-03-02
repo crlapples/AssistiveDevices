@@ -64,6 +64,14 @@ const ProductPage = ({ params }: ProductPageProps ) => {
       <ProductMetadata productName={productName} />
       <BreadcrumbMetadata breadPageName={breadPageName} />
       <div className={styles.container}>
+        <div className={styles.topContainer}>
+          <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+          <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+          <Dropdown />
+        </div>
+        <div className={styles.title}>
+          <p>Featured</p>
+        </div>
        {/* Hero Section */}
         <div className={styles.hero}>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
