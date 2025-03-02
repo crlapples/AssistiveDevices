@@ -108,7 +108,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           <div className={styles.benefitBlock}>
             <Image src={product.icon4} width={512} height={512} alt={product.icon4Alt} className={styles.icon} />
             <p>{product.benefit4}</p>
-            <div className={styles.seperatorLineA} />
           </div>
         </div>
 
