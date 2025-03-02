@@ -1,0 +1,48 @@
+/* Style for the text container */
+.textContainer {
+  width: 100%; /* Take up 100% width of the parent */
+  height: 100vh; /* Take up 100% height of the viewport */
+  display: flex;
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  position: relative; /* Keep relative positioning for the container */
+  overflow: hidden; /* Prevent any overflow of the animation */
+}
+
+/* Animation and styling for each letter */
+.letter {
+  position: relative; /* Instead of absolute */
+  display: inline-block; /* Ensure letters are inline */ /* Ensure each letter is positioned relative to the viewport */
+  top: -100vh; /* Initially position the letter outside the viewport (above) */
+  right: -100vw;
+  transition: top 0.1s ease, right 0.1s ease; /* Smooth animation */
+}
+
+.word {
+  display: inline-block; /* Keeps words together */
+  white-space: nowrap; /* Prevents breaking inside words */
+}
+
+/* When the animation triggers, the letter moves down */
+.moveDown {
+  top: 0;
+  right: 0;
+}
+
+/* Optional: Styling for the <p> tag */
+.textContainer p {
+  margin: 0; /* Remove default margin */
+  font-size: 3.9vh; /* Adjust text size */
+  color: black; /* Text color */
+  text-align: center;
+  padding-right: 10vw; /* Ensure text is centered */
+  padding-left: 10vw;
+  padding-top: 15vw;
+  padding-bottom: 15vw;
+}
+
+@media (prefers-color-scheme: dark) {
+  .textContainer p {
+    color: white;
+  }
+}
