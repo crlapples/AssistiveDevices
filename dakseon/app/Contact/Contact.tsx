@@ -59,6 +59,8 @@ const Contact: React.FC = () => {
         <textarea className={styles.message} name="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
 
         <button type="submit">Send</button>
+
+        <p className={styles.status}>{status}</p>
       </form>
 
       <h2>Direct Contact</h2>
