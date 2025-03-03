@@ -53,11 +53,6 @@ const Orders = () => {
                 <Image src="" alt="" width={} height={} />
                 <p>Payment</p>
               </div>
-              <div className={styles.expressCheckoutContainer}>
-                <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-                <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
-                <Image src="" alt="" width={} height={} className={styles.googleExpress} />
-              </div>
               {addedWalker && (
                 <div className={styles.entranceItemContainer}>
                   <div className={styles.entranceHoriz}>
@@ -129,6 +124,11 @@ const Orders = () => {
             <p>Shipping</p>
             <Image src="" alt="" width={} height={} />
             <p>Payment</p>
+          </div>
+          <div className={styles.expressCheckoutContainer}>
+            <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
+            <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
+            <Image src="" alt="" width={} height={} className={styles.googleExpress} />
           </div>
           <div className={styles.customerDetailsContainer}>
             <p className={styles.contactP}>Contact Information</p>
@@ -245,6 +245,42 @@ const Orders = () => {
             <p><strong>Shipping</strong></p>
             <Image src="" alt="" width={} height={} />
             <p>Payment</p>
+          </div>
+          <div className={styles.shippingOptionsContainer}>
+            <div className={styles.shippingOptions}>
+              <label></label>
+              <input
+                type="radio"
+                name="standard"
+              />
+              <label></label>
+              <input
+                type="radio"
+                name="priority"
+              />
+              <label></label>
+              <input
+                type="radio"
+                name="overnight"
+              />
+            </div>
+            <div className={styles.shippingCarriersContainer}>
+              <div className={styles.fedexContainer}>
+                <p className={styles.deliveryTime}></p>
+                <p className={styles.deliveryCost}></p>
+                <Image src="" alt="" width={} height={} />
+              </div>
+              <div className={styles.upsContainer}>
+                <p className={styles.deliveryTime}></p>
+                <p className={styles.deliveryCost}></p>
+                <Image src="" alt="" width={} height={} />
+              </div>
+              <div className={styles.dhlContainer}>
+                <p className={styles.deliveryTime}></p>
+                <p className={styles.deliveryCost}></p>
+                <Image src="" alt="" width={} height={} />
+              </div>
+            </div>
           </div>
           <div className={styles.shippingButtons}>\
             <Image src="" alt="" width={} height={} />
