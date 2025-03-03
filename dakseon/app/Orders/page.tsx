@@ -9,6 +9,7 @@ import Dropdown from "./Dropdown";
 const Orders = () => {
   const [noItems, setNoItems] = useState<boolean>(false);
   const [entrance, setEntrance] = useState<boolean>(true);
+  const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
   const [addedWalker, setAddedWalker] = useState<boolean>(false);
   const [addedSeat, setAddedSeat] = useState<boolean>(false);
   const [walkerQuantity, setWalkerQuantity] = useState<number>(0);
