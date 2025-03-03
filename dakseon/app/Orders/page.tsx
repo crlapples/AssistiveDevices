@@ -34,29 +34,56 @@ const Orders = () => {
               <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
               <Image src="" alt="" width={} height={} className={styles.googleExpress} />
             </div>
-            <div className={styles.entranceItemContainer}>
-              <div className={styles.entranceHoriz}>
-                <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
-                <div className={styles.entranceVer}>
-                  <p className={styles.entranceItemBrand}>Dakseon</p>
-                  <p className={styles.entranceName}></p>
-                  <p className={styles.entranceTaglineDesc}></p>
-                  <p className={styles.entranceItemSKU}></p>
-                  <p className={styles.entranceItemSpecs}></p>
-                </div>
-                <div className={styles.entranceVer2}>
-                  <p className={styles.entranceItemPrice></p>
-                  <div className={styles.entranceHoriz2}>
-                    <p>-</p>
-                    <input
-                      type="number"
-                      value={walkerQuantity}
-                      onChange={(e) => setWalkerQuantity(e.target.value)};
-                    <p>+</p>
+            (addedWalker && {
+              <div className={styles.entranceItemContainer}>
+                <div className={styles.entranceHoriz}>
+                  <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
+                  <div className={styles.entranceVer}>
+                    <p className={styles.entranceItemBrand}>Dakseon</p>
+                    <p className={styles.entranceName}></p>
+                    <p className={styles.entranceTaglineDesc}></p>
+                    <p className={styles.entranceItemSKU}></p>
+                    <p className={styles.entranceItemSpecs}></p>
+                  </div>
+                  <div className={styles.entranceVer2}>
+                    <p className={styles.entranceItemPrice></p>
+                    <div className={styles.entranceHoriz2}>
+                      <p>-</p>
+                      <input
+                        type="number"
+                        value={walkerQuantity}
+                        onChange={(e) => setWalkerQuantity(e.target.value)};
+                      <p>+</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            })
+            (addedSeat && {
+              <div className={styles.entranceItemContainer}>
+                <div className={styles.entranceHoriz}>
+                  <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
+                  <div className={styles.entranceVer}>
+                    <p className={styles.entranceItemBrand}>Dakseon</p>
+                    <p className={styles.entranceName}></p>
+                    <p className={styles.entranceTaglineDesc}></p>
+                    <p className={styles.entranceItemSKU}></p>
+                    <p className={styles.entranceItemSpecs}></p>
+                  </div>
+                  <div className={styles.entranceVer2}>
+                    <p className={styles.entranceItemPrice></p>
+                    <div className={styles.entranceHoriz2}>
+                      <p>-</p>
+                      <input
+                        type="number"
+                        value={seatQuantity}
+                        onChange={(e) => setSeatQuantity(e.target.value)};
+                      <p>+</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            })
             <div className={styles.entranceTotalPriceContainer}>
               <p className={styles.entrancePriceType}>Total</p>
               <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
@@ -65,7 +92,7 @@ const Orders = () => {
           })
         </div>
       })
-      (selectedCart && {
+      (isOnShipping && {
         
         (addedWalker || addedSeat && {
           <div className={styles.itemsContainer>
