@@ -400,7 +400,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .topContainer {
         height: 20vw;
     }
@@ -422,7 +422,7 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .letters1 {
         height: 60vh !important;
     }
