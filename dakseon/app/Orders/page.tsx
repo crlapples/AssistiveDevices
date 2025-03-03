@@ -13,6 +13,8 @@ const Orders = () => {
   const addedSeat = useState<boolean>(false);
   const walkerQuantity = useState<number>(0);
   const seatQuantity = useState<number>(0);
+  const subtotalPrice = useState<number>(0);
+  const shippingPrice = useState<number>(0);
   const totalPrice = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
@@ -42,7 +44,7 @@ const Orders = () => {
                 </div>
               </div>
               <div className={styles.entranceTotalPriceContainer}>
-                <p className={styles.priceType}>Subtotal</p>
+                <p className={styles.entrancePriceType}>Subtotal</p>
                 <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
               </div>
             </div>
@@ -70,7 +72,18 @@ const Orders = () => {
               </div>
             })
             <div className={styles.priceContainer}>
-              <p className={styles.totalPrice}>{totalPrice.toFixed(2)}</p>
+              <div className={styles.seperatorLineA} />
+              <div className={styles.afterSubAndShipCostContainer}>
+                <p className={styles.afterPriceType}>Subtotal</p>
+                <p className={styles.afterTotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                <p className={styles.afterPriceType}>Shipping</p>
+                <p className={styles.afterTotalPrice}>Calculated at the shipping step</p>
+              </div>
+              <div className={styles.seperatorLineA} />
+              <div className={styles.afterTypeAndPriceContainer}>
+                <p className={styles.afterPriceType}>Total</p>
+                <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
+              </div>
             </div>
             <div className={styles.
           </div>
