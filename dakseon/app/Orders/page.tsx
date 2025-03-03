@@ -7,16 +7,16 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 
 const Orders = () => {
-  const noItems = useState<boolean>(false);
-  const entrance = useState<boolean>(true);
-  const addedWalker = useState<boolean>(false);
-  const addedSeat = useState<boolean>(false);
-  const walkerQuantity = useState<number>(0);
-  const seatQuantity = useState<number>(0);
-  const subtotalPrice = useState<number>(0);
-  const shippingPrice = useState<number>(0);
-  const salesTaxPrice = useState<number>(0);
-  const totalPrice = useState<number>(0);
+  const [noItems, setNoItems] = useState<boolean>(false);
+  const [entrance, setEntrance] = useState<boolean>(true);
+  const [addedWalker, setAddedWalker] = useState<boolean>(false);
+  const [addedSeat, setAddedSeat] = useState<boolean>(false);
+  const [walkerQuantity, setWalkerQuantity] = useState<number>(0);
+  const [seatQuantity, setSeatQuantity] = useState<number>(0);
+  const [subtotalPrice, setSubtotalPrice] = useState<number>(0);
+  const [shippingPrice, setShippingPrice] = useState<number>(0);
+  const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
   
@@ -28,6 +28,11 @@ const Orders = () => {
             <p className={styles.noItemsMsg}>There's nothing here. Add items to your cart to continue.</p>
           })
           (addedWalker || addedSeat &&
+            <div className={styles.expressCheckoutContainer}>
+              <p className={expressTitle}>EXPRESS CHECKOUT</p>
+              <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
+              <Image src="" alt="" width={} height={} className={styles.googleExpress} />
+            </div>
             <div className={styles.entranceItemContainer}>
               <div className={styles.entranceHoriz}>
                 <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
@@ -40,15 +45,19 @@ const Orders = () => {
                 </div>
                 <div className={styles.entranceVer2}>
                   <p className={styles.entranceItemPrice></p>
-                  <p className={styles.entranceItemQuantity}></p>
+                    <div className={styles.entranceHoriz2}>
+                      <p>-</p>
+                      <input
+                        type="number"
+                        value={walkerQuantity}
+                        onChange={(e) => setWalkerQuantity(e.target.value)};
+                      <p>+</p>
+                    </div>
                 </div>
-              </div>
-              <div className={styles.entranceItemButtons}>
-                  
               </div>
             </div>
             <div className={styles.entranceTotalPriceContainer}>
-              <p className={styles.entrancePriceType}>Subtotal</p>
+              <p className={styles.entrancePriceType}>Total</p>
               <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
             </div>
           })
@@ -84,7 +93,7 @@ const Orders = () => {
                 <p className={styles.afterPriceType}>Subtotal</p>
                 <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
                 <p className={styles.afterPriceType}>Shipping</p>
-                <p className={styles.afterShippingPrice}>Calculated at the shipping step</p>
+                <p className={styles.afterShippingPrice}>Calculated next step</p>
                 <p className={styles.afterPriceType}>Sales Tax</p>
                 <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
               </div>
