@@ -50,6 +50,40 @@
   margin-left: 2vw;
 }
 
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contactForm label {
+  text-align: left;
+  font-size: 3vh;
+  width: 95%;
+  margin: 0.5vh;
+}
+
+.name {
+  border-radius: 1.5vh;
+  width: 95%;
+  height: 3vh;
+}
+
+.email {
+  border-radius: 1.5vh;
+  width: 95%;
+  height: 3vh;
+}
+
+.message {
+  border-radius: 1.5vh;
+  width: 95%;
+  height: 25vh;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -143,6 +177,22 @@
   }
 
 @media (min-width: 1025px) {
+    .contactForm label {
+      width: 50%;
+    }
+  
+    .name {
+      width: 50%;
+    }
+
+    .email {
+      width: 50%;
+    }
+
+    .message {
+      width: 50%;
+    }
+  
     .footer {
       height: 40%;
     }
