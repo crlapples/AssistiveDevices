@@ -50,13 +50,13 @@ const Contact: React.FC = () => {
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <label>Name</label>
-        <input className={styles.name} type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input className={styles.name} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
         <label>Email</label>
-        <input className={styles.email} type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input className={styles.email} type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
         <label>Message</label>
-        <textarea className={styles.message} name="message" value={formData.message} onChange={handleChange} required />
+        <textarea className={styles.message} name="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
 
         <button type="submit">Send</button>
       </form>
