@@ -93,7 +93,9 @@ const Orders = () => {
         </div>
       })
       (isOnShipping && {
-        
+        <div className={styles.customerDetailsContainer}>
+          
+        </div>
         (addedWalker || addedSeat && {
           <div className={styles.itemsContainer>
             (addedWalker && {
@@ -132,7 +134,9 @@ const Orders = () => {
                 <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
               </div>
             </div>
-            <div className={styles.
+            <div className={styles.promotions}>
+              
+            </div>
           </div>
         })
       })
