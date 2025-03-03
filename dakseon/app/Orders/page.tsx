@@ -36,17 +36,19 @@ const Orders = () => {
                   <p className={styles.entranceTaglineDesc}></p>
                   <p className={styles.entranceItemSKU}></p>
                   <p className={styles.entranceItemSpecs}></p>
-                  <p className={styles.entranceItemPrice}></p>
+                </div>
+                <div className={styles.entranceVer2}>
+                  <p className={styles.entranceItemPrice></p>
                   <p className={styles.entranceItemQuantity}></p>
                 </div>
-                <div className={styles.entrancrItemButtons}>
+              </div>
+              <div className={styles.entranceItemButtons}>
                   
-                </div>
               </div>
-              <div className={styles.entranceTotalPriceContainer}>
-                <p className={styles.entrancePriceType}>Subtotal</p>
-                <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
-              </div>
+            </div>
+            <div className={styles.entranceTotalPriceContainer}>
+              <p className={styles.entrancePriceType}>Subtotal</p>
+              <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
             </div>
           })
         </div>
@@ -61,6 +63,8 @@ const Orders = () => {
                 <div className={styles.itemInfo>
                   <p className={styles.itemName}></p>
                 </div>
+                <p className={styles.afterItemQuantity}></p>
+                <p className={styles.afterItemPrice></p>
               </div>
             })
             (addedSeat && {
@@ -69,6 +73,8 @@ const Orders = () => {
                 <div className={styles.itemInfo>
                   <p className={styles.itemName}></p>
                 </div>
+                <p className={styles.afterItemQuantity}></p>
+                <p className={styles.afterItemPrice></p>
               </div>
             })
             <div className={styles.priceContainer}>
