@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
       });
 
       if (response.ok) {
-        setStatus("Thank you for contacting me!");
+        setStatus("Your message has been sent.");
         setName("");
         setEmail("");
         setMessage("");
