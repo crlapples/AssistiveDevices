@@ -42,6 +42,7 @@ const Orders = () => {
                 </div>
               </div>
               <div className={styles.entranceTotalPriceContainer}>
+                <p className={styles.priceType}>Subtotal</p>
                 <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
               </div>
             </div>
