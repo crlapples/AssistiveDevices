@@ -45,14 +45,14 @@ const Orders = () => {
                 </div>
                 <div className={styles.entranceVer2}>
                   <p className={styles.entranceItemPrice></p>
-                    <div className={styles.entranceHoriz2}>
-                      <p>-</p>
-                      <input
-                        type="number"
-                        value={walkerQuantity}
-                        onChange={(e) => setWalkerQuantity(e.target.value)};
-                      <p>+</p>
-                    </div>
+                  <div className={styles.entranceHoriz2}>
+                    <p>-</p>
+                    <input
+                      type="number"
+                      value={walkerQuantity}
+                      onChange={(e) => setWalkerQuantity(e.target.value)};
+                    <p>+</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -60,6 +60,7 @@ const Orders = () => {
               <p className={styles.entrancePriceType}>Total</p>
               <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
             </div>
+            <button className={styles.continueToShipping}>Continue to shipping</button>
           })
         </div>
       })
