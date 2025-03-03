@@ -7,6 +7,7 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 
 const Orders = () => {
+  const noItems = useState<boolean>(false);
   const entrance = useState<boolean>(true);
   const addedWalker = useState<boolean>(false);
   const addedSeat = useState<boolean>(false);
@@ -19,7 +20,14 @@ const Orders = () => {
   return (
     <div className={styles.mainContainer}>
       (entrance && {
-        <
+        (noItems && {
+          
+        })
+        (addedWalker || addedSeat &&
+          <div className={styles.cartContainer}>
+            <div className
+          </div>
+        )}
       })
       (selectedCart && {
         
