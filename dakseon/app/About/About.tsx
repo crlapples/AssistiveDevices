@@ -30,7 +30,7 @@ const About: React.FC = () => {
       <p className={styles.p}>With a decade of experience in the assistive device industry, we understand the importance of reliable and well-designed products. Our carefully selected mobility and bathroom safety solutions are built to enhance everyday life, ensuring both safety and comfort.</p>
 
       <h2 className={styles.secondh2}>Our Commitment</h2>
-      <p className={styles.thirdp}>We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike.</p>
+      <p className={`${styles.thirdp} ${styles.p}`}>We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike.</p>
 
       <h2>Need Help?</h2>
       <p className={styles.p}>Have questions about our products? Contact our team <Link href="/contact">here</Link>, and we’ll be happy to assist you.</p>
