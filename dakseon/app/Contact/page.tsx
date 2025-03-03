@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import styles from "./Contact.module.css";
 import "./globals.css";
@@ -5,17 +7,39 @@ import Image from "next/image";
 import Dropdown from '../Dropdown';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Your message has been sent!");
-  };
 
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("message", message);
+
+      const response = await fetch("https://formspree.io/f/xzzdkbny", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        setStatus("Your message has been sent.");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("Something went wrong, failed to send message");
+      }
+    } catch (error) {
+      setStatus("Something went wrong, failed to send message");
+      console.error("Error submitting form:", error);
+    }
+  };
+  
   return (
     <div className={styles.contactContainer}>
       <div className={styles.topContainer}>
@@ -24,23 +48,25 @@ const Contact: React.FC = () => {
         <Dropdown />
       </div>
       <h1>Contact Us</h1>
-      <p>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
+      <p className={styles.query}>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <label>Name</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input className={styles.name} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
         <label>Email</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input className={styles.email} type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
         <label>Message</label>
-        <textarea name="message" value={formData.message} onChange={handleChange} required />
+        <textarea className={styles.message} name="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
 
-        <button type="submit">Send Message</button>
+        <button type="submit">Send</button>
+
+        <p className={styles.status}>{status}</p>
       </form>
 
       <h2>Direct Contact</h2>
-      <p>Email: support@goaid.com</p>
+      <p className={styles.contactEmail}>Email: support@goaid.com</p>
       <footer className={styles.footer}>
         <div className={styles.verticalOriA}>
           <strong>
