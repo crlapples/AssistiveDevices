@@ -20,14 +20,31 @@ const Orders = () => {
   return (
     <div className={styles.mainContainer}>
       (entrance && {
-        (noItems && {
-          
-        })
-        (addedWalker || addedSeat &&
-          <div className={styles.cartContainer}>
-            <div className
-          </div>
-        )}
+        <div className={styles.cartContainer}>
+          (noItems && {
+            <p className={styles.noItemsMsg}>There's nothing here. Add items to your cart to continue.</p>
+          })
+          (addedWalker || addedSeat &&
+            <div className={styles.entranceItemContainer}>
+              <div className={styles.entranceHoriz}>
+                <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
+                <div className={styles.entranceVer}>
+                  <p className={styles.entranceName}></p>
+                  <p className={styles.entranceTaglineDesc}></p>
+                  <p className={styles.entranceItemSpecs}></p>
+                  <p className={styles.entranceItemPrice}></p>
+                  <p className={styles.entranceItemQuantity}></p>
+                </div>
+                <div className={styles.entrancrItemButtons}>
+                  
+                </div>
+              </div>
+              <div className={styles.entranceTotalPriceContainer}>
+                <p className={styles.entranceTotalPrice>{totalPrice.toFixed(2)}</p>
+              </div>
+            </div>
+          })
+        </div>
       })
       (selectedCart && {
         
