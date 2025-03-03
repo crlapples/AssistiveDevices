@@ -15,6 +15,7 @@ const Orders = () => {
   const seatQuantity = useState<number>(0);
   const subtotalPrice = useState<number>(0);
   const shippingPrice = useState<number>(0);
+  const salesTaxPrice = useState<number>(0);
   const totalPrice = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
@@ -81,9 +82,11 @@ const Orders = () => {
               <div className={styles.seperatorLineA} />
               <div className={styles.afterSubAndShipCostContainer}>
                 <p className={styles.afterPriceType}>Subtotal</p>
-                <p className={styles.afterTotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
                 <p className={styles.afterPriceType}>Shipping</p>
-                <p className={styles.afterTotalPrice}>Calculated at the shipping step</p>
+                <p className={styles.afterShippingPrice}>Calculated at the shipping step</p>
+                <p className={styles.afterPriceType}>Sales Tax</p>
+                <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
               </div>
               <div className={styles.seperatorLineA} />
               <div className={styles.afterTypeAndPriceContainer}>
