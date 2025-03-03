@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         <label>Message</label>
         <textarea className={styles.message} name="message" value={formData.message} onChange={handleChange} required />
 
-        <button type="submit">Send Message</button>
+        <button type="submit">Send</button>
       </form>
 
       <h2>Direct Contact</h2>
