@@ -47,16 +47,27 @@ const Contact: React.FC = () => {
         <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
         <Dropdown />
       </div>
+      <div className={styles.mainIcon}>
+        <Image src="/headphone-headset-icon.png" alt="" width={512} height={512} className={styles.mainIcon2} />
+      </div>
       <h1>Contact Us</h1>
       <p className={styles.query}>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
-        <label>Name</label>
-        <input className={styles.name} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
-
-        <label>Email</label>
-        <input className={styles.email} type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-
+        <div className={styles.together}>
+          <Image src="/account-grey-icon.png" alt="" width={512} height={512} className={styles.contactIcon} />
+          <div className={styles.togetherV}>
+            <label>Name</label>
+            <input className={styles.name} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
+          </div>
+        </div>
+        <div className={styles.together}>
+          <Image src="/envelope-line-icon.png" alt="" width={512} height={512} className={styles.contactIcon} />
+          <div className={styles.togetherV}>
+            <label>Email</label>
+            <input className={styles.email} type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+        </div>
         <label>Message</label>
         <textarea className={styles.message} name="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
 

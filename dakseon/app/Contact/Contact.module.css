@@ -8,13 +8,28 @@
   position: relative;
 }
 
+.mainIcon {
+  border-top: 0.5vh solid black;
+  margin-top: 20vw;
+  width: 100%;
+  height: 30%;
+  padding: 7vh;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainIcon2 {
+  width: 25vh;
+  height: 25vh;
+}
+
 .contactContainer h1 {
   width: 100%;
   height: 30%;
   font-size: 8vh;
   text-align: center;
-  border-top: 0.5vh solid black;
-  margin-top: 20vw;
   padding: 7vh
 }
 
@@ -62,6 +77,30 @@
   padding: 7vh;
 }
 
+.together {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.contactIcon {
+  width: 10vh;
+  height: 10vh;
+}
+
+.togetherV {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+.togetherV label {
+  width: 100%;
+}
+
 .contactForm label {
   text-align: left;
   font-size: 3vh;
@@ -71,13 +110,13 @@
 
 .name {
   border-radius: 1vh;
-  width: 95%;
+  width: 100%;
   height: 3vh;
 }
 
 .email {
   border-radius: 1vh;
-  width: 95%;
+  width: 100%;
   height: 3vh;
 }
 
@@ -196,7 +235,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .contactContainer h1 {
+  .mainIcon {
+    filter: invert(1);
     border-top: solid white;
   }
 
@@ -232,7 +272,7 @@
   }
 
 @media (min-width: 1025px) {
-    .contactContainer h1 {
+    .mainIcon {
       margin-top: 10vh;
     }
 
@@ -244,13 +284,17 @@
     .contactForm label {
       width: 50%;
     }
+
+    .togetherV label {
+      width: 50%;
+    }
   
     .name {
-      width: 50%;
+      width: 100%;
     }
 
     .email {
-      width: 50%;
+      width: 100%;
     }
 
     .message {
