@@ -84,7 +84,7 @@
   height: 25vh;
 }
 
-.shopButton {
+.contactForm button {
   border-radius: 2vh;
   padding-top: 2vw;
   padding-right: 2vw;
@@ -102,7 +102,7 @@
   z-index: 0;
 }
 
-.shopButton:hover {
+.contactForm button:hover {
   cursor: pointer;
 }
 
