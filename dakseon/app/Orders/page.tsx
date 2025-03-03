@@ -33,6 +33,19 @@ const Orders = () => {
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
+  const [bEmail, setBEmail] = useState<string>("");
+  const [bMatchEmail, setBMatchEmail] = useState<string>("");
+  const [bFullName, setBFullName] = useState<string>("");
+  const [bCountry, setBCountry] = useState<string>("");
+  const [bStreetAddress, setBStreetAddress] = useState<string>("");
+  const [bApartment, setBApartment] = useState<string>("");
+  const [bCity, setBCity] = useState<string>("");
+  const [bStateOrProvince, setBStateOrProvince] = useState<string>("");
+  const [bPostal, setBPostal] = useState<string>("");
+  const [cardName, setCardName] = useState<string>("");
+  const [cardNumber, setCardNumber] = useState<string>("");
+  const [cardExp, setCardExp] = useState<string>("");
+  const [cardCVV, setCardCVV] = useState<string>("");
 
   const prices = { "walker": 100, "seat": 50 };
   
@@ -210,7 +223,7 @@ const Orders = () => {
                   type="text"
                   value={stateOrProvince}
                   onChange={(e) => setStateOrProvince(e.target.value)}
-                  placeholder="State/Province"
+                  placeholder="State/province"
                 />
                 <input
                   type="text"
@@ -308,6 +321,87 @@ const Orders = () => {
             <p>Shipping</p>
             <Image src="" alt="" width={} height={} />
             <p><strong>Payment</strong></p>
+          </div>
+          <p className={styles.billingP}>Billing Information</Image>
+          <input
+            type="email"
+            value={bEmail}
+            onChange={(e) => setBEmail(e.target.value)}
+            className={styles.bFullInput}
+            placeholder="Email"
+          />
+          <input
+            type="email"
+            value={bMatchEmail}
+            onChange={(e) => setBMatchEmail(e.target.value)}
+            className={styles.bFullInput}
+            placeholder="Confirm email"
+          />
+          <input
+            type="text"
+            value={bFullName}
+            onChange={(e) => setBFullName(e.target.value)}
+            required
+            className={styles.bFullInput}
+            placeholder="Full name"
+          />
+          <input
+            type="text"
+            value={bCountry}
+            onChange={(e) => setBCountry(e.target.value)}
+            required
+            className={styles.bFullInput}
+            placeholder="Country/region"
+          />
+          <input
+            type="text"
+            value={bStreetAddress}
+            onChange={(e) => setBStreetAddress(e.target.value)}
+            required
+            className={styles.bFullInput}
+            placeholder="Street address"
+          />
+          <input
+            type="text"
+            value={bApartment}
+            onChange={(e) => setBApartment(e.target.value)}
+            className={styles.bFullInput}
+            placeholder="Apartment, suite, etc. (optional)"
+          />
+          <div className={styles.paymentHoriz}>
+            <input
+              type="text"
+              value={bCity}
+              onChange={(e) => setBCity(e.target.value)}
+              required
+              placeholder="City"
+            />
+            <input
+              type="text"
+              value={bStateOrProvince}
+              onChange={(e) => setBStateOrProvince(e.target.value)}
+              required
+              placeholder="State/province"
+            />
+            <input
+              type="text"
+              value={bPostal}
+              onChange={(e) => setBPostal(e.target.value)}
+              required
+              placeholder="Postal code"
+            />
+          </div>
+          <div className={styles.cardBrands}>
+            <Image src="" alt="" width={} height={} />
+            <Image src="" alt="" width={} height={} />
+            <Image src="" alt="" width={} height={} />
+            <Image src="" alt="" width={} height={} />
+          </div>
+          <div className={styles.cardInfoContainer}>
+            <input
+              type="text"
+              value=
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" pattern="\d{2}/\d{2}" required>
           </div>
           <div className={styles.paymentButtons}>\
             <Image src="" alt="" width={} height={} />
