@@ -29,8 +29,10 @@ const Orders = () => {
               <div className={styles.entranceHoriz}>
                 <Image src="" at="" width={902} height={1600} className={styles.entranceImage} />
                 <div className={styles.entranceVer}>
+                  <p className={styles.entranceItemBrand}>Dakseon</p>
                   <p className={styles.entranceName}></p>
                   <p className={styles.entranceTaglineDesc}></p>
+                  <p className={styles.entranceItemSKU}></p>
                   <p className={styles.entranceItemSpecs}></p>
                   <p className={styles.entranceItemPrice}></p>
                   <p className={styles.entranceItemQuantity}></p>
