@@ -15,6 +15,10 @@
   margin-left: auto;
 }
 
+.menu:hover {
+  cursor: pointer;
+}
+
 .dropdownList {
   display: flex;
   position: absolute;
