@@ -31,6 +31,7 @@ const Orders = () => {
   const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
+  const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
 
   const prices = { "walker": 100, "seat": 50 };
@@ -248,17 +249,17 @@ const Orders = () => {
           </div>
           <div className={styles.shippingOptionsContainer}>
             <div className={styles.shippingOptions}>
-              <label></label>
+              <label>Standard</label>
               <input
                 type="radio"
                 name="standard"
               />
-              <label></label>
+              <label>Priority</label>
               <input
                 type="radio"
                 name="priority"
               />
-              <label></label>
+              <label>Overnight</label>
               <input
                 type="radio"
                 name="overnight"
@@ -282,6 +283,14 @@ const Orders = () => {
               </div>
             </div>
           </div>
+          <p className={styles.estTime}></p>
+          <input
+            type="text"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="Special delivery instructions (optional)"
+            className={styles.notes}
+          />
           <div className={styles.shippingButtons}>\
             <Image src="" alt="" width={} height={} />
             <p>Return to information</p>
