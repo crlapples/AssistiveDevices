@@ -438,6 +438,7 @@ const Orders = () => {
                   value={cardName}
                   onChange={(e) => setCardName(e.target.value)}
                   placeholder="Name on card"
+                  className={styles.cardFullInput}
                   required
                 />
                 <input
@@ -445,6 +446,7 @@ const Orders = () => {
                   value={cardNumber}
                   onChange={(e) => setCardNumber(e.target.value)}
                   placeholder="Card number"
+                  className={styles.cardFullInput}
                   required
                 />
                 <div className={styles.cardHoriz}>
