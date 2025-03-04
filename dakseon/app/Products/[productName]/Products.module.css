@@ -43,7 +43,7 @@
   align-items: flex-start;
   align-self: flex-start;
   margin-top: 20vw;
-  border-top: 1vh solid black;
+  border-top: 0.5vh solid black;
 }
 
 .pageTitle {
