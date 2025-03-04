@@ -157,6 +157,9 @@ const Orders = () => {
                 <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
                 <Image src="" alt="" width={} height={} className={styles.googleExpress} />
               </div>
+              <div className={styles.orContainer}>
+                <p>Or</p>
+              </div>
               <div className={styles.customerDetailsContainer}>
                 <p className={styles.contactP}>Contact Information</p>
                 <form>
