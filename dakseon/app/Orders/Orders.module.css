@@ -671,6 +671,52 @@
   border: 0.1vh solid gray;
 }
 
+.itemsContainer2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemHoriz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  width: 100%;
+  height: 25%;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.itemName {
+  font-size: 3.9vh;
+}
+
+.itemInfo2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.afterItemQuantity {
+  font-size: 3.9vh;
+}
+
+.afterItemPrice {
+  font-size: 3.9vh;
+}
+
 .seperatorLineA {
   height: 0.2vh;
   width: 100vw;
