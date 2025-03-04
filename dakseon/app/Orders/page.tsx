@@ -261,9 +261,11 @@ const Orders = () => {
                     placeholder="Phone (optional)"
                     className={styles.fullInput}
                   />
-                  <div className={styles.informationButtons}>\
-                    <Image src="" alt="" width={} height={} />
-                    <p>Return to cart</p>
+                  <div className={styles.informationButtons}>
+                    <div className={returnContainer}>
+                      <Image src="" alt="" width={} height={} />
+                      <p>Return to cart</p>
+                    </div>
                     <button className={styles.continueToShipping}>Continue to shipping</button>
                   </div>
                 </form>
