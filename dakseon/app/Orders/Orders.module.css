@@ -21,7 +21,6 @@
   padding-left: 1vh;
   padding-right: 1vh;
   padding-bottom: 1vh;
-  border-bottom: 0.5vh solid black;
 }
 
 .logo {
@@ -81,6 +80,78 @@
 .flowContainer img {
   width: 3vh;
   height: 3vh;
+}
+
+.entranceItemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  width: 90%;
+  height: 100%;
+}
+
+.entranceHoriz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 100%;
+  height: 100%;
+}
+
+.entranceHoriz img {
+  width: 15vh;
+  height: 23vh;
+}
+
+.entranceVer {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 50%;
+  height: 39%;
+}
+
+.entranceItemBrand {
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.entranceName {
+  font-size: 5vh;
+}
+
+.entranceTaglineDesc {
+  font-size: 3.9vh;
+}
+
+.entranceItemSKU {
+  font-size: 3.9vh;
+}
+
+.entranceItemSpecs {
+  font-size: 3.9vh;
+}
+
+.entranceVer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+}
+
+.entranceItemPrice {
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.entranceHoriz2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .continueToShipping {
@@ -173,10 +244,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .topContainer {
-    border-top: solid white;
-  }
-
   .cartContainer {
     border: solid white;
   }
