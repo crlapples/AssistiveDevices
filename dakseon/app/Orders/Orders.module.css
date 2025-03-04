@@ -17,7 +17,11 @@
   z-index: 1;
   top: 0;
   left: 0;
-  padding: 1vh;
+  padding-top: 1vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-bottom: 1vh;
+  border-bottom: 0.5vh solid black;
 }
 
 .logo {
@@ -34,15 +38,23 @@
 }
 
 .cartContainer {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23vw;
+  border: 0.1vh solid black;
+}
+
+.cartContainer2 {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-self: flex-start;
-  margin-top: 20vw;
-  border-top: 0.5vh solid black;
 }
 
 .noItemsMsg {
@@ -50,6 +62,25 @@
   height: 35%;
   padding: 7vh;
   font-size: 6vh;
+}
+
+.flowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 100%;
+  height: 10%;
+}
+
+.flowContainer p {
+  text-align: center;
+  font-size: 3vh;
+}
+
+.flowContainer img {
+  width: 3vh;
+  height: 3vh;
 }
 
 .continueToShipping {
@@ -142,8 +173,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .cartContainer {
+  .topContainer {
     border-top: solid white;
+  }
+
+  .cartContainer {
+    border: solid white;
   }
   
   .continueToShipping {
@@ -171,7 +206,7 @@
     }
 
     .cartContainer {
-      margin-top: 20vw;
+      margin-top: 23vw;
     }
 
     .logo {
@@ -189,7 +224,7 @@
     }
 
     .cartContainer {
-        margin-top: 10vh;
+        margin-top: 12vh;
     }
 
     .verticalOriA {
