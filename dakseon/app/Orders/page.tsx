@@ -294,11 +294,15 @@ const Orders = () => {
                     type="radio"
                     name="standard"
                   />
+                </div>
+                <div className={styles.shippingOptions}>
                   <label>Priority</label>
                   <input
                     type="radio"
                     name="priority"
                   />
+                </div>
+                <div className={styles.shippingOptions}>
                   <label>Overnight</label>
                   <input
                     type="radio"
