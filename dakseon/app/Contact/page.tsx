@@ -57,18 +57,18 @@ const Contact: React.FC = () => {
         <div className={styles.together}>
           <Image src="/account-grey-icon.png" alt="" width={512} height={512} className={styles.contactIcon} />
           <div className={styles.togetherV}>
-            <label>Name</label>
+            <label className={styles.label2}>Name</label>
             <input className={styles.name} type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
         </div>
         <div className={styles.together}>
           <Image src="/envelope-line-icon.png" alt="" width={512} height={512} className={styles.contactIcon} />
           <div className={styles.togetherV}>
-            <label>Email</label>
+            <label className={styles.label2}>Email</label>
             <input className={styles.email} type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
         </div>
-        <label>Message</label>
+        <label className={styles.label1}>Message</label>
         <textarea className={styles.message} name="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
 
         <button type="submit">Send Message</button>
