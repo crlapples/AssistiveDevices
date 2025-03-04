@@ -68,7 +68,7 @@ const Orders = () => {
             )}
             {(addedWalker || addedSeat) && (
               <>
-                <div className={styles.flowContainer}>
+                <div className={styles.flowContainer2}>
                   <p><strong>Cart</strong></p>
                   <Image src="" alt="" width={} height={} />
                   <p>Information</p>
