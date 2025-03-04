@@ -402,6 +402,24 @@
   align-items: center;
 }
 
+.shippingOptionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 20%;
+}
+
+.shippingOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 33%;
+  height: 100%;
+}
+
 .seperatorLineA {
   height: 0.5vh;
   width: 100vw;
