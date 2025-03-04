@@ -63,7 +63,16 @@ const Home: React.FC = () => {
           <Dropdown />
         </div>
         <header className={styles.heroSection}>
-          <h1>Reliable Mobility & Safety Products</h1>
+          <div className={styles.heroVer}>
+            <h1>Reliable Mobility & Safety Products</h1>
+            <p>
+              Enhance your independence and safety with Dakseon’s top-quality
+              walker and shower seat.
+            </p>
+            <div className={styles.buttonContainer}>
+              <Link href="/walker"><button className={styles.shopButton}>Shop Now</button></Link>
+            </div>
+          </div>
           <div className={styles.imageContainer1}>
             <Image
               src="/image_fx_ (9).jpg"
@@ -73,15 +82,18 @@ const Home: React.FC = () => {
               className={styles.heroImage1}
             />
           </div>
-          <p>
-            Enhance your independence and safety with Dakseon’s top-quality
-            walker and shower seat.
-          </p>
-          <div className={styles.buttonContainer}>
-            <Link href="/walker"><button className={styles.shopButton}>Shop Now</button></Link>
-          </div>
         </header>
+        <div className={styles.imageContainer1}>
+          <Image
+            src="/image_fx_ (9).jpg"
+            alt="First happy senior enjoying mobility support"
+            width={1600}
+            height={902}
+            className={styles.heroImage1}
+          />
+        </div>
         <section className={styles.whyChooseUs}>
+          <h2>tagline</h2>
           <LetterFromTopAnimation className={styles.letters1} text="At Dakseon, we are dedicated to enhancing mobility and safety for individuals who value independence. We offer premium-quality walkers and shower seats designed for comfort, stability, and ease of use. Our mission is to provide affordable, reliable solutions that empower our customers to live with greater confidence and security, every day." />
           <div className={styles.imageContainer2}>
             <Image
@@ -120,6 +132,7 @@ const Home: React.FC = () => {
             <div className={styles.seperatorLineA} />
           </div>
         </section>
+        <h2>tagline</h2>
         <LetterFromTopAnimation
           className={styles.letters2}
           text="Dakseon furthermore provides wholesale pricing on walkers and shower seats, offering businesses cost-effective solutions with reliable shipping and consistent product quality to support growth and meet customer demand."
