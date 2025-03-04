@@ -275,7 +275,19 @@
   height: 90%;
 }
 
+.orContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 0.1vh;
+  border-top: 0.1vh solid gray;
+  position: relative;
+}
 
+.orContainer p {
+  
+}
 
 .continueToShipping {
   border-radius: 2vh;
