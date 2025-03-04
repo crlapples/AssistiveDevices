@@ -62,204 +62,209 @@ const Orders = () => {
       </div>
       {entrance && (
         <div className={styles.cartContainer}>
-          {noItems && (
-            <p className={styles.noItemsMsg}>There's nothing here. Add items to your cart to continue.</p>
-          )}
-          {(addedWalker || addedSeat) && (
-            <>
-              <div className={styles.flowContainer}>
-                <p><strong>Cart</strong></p>
-                <Image src="" alt="" width={} height={} />
-                <p>Information</p>
-                <Image src="" alt="" width={} height={} />
-                <p>Shipping</p>
-                <Image src="" alt="" width={} height={} />
-                <p>Payment</p>
-              </div>
-              {addedWalker && (
-                <div className={styles.entranceItemContainer}>
-                  <div className={styles.entranceHoriz}>
-                    <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
-                    <div className={styles.entranceVer}>
-                      <p className={styles.entranceItemBrand}>Dakseon</p>
-                      <p className={styles.entranceName}></p>
-                      <p className={styles.entranceTaglineDesc}></p>
-                      <p className={styles.entranceItemSKU}></p>
-                      <p className={styles.entranceItemSpecs}></p>
-                    </div>
-                    <div className={styles.entranceVer2}>
-                      <p className={styles.entranceItemPrice}></p>
-                      <div className={styles.entranceHoriz2}>
-                        <p>-</p>
-                        <input
-                          type="number"
-                          value={walkerQuantity}
-                          onChange={(e) => setWalkerQuantity(parseInt(e.target.value, 10) || 0)}
-                        />
-                        <p>+</p>
+          <div className={styles.cartContainer2}>
+            {noItems && (
+              <p className={styles.noItemsMsg}>There's nothing here. Add items to your cart to continue.</p>
+            )}
+            {(addedWalker || addedSeat) && (
+              <>
+                <div className={styles.flowContainer}>
+                  <p><strong>Cart</strong></p>
+                  <Image src="" alt="" width={} height={} />
+                  <p>Information</p>
+                  <Image src="" alt="" width={} height={} />
+                  <p>Shipping</p>
+                  <Image src="" alt="" width={} height={} />
+                  <p>Payment</p>
+                </div>
+                {addedWalker && (
+                  <div className={styles.entranceItemContainer}>
+                    <div className={styles.entranceHoriz}>
+                      <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
+                      <div className={styles.entranceVer}>
+                        <p className={styles.entranceItemBrand}>Dakseon</p>
+                        <p className={styles.entranceName}></p>
+                        <p className={styles.entranceTaglineDesc}></p>
+                        <p className={styles.entranceItemSKU}></p>
+                        <p className={styles.entranceItemSpecs}></p>
+                      </div>
+                      <div className={styles.entranceVer2}>
+                        <p className={styles.entranceItemPrice}></p>
+                        <div className={styles.entranceHoriz2}>
+                          <p>-</p>
+                          <input
+                            type="number"
+                            value={walkerQuantity}
+                            onChange={(e) => setWalkerQuantity(parseInt(e.target.value, 10) || 0)}
+                          />
+                          <p>+</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
-              {addedSeat && (
-                <div className={styles.entranceItemContainer}>
-                  <div className={styles.entranceHoriz}>
-                    <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
-                    <div className={styles.entranceVer}>
-                      <p className={styles.entranceItemBrand}>Dakseon</p>
-                      <p className={styles.entranceName}></p>
-                      <p className={styles.entranceTaglineDesc}></p>
-                      <p className={styles.entranceItemSKU}></p>
-                      <p className={styles.entranceItemSpecs}></p>
-                    </div>
-                    <div className={styles.entranceVer2}>
-                      <p className={styles.entranceItemPrice}></p>
-                      <div className={styles.entranceHoriz2}>
-                        <p>-</p>
-                        <input
-                          type="number"
-                          value={seatQuantity}
-                          onChange={(e) => setSeatQuantity(parseInt(e.target.value, 10) || 0)}
-                        />
-                        <p>+</p>
+                )}
+                {addedSeat && (
+                  <div className={styles.entranceItemContainer}>
+                    <div className={styles.entranceHoriz}>
+                      <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
+                      <div className={styles.entranceVer}>
+                        <p className={styles.entranceItemBrand}>Dakseon</p>
+                        <p className={styles.entranceName}></p>
+                        <p className={styles.entranceTaglineDesc}></p>
+                        <p className={styles.entranceItemSKU}></p>
+                        <p className={styles.entranceItemSpecs}></p>
+                      </div>
+                      <div className={styles.entranceVer2}>
+                        <p className={styles.entranceItemPrice}></p>
+                        <div className={styles.entranceHoriz2}>
+                          <p>-</p>
+                          <input
+                            type="number"
+                            value={seatQuantity}
+                            onChange={(e) => setSeatQuantity(parseInt(e.target.value, 10) || 0)}
+                          />
+                          <p>+</p>
+                        </div>
                       </div>
                     </div>
                   </div>
+                )}
+                <div className={styles.entranceTotalPriceContainer}>
+                  <p className={styles.entrancePriceType}>Total</p>
+                  <p className={styles.entranceTotalPrice}>{totalPrice.toFixed(2)}</p>
                 </div>
-              )}
-              <div className={styles.entranceTotalPriceContainer}>
-                <p className={styles.entrancePriceType}>Total</p>
-                <p className={styles.entranceTotalPrice}>{totalPrice.toFixed(2)}</p>
-              </div>
-              <button className={styles.continueToInfo}>Continue</button>
-            </>
-          )}
+                <button className={styles.continueToInfo}>Continue</button>
+              </>
+            )}
+          </div>
         </div>
       )}
       {isOnInformation && (
         <>
-          <div className={styles.flowContainer}>
-            <p>Cart</p>
-            <Image src="" alt="" width={} height={} />
-            <p><strong>Information</strong></p>
-            <Image src="" alt="" width={} height={} />
-            <p>Shipping</p>
-            <Image src="" alt="" width={} height={} />
-            <p>Payment</p>
-          </div>
-          <div className={styles.expressCheckoutContainer}>
-            <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-            <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
-            <Image src="" alt="" width={} height={} className={styles.googleExpress} />
-          </div>
-          <div className={styles.customerDetailsContainer}>
-            <p className={styles.contactP}>Contact Information</p>
-            <form>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                required
-                className={styles.fullInput}
-              />
-              <input
-                type="email"
-                value={matchEmail}
-                onChange={(e) => setMatchEmail(e.target.value)}
-                placeholder="Confirm email"
-                required
-                className={styles.fullInput}
-              />
-              <div className={styles.seperatorLineB} />
-              <p className={styles.shippingP}>Shipping Details</p>
-              <input
-                type="text"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                placeholder="Country/region"
-                required
-                className={styles.fullInput}
-              />
-              <div className={styles.shippingHoriz}>
+          <div className={styles.infoContainer}>
+            <div className={styles.flowContainer}>
+              <p>Cart</p>
+              <Image src="" alt="" width={} height={} />
+              <p><strong>Information</strong></p>
+              <Image src="" alt="" width={} height={} />
+              <p>Shipping</p>
+              <Image src="" alt="" width={} height={} />
+              <p>Payment</p>
+            </div>
+            <div className={styles.expressCheckoutContainer}>
+              <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
+              <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
+              <Image src="" alt="" width={} height={} className={styles.googleExpress} />
+            </div>
+            <div className={styles.customerDetailsContainer}>
+              <p className={styles.contactP}>Contact Information</p>
+              <form>
                 <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="First name"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
                   required
+                  className={styles.fullInput}
                 />
                 <input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="LastName"
+                  type="email"
+                  value={matchEmail}
+                  onChange={(e) => setMatchEmail(e.target.value)}
+                  placeholder="Confirm email"
                   required
+                  className={styles.fullInput}
                 />
-              </div>
-              <input
-                type="text"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                placeholder="Company (optional)"
-                className={styles.fullInput}
-              />
-              <input
-                type="text"
-                value={streetAddress}
-                onChange={(e) => setStreetAddress(e.target.value)}
-                placeholder="Street address"
-                required
-                className={styles.fullInput}
-              />
-              <input
-                type="text"
-                value={apartment}
-                onChange={(e) => setApartment(e.target.value)}
-                placeholder="Apartment, suite, etc. (optional)"
-                className={styles.fullInput}
-              />
-              <div className={styles.shippingHoriz2}>
+                <div className={styles.seperatorLineB} />
+                <p className={styles.shippingP}>Shipping Details</p>
                 <input
                   type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  placeholder="City"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  placeholder="Country/region"
                   required
+                  className={styles.fullInput}
+                />
+                <div className={styles.shippingHoriz}>
+                  <input
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="First name"
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="LastName"
+                    required
+                  />
+                </div>
+                <input
+                  type="text"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  placeholder="Company (optional)"
+                  className={styles.fullInput}
                 />
                 <input
                   type="text"
-                  value={stateOrProvince}
-                  onChange={(e) => setStateOrProvince(e.target.value)}
-                  placeholder="State/province"
-                />
-                <input
-                  type="text"
-                  value={postal}
-                  onChange={(e) => setPostal(e.target.value)}
-                  placeholder="Postal code"
+                  value={streetAddress}
+                  onChange={(e) => setStreetAddress(e.target.value)}
+                  placeholder="Street address"
                   required
+                  className={styles.fullInput}
                 />
-              </div>
-              <input
-                type="text"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="Phone (optional)"
-                className={styles.fullInput}
-              />
-              <div className={styles.informationButtons}>\
-                <Image src="" alt="" width={} height={} />
-                <p>Return to cart</p>
-                <button className={styles.continueToShipping}>Continue to shipping</button>
-              </div>
-            </form>
+                <input
+                  type="text"
+                  value={apartment}
+                  onChange={(e) => setApartment(e.target.value)}
+                  placeholder="Apartment, suite, etc. (optional)"
+                  className={styles.fullInput}
+                />
+                <div className={styles.shippingHoriz2}>
+                  <input
+                    type="text"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    placeholder="City"
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={stateOrProvince}
+                    onChange={(e) => setStateOrProvince(e.target.value)}
+                    placeholder="State/province"
+                  />
+                  <input
+                    type="text"
+                    value={postal}
+                    onChange={(e) => setPostal(e.target.value)}
+                    placeholder="Postal code"
+                    required
+                  />
+                </div>
+                <input
+                  type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone (optional)"
+                  className={styles.fullInput}
+                />
+                <div className={styles.informationButtons}>\
+                  <Image src="" alt="" width={} height={} />
+                  <p>Return to cart</p>
+                  <button className={styles.continueToShipping}>Continue to shipping</button>
+                </div>
+              </form>
+            </div>
           </div>
         </>
       )}
       {isOnShipping && (
         <>
+          
           <div className={styles.flowContainer}>
             <p>Cart</p>
             <Image src="" alt="" width={} height={} />
