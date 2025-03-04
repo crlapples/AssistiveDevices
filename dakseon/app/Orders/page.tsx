@@ -485,8 +485,10 @@ const Orders = () => {
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
-                <p className={styles.afterItemQuantity}></p>
-                <p className={styles.afterItemPrice}></p>
+                <div className={styles.itemInfo2}>
+                  <p className={styles.afterItemQuantity}></p>
+                  <p className={styles.afterItemPrice}></p>
+                </div>
               </div>
             )}
             {addedSeat && (
@@ -495,8 +497,10 @@ const Orders = () => {
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
-                <p className={styles.afterItemQuantity}></p>
-                <p className={styles.afterItemPrice}></p>
+                <div className={styles.itemInfo2}>
+                  <p className={styles.afterItemQuantity}></p>
+                  <p className={styles.afterItemPrice}></p>
+                </div>
               </div>
             )}
             <div className={styles.priceContainer}>
