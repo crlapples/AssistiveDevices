@@ -382,7 +382,25 @@
   cursor: pointer;
 }
 
+.shippingContainer {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23vw;
+  border: 0.1vh solid gray;
+}
 
+.shippingContainer2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .seperatorLineA {
   height: 0.5vh;
