@@ -235,6 +235,12 @@
   align-items: center;
 }
 
+.contactP {
+  font-size: 3vh;
+  text-align: left;
+  width: 100%;
+}
+
 .flowContainer {
   display: flex;
   justify-content: flex-start;
@@ -310,6 +316,26 @@
   height: 3.9vh;
   padding: 1.5vh
   font-size: 3.5vh;
+}
+
+.shippingHoriz {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+  height: 3.9vh;
+}
+
+.shippingHoriz2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+  height: 3.9vh;
 }
 
 .halfInput {
@@ -506,10 +532,147 @@
   cursor: pointer;
 }
 
+.paymentContainer {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23vw;
+  border: 0.1vh solid gray;
+}
 
+.paymentContainer2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.billingP {
+  font-size: 3vh;
+  text-align: left;
+  width: 100%;
+}
+
+.bFullInput {
+  border: 0.1vh solid gray;
+  width: 100%;
+  height: 3.9vh;
+  padding: 1.5vh
+  font-size: 3.5vh;
+}
+
+.paymentHoriz {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+  height: 3.9vh;
+}
+
+.paymentHoriz input {
+  border: 0.1vh solid gray;
+  width: 30%;
+  height: 3.9vh;
+  padding: 1.5vh
+  font-size: 3.5vh;
+}
+
+.seperatorLineB {
+  height: 0.2vh;
+  width: 90%;
+  border-bottom: 0.5vh solid black;
+  margin-bottom: 2vw;
+}
+
+.cardBrands {
+  width: 100%;
+  height: 3.9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.cardBrands img {
+  width: 15%;
+  height: 100%;
+}
+
+.cardInfoContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.cardFullInput {
+  border: 0.1vh solid gray;
+  width: 100%;
+  height: 3.9vh;
+  padding: 1.5vh
+  font-size: 3.5vh;
+}
+
+.paymentHoriz input {
+  border: 0.1vh solid gray;
+  width: 50%;
+  height: 3.9vh;
+  padding: 1.5vh
+  font-size: 3.5vh;
+}
+
+.paymentButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+
+.orderButton {
+  border-radius: 2vh;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  margin-bottom: 5vh;
+  font-size: 3vh;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: #2f7ab6;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
+}
+
+.orderButton:hover {
+  cursor: pointer;
+}
+
+.itemsContainer {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23vw;
+  border: 0.1vh solid gray;
+}
 
 .seperatorLineA {
-  height: 0.5vh;
+  height: 0.2vh;
   width: 100vw;
   border-bottom: 0.5vh solid black;
   margin-bottom: 2vw;
