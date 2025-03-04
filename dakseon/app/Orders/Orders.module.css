@@ -468,6 +468,44 @@
   font-size: 3vh;
 }
 
+.notes {
+  border: 0.1vh solid gray;
+  width: 100%;
+  height: 3.9vh;
+  padding: 1.5vh
+  font-size: 3.5vh;
+}
+
+.shippingButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+
+.continueToPayment {
+  border-radius: 2vh;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  margin-bottom: 5vh;
+  font-size: 3vh;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: #2f7ab6;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
+}
+
+.continueToPayment:hover {
+  cursor: pointer;
+}
+
 .seperatorLineA {
   height: 0.5vh;
   width: 100vw;
