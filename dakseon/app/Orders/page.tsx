@@ -146,11 +146,11 @@ const Orders = () => {
             <div className={styles.infoContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p><strong>Information</strong></p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Shipping</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Payment</p>
               </div>
               <div className={styles.expressCheckoutContainer}>
@@ -264,7 +264,7 @@ const Orders = () => {
                   />
                   <div className={styles.informationButtons}>
                     <div className={styles.returnContainer}>
-                      <Image src="" alt="" width={} height={} />
+                      <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
                       <p>Return to cart</p>
                     </div>
                     <button className={styles.continueToShipping}>Continue to shipping</button>
@@ -281,11 +281,11 @@ const Orders = () => {
             <div className={styles.shippingContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Information</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p><strong>Shipping</strong></p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Payment</p>
               </div>
               <div className={styles.shippingOptionsContainer}>
@@ -314,17 +314,17 @@ const Orders = () => {
                   <div className={styles.fedexContainer}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="" alt="" width={} height={} />
+                    <Image src="/fedex-seeklogo.png" alt="" width={} height={} />
                   </div>
                   <div className={styles.upsContainer}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="" alt="" width={} height={} />
+                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={} height={} />
                   </div>
                   <div className={styles.dhlContainer}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="" alt="" width={} height={} />
+                    <Image src="/dhl-1.svg" alt="" width={} height={} />
                   </div>
                 </div>
               </div>
@@ -337,7 +337,7 @@ const Orders = () => {
                 className={styles.notes}
               />
               <div className={styles.shippingButtons}>\
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
                 <p>Return to information</p>
                 <button className={styles.continueToPayment}>Continue to payment</button>
               </div>
@@ -351,11 +351,11 @@ const Orders = () => {
             <div className={styles.paymentContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Information</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p>Shipping</p>
-                <Image src="" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                 <p><strong>Payment</strong></p>
               </div>
               <p className={styles.billingP}>Billing Information</p>
@@ -482,7 +482,7 @@ const Orders = () => {
           <div className={styles.itemsContainer2}>
             {addedWalker && (
               <div className={styles.itemHoriz}>
-                <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
+                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={902} height={1600} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
@@ -538,7 +538,7 @@ const Orders = () => {
         <div className={styles.orderConfirmationContainer}>
           <div className={styles.orderConfirmationContainer2}>
             <div className={styles.orderConfirmedMsg}>
-              <Image src="" alt="" width={} height={} />
+              <Image src="/success-green-check-mark-icon.png" alt="" width={} height={} />
               <h2>Thank you for your order!</h2>
               <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
             </div>
@@ -604,7 +604,8 @@ const Orders = () => {
                 <div className={styles.horizontalOri}>
                   <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
                   <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
-                  <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+                  <Image src="/LI-In-Bug.png" width={512} height={512} alt="" />
+                  <Image src="/Facebook_Logo_Primary.png" width={512} height={512} alt="" />
                 </div>
               </div>
             </footer>
