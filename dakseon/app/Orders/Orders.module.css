@@ -110,7 +110,7 @@
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  width: 50%;
+  width: 30%;
   height: 39%;
 }
 
@@ -140,6 +140,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 30%;
+  height: 50%;
   gap: 3vh;
 }
 
@@ -152,6 +154,65 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 75%;
+  height: 25%;
+  border-radius: 25px;
+}
+
+.entranceHoriz2 p {
+  padding: 3vh;
+}
+
+.entranceHoriz2 img {
+  padding: 3vh;
+  border: none;
+}
+
+.entranceTotalPriceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+}
+
+.entrancePriceType {
+  width: 65%;
+  height: 100%;
+  text-align: right;
+  font-size: 3.9vh;
+  font-weight: bold;
+}
+
+.entranceTotalPrice {
+  width: 35%;
+  height: 100%;
+  font-size: 3.9vh;
+  font-weight: bold;
+}
+
+.continueToInfo {
+  border-radius: 2vh;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  margin-bottom: 5vh;
+  font-size: 3vh;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  width: 100%;
+  height: 10%;
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
+}
+
+.continueToInfo:hover {
+  cursor: pointer;
 }
 
 .continueToShipping {
