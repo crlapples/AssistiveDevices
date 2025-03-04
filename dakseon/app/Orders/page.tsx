@@ -55,6 +55,11 @@ const Orders = () => {
   
   return (
     <div className={styles.mainContainer}>
+      <div className={styles.topContainer}>
+        <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
+        <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
+        <Dropdown />
+      </div>
       {entrance && (
         <div className={styles.cartContainer}>
           {noItems && (
