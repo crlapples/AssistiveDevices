@@ -506,12 +506,18 @@ const Orders = () => {
             <div className={styles.priceContainer}>
               <div className={styles.seperatorLineA} />
               <div className={styles.afterSubAndShipCostContainer}>
-                <p className={styles.afterPriceType}>Subtotal</p>
-                <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
-                <p className={styles.afterPriceType}>Shipping</p>
-                <p className={styles.afterShippingPrice}>Calculated next step</p>
-                <p className={styles.afterPriceType}>Sales Tax</p>
-                <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
+                <div className={styles.paymentPriceHoriz}>
+                  <p className={styles.afterPriceType}>Subtotal</p>
+                  <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                </div>
+                <div className={styles.paymentPriceHoriz}>
+                  <p className={styles.afterPriceType}>Shipping</p>
+                  <p className={styles.afterShippingPrice}>Calculated next step</p>
+                </div>
+                <div className={styles.paymentPriceHoriz}>
+                  <p className={styles.afterPriceType}>Sales Tax</p>
+                  <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
+                </div>
               </div>
               <div className={styles.seperatorLineA} />
               <div className={styles.afterTypeAndPriceContainer}>
