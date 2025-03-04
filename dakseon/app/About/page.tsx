@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import Dropdown from '../Dropdown';
+import LetterFromTopAnimation from '../LetterFromTopAnimation';
 
 const About: React.FC = () => {
   return (
@@ -14,13 +15,13 @@ const About: React.FC = () => {
         <Dropdown />
       </div>
       <h1>About Dakseon</h1>
-      <p>At Dakseon, we are committed to providing high-quality mobility and safety products that help individuals live with greater independence and confidence.</p>
+      <LetterFromTopAnimation className={styles.letters1} text="At Dakseon, we are committed to providing high-quality mobility and safety products that help individuals live with greater independence and confidence." />
       
       {/* Image of happy seniors using mobility aids */}
       <div className={styles.imageContainer}>
         <Image 
-          src="/images/happy-seniors.jpg" 
-          alt="Happy seniors using mobility aids" 
+          src="/image_fx_ (28).jpg" 
+          alt="Happy senior using mobility aids" 
           width={1600} 
           height={902} 
           className={styles.aboutImage}
@@ -28,13 +29,13 @@ const About: React.FC = () => {
       </div>
 
       <h2>Our Story</h2>
-      <p>With a decade of experience in the assistive device industry, we understand the importance of reliable and well-designed products. Our carefully selected mobility and bathroom safety solutions are built to enhance everyday life, ensuring both safety and comfort.</p>
+      <LetterFromTopAnimation className={styles.letters2} text="With a decade of experience in the assistive device industry, we understand the importance of reliable and well-designed products. Our carefully selected mobility and bathroom safety solutions are built to enhance everyday life, ensuring both safety and comfort." />
 
       <h2 className={styles.secondh2}>Our Commitment</h2>
-      <p className={styles.thirdp}>We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike.</p>
+      <LetterFromTopAnimation className={`${styles.letters3} ${styles.thirdp}`} text="We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike."/>
 
       <h2>Need Help?</h2>
-      <p>Have questions about our products? Contact our team <Link href="/contact">here</Link>, and we’ll be happy to assist you.</p>
+      <p className={styles.lastP}>Have questions about our products? Contact our team <Link href="/contact"><span style={{ color: "#2f7ab6" }}>here</span></Link>, and we’ll be happy to assist you.</p>
       <footer className={styles.footer}>
           <div className={styles.verticalOriA}>
             <strong>

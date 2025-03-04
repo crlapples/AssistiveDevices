@@ -1,1 +1,207 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
+.topContainer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 1vh;
+}
+
+.logo {
+  width: 5%;
+  height: 100%;
+  display: block;
+  border-radius: 2vh;
+}
+
+.fda {
+  width: 5%;
+  height: 100%;
+  margin-left: 2vw;
+}
+
+.cartContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 20vw;
+  border-top: 0.5vh solid black;
+}
+
+.noItemsMsg {
+  width: 100%;
+  height: 35%;
+  padding: 7vh;
+  font-size: 6vh;
+}
+
+.continueToShipping {
+  border-radius: 2vh;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 2vw;
+  margin-bottom: 5vh;
+  font-size: 3vh;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
+  z-index: 0;
+}
+
+.continueToShipping:hover {
+  cursor: pointer;
+}
+
+.seperatorLineA {
+  height: 0.5vh;
+  width: 100vw;
+  border-bottom: 0.5vh solid black;
+  margin-bottom: 2vw;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 60%;
+  padding: 3vh;
+  border-top: 0.5vh solid black;
+}
+
+.verticalOriA {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 39%;
+  height: 100%;
+  padding: 1vh;
+  gap: 5vh;
+  margin-top: 15%;
+}
+
+.verticalOriA p {
+  width: 100%;
+  height: 25%;
+}
+
+.verticalOriB {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 61%;
+  height: 100%;
+  padding: 1vh;
+  gap: 5vh;
+  margin-top: 25%;
+}
+
+.wheelchairIcon {
+  width: 15vh;
+  height: 15vh;
+}
+
+.horizontalOri {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  gap: 3vh;
+  margin-top: -25%;
+  margin-bottom: 25%;
+}
+
+.horizontalOri img {
+  height: 5vh;
+  width: 5vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cartContainer {
+    border-top: solid white;
+  }
+  
+  .continueToShipping {
+    color: white;
+    background-color: black;
+    box-shadow: 2px 2px 5px 1px gray;
+  }
+  
+  .footer {
+    border-top: solid white;
+  }
+
+  .wheelchairIcon {
+    filter: invert(1);
+  }
+
+  .x {
+    filter: invert(1);
+  }
+}
+
+@media (max-width: 1024px) {
+    .topContainer {
+        height: 20vw;
+    }
+
+    .cartContainer {
+      margin-top: 20vw;
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+    .fda {
+      width: 20%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .footer {
+      height: 40%;
+    }
+
+    .cartContainer {
+        margin-top: 10vh;
+    }
+
+    .verticalOriA {
+      margin-top: 2%;
+    }
+
+    .verticalOriB {
+      margin-top: 2%;
+    }
+
+    .horizontalOri {
+      margin-bottom: 2%;
+      justify-content: flex-end;
+    }
+}
