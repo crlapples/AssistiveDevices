@@ -46,6 +46,10 @@ const Orders = () => {
   const [cardNumber, setCardNumber] = useState<string>("");
   const [cardExp, setCardExp] = useState<string>("");
   const [cardCVV, setCardCVV] = useState<string>("");
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState<boolean>("");
+  const [invoiceItem1, setInvoiceItem1] = useState<string>("");
+  const [invoiceTotal1, setInvoiceTotal1] = useState<number>("");
+  const [invoiceTotal5, setInvoiceTotal5] = useState<number>("");
 
   const prices = { "walker": 100, "seat": 50 };
   
@@ -400,8 +404,35 @@ const Orders = () => {
           <div className={styles.cardInfoContainer}>
             <input
               type="text"
-              value=
-            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" pattern="\d{2}/\d{2}" required>
+              value={cardName}
+              onChange={(e) => setCardName(e.target.value)}
+              placeholder="Name on card"
+              required
+            />
+            <input
+              type="text"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+              placeholder="Card number"
+              required
+            />
+            <div className={styles.cardHoriz}>
+              <input
+                type="text"
+                value={cardExp}
+                onChange={(e) => setCardExp(e.target.value)}
+                placeholder="MM/YY"
+                pattern="\d{2}/\d{2}"
+                required
+              />
+              <input
+                type="text"
+                value={cardCVV}
+                onChange={(e) => setCardCVV(e.target.value)}
+                placeholder="CVV"
+                required
+              />
+            </div>
           </div>
           <div className={styles.paymentButtons}>\
             <Image src="" alt="" width={} height={} />
@@ -450,6 +481,65 @@ const Orders = () => {
           </div>
           <div className={styles.promotions}>
               
+          </div>
+        </div>
+      )}
+      {isOrderConfirmed && (
+        <div className={styles.orderConfirmationContainer}>
+          <div className={styles.orderConfirmedMsg}>
+            <Image src="" alt="" width={} height={} />
+            <h2>Thank you for your order!</h2>
+            <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
+          </div>
+          <div className={styles.orderInvoice}>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}><strong>Items</strong></p>
+              <p className={styles.second}><strong>Qty.</strong></p>
+              <p className={styles.third}><strong>Cost</strong></p>
+              <p className={styles.fourth}><strong>SKU</strong></p>
+              <p className={styles.fifth}></p>
+              <p className={styles.sixth}><strong>Total</strong></p>
+            </div>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}>{invoiceItem1}</p>
+              <p className={styles.second}></p>
+              <p className={styles.third}></p>
+              <p className={styles.fourth}></p>
+              <p className={styles.fifth}></p>
+              <p className={styles.sixth}>{invoiceTotal1.toFixed(2)}</p>
+            </div>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}></p>
+              <p className={styles.second}></p>
+              <p className={styles.third}></p>
+              <p className={styles.fourth}></p>
+              <p className={styles.fifth}>Subtotal</p>
+              <p className={styles.sixth}></p>
+            </div>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}></p>
+              <p className={styles.second}></p>
+              <p className={styles.third}></p>
+              <p className={styles.fourth}></p>
+              <p className={styles.fifth}>Shipping</p>
+              <p className={styles.sixth}></p>
+            </div>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}></p>
+              <p className={styles.second}></p>
+              <p className={styles.third}></p>
+              <p className={styles.fourth}></p>
+              <p className={styles.fifth}>Sales Tax</p>
+              <p className={styles.sixth}></p>
+            </div>
+            <div className={styles.orderHoriz}>
+              <p className={styles.first}></p>
+              <p className={styles.second}></p>
+              <p className={styles.third}></p>
+              <p className={styles.fourth}></p>
+              <p className={styles.fifth}></p>
+              <p className={styles.sixth}>{invoiceTotal5.toFixed(2)}</p>
+            </div>
           </div>
         </div>
       )}
