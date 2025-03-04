@@ -746,6 +746,11 @@
 .afterSubAndShipCostContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 90%;
+  height: 25%;
 }
 
 .footer {
