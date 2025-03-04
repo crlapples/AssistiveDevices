@@ -46,10 +46,11 @@ const Orders = () => {
   const [cardNumber, setCardNumber] = useState<string>("");
   const [cardExp, setCardExp] = useState<string>("");
   const [cardCVV, setCardCVV] = useState<string>("");
-  const [isOrderConfirmed, setIsOrderConfirmed] = useState<boolean>("");
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState<boolean>(false);
+  const [orderId, setOrderId] = useState<string>("");
   const [invoiceItem1, setInvoiceItem1] = useState<string>("");
-  const [invoiceTotal1, setInvoiceTotal1] = useState<number>("");
-  const [invoiceTotal5, setInvoiceTotal5] = useState<number>("");
+  const [invoiceTotal1, setInvoiceTotal1] = useState<number>(0);
+  const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
   
@@ -262,7 +263,7 @@ const Orders = () => {
                     className={styles.fullInput}
                   />
                   <div className={styles.informationButtons}>
-                    <div className={returnContainer}>
+                    <div className={styles.returnContainer}>
                       <Image src="" alt="" width={} height={} />
                       <p>Return to cart</p>
                     </div>
@@ -357,7 +358,7 @@ const Orders = () => {
                 <Image src="" alt="" width={} height={} />
                 <p><strong>Payment</strong></p>
               </div>
-              <p className={styles.billingP}>Billing Information</Image>
+              <p className={styles.billingP}>Billing Information</p>
               <input
                 type="email"
                 value={bEmail}
@@ -521,8 +522,10 @@ const Orders = () => {
               </div>
               <div className={styles.seperatorLineA} />
               <div className={styles.afterTypeAndPriceContainer}>
-                <p className={styles.afterPriceType}>Total</p>
-                <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
+                <div className={styles.paymentPriceHoriz}>
+                  <p className={styles.afterPriceType}>Total</p>
+                  <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
+                </div>
               </div>
             </div>
             <div className={styles.promotions}>
@@ -533,77 +536,79 @@ const Orders = () => {
       )}
       {isOrderConfirmed && (
         <div className={styles.orderConfirmationContainer}>
-          <div className={styles.orderConfirmedMsg}>
-            <Image src="" alt="" width={} height={} />
-            <h2>Thank you for your order!</h2>
-            <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
-          </div>
-          <div className={styles.orderInvoice}>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}><strong>Items</strong></p>
-              <p className={styles.second}><strong>Qty.</strong></p>
-              <p className={styles.third}><strong>Cost</strong></p>
-              <p className={styles.fourth}><strong>SKU</strong></p>
-              <p className={styles.fifth}></p>
-              <p className={styles.sixth}><strong>Total</strong></p>
+          <div className={styles.orderConfirmationContainer2}>
+            <div className={styles.orderConfirmedMsg}>
+              <Image src="" alt="" width={} height={} />
+              <h2>Thank you for your order!</h2>
+              <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
             </div>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}>{invoiceItem1}</p>
-              <p className={styles.second}></p>
-              <p className={styles.third}></p>
-              <p className={styles.fourth}></p>
-              <p className={styles.fifth}></p>
-              <p className={styles.sixth}>{invoiceTotal1.toFixed(2)}</p>
-            </div>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}></p>
-              <p className={styles.second}></p>
-              <p className={styles.third}></p>
-              <p className={styles.fourth}></p>
-              <p className={styles.fifth}>Subtotal</p>
-              <p className={styles.sixth}></p>
-            </div>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}></p>
-              <p className={styles.second}></p>
-              <p className={styles.third}></p>
-              <p className={styles.fourth}></p>
-              <p className={styles.fifth}>Shipping</p>
-              <p className={styles.sixth}></p>
-            </div>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}></p>
-              <p className={styles.second}></p>
-              <p className={styles.third}></p>
-              <p className={styles.fourth}></p>
-              <p className={styles.fifth}>Sales Tax</p>
-              <p className={styles.sixth}></p>
-            </div>
-            <div className={styles.orderHoriz}>
-              <p className={styles.first}></p>
-              <p className={styles.second}></p>
-              <p className={styles.third}></p>
-              <p className={styles.fourth}></p>
-              <p className={styles.fifth}></p>
-              <p className={styles.sixth}>{invoiceTotal5.toFixed(2)}</p>
-            </div>
-          </div>
-          <footer className={styles.footer}>
-            <div className={styles.verticalOriA}>
-              <strong>
-                <p>Return to Top</p>
-              </strong>
-              <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
-              <p>© Copyright</p>
-            </div>
-            <div className={styles.verticalOriB}>
-              <div className={styles.horizontalOri}>
-                <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
-                <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
-                <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+            <div className={styles.orderInvoice}>
+              <div className={styles.orderHoriz1}>
+                <p className={styles.first}><strong>Items</strong></p>
+                <p className={styles.second}><strong>Qty.</strong></p>
+                <p className={styles.third}><strong>Cost</strong></p>
+                <p className={styles.fourth}><strong>SKU</strong></p>
+                <p className={styles.fifth}></p>
+                <p className={styles.sixth}><strong>Total</strong></p>
+              </div>
+              <div className={styles.orderHoriz}>
+                <p className={styles.first}>{invoiceItem1}</p>
+                <p className={styles.second}></p>
+                <p className={styles.third}></p>
+                <p className={styles.fourth}></p>
+                <p className={styles.fifth}></p>
+                <p className={styles.sixth}>{invoiceTotal1.toFixed(2)}</p>
+              </div>
+              <div className={styles.orderHoriz}>
+                <p className={styles.first}></p>
+                <p className={styles.second}></p>
+                <p className={styles.third}></p>
+                <p className={styles.fourth}></p>
+                <p className={styles.fifth}>Subtotal</p>
+                <p className={styles.sixth}></p>
+              </div>
+              <div className={styles.orderHoriz}>
+                <p className={styles.first}></p>
+                <p className={styles.second}></p>
+                <p className={styles.third}></p>
+                <p className={styles.fourth}></p>
+                <p className={styles.fifth}>Shipping</p>
+                <p className={styles.sixth}></p>
+              </div>
+              <div className={styles.orderHoriz}>
+                <p className={styles.first}></p>
+                <p className={styles.second}></p>
+                <p className={styles.third}></p>
+                <p className={styles.fourth}></p>
+                <p className={styles.fifth}>Sales Tax</p>
+                <p className={styles.sixth}></p>
+              </div>
+              <div className={styles.orderHoriz}>
+                <p className={styles.first}></p>
+                <p className={styles.second}></p>
+                <p className={styles.third}></p>
+                <p className={styles.fourth}></p>
+                <p className={styles.fifth}></p>
+                <p className={styles.sixth}>{invoiceTotal5.toFixed(2)}</p>
               </div>
             </div>
-          </footer>
+            <footer className={styles.footer}>
+              <div className={styles.verticalOriA}>
+                <strong>
+                  <p>Return to Top</p>
+                </strong>
+                <Image src="/wheelchair-icon.png" width={512} height={512} alt="" className={styles.wheelchairIcon} />
+                <p>© Copyright</p>
+              </div>
+              <div className={styles.verticalOriB}>
+                <div className={styles.horizontalOri}>
+                  <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
+                  <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
+                  <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+                </div>
+              </div>
+            </footer>
+          </div>
         </div>
       )}
     </div>

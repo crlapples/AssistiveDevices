@@ -753,6 +753,134 @@
   height: 25%;
 }
 
+.paymentPriceHoriz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.afterPriceType {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.afterSubtotalPrice {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.afterShippingPrice {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.afterTaxPrice {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.afterTypeAndPriceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  width: 90%;
+  height: 25%;
+}
+
+.afterTotalPrice {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.orderConfirmationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.orderConfirmationContainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.orderConfirmedMsg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.orderConfirmedMsg img {
+  width: 15vh;
+  height: 15vh;
+  padding: 5vh;
+}
+
+.orderConfirmedMsg h2 {
+  font-size: 7vh;
+  text-align: center;
+  width: 100%;
+}
+
+.orderConfirmedMsg h2 {
+  font-size: 5vh;
+  text-align: left;
+  width: 100%;
+}
+
+.orderInvoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+}
+
+.orderHoriz1 {
+  background-color: #2f7ab6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 15%;
+  width: 100%;
+}
+
+.orderHoriz1 .first, .orderHoriz1 .second, .orderHoriz1 .third, .orderHoriz1 .fourth, .orderHoriz1 .fifth, .orderHoriz1 .sixth {
+  width: 15%;
+  height: 10%;
+  font-size: 3.9vh;
+  text-align: center;
+} 
+
+.orderHoriz1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 15%;
+  width: 100%;
+}
+
+.orderHoriz .first, .orderHoriz .second, .orderHoriz .third, .orderHoriz .fourth, .orderHoriz .fifth, .orderHoriz .sixth {
+  width: 15%;
+  height: 10%;
+  font-size: 3.9vh;
+  text-align: center;
+} 
+
 .footer {
   display: flex;
   justify-content: space-between;
