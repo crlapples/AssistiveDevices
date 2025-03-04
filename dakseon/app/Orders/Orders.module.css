@@ -38,14 +38,21 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   align-self: flex-start;
   margin-top: 20vw;
   border-top: 0.5vh solid black;
 }
 
-.shopButton {
+.noItemsMsg {
+  width: 100%;
+  height: 35%;
+  padding: 7vh;
+  font-size: 6vh;
+}
+
+.continueToShipping {
   border-radius: 2vh;
   padding-top: 2vw;
   padding-right: 2vw;
@@ -63,7 +70,7 @@
   z-index: 0;
 }
 
-.shopButton:hover {
+.continueToShipping:hover {
   cursor: pointer;
 }
 
@@ -139,7 +146,7 @@
     border-top: solid white;
   }
   
-  .shopButton {
+  .continueToShipping {
     color: white;
     background-color: black;
     box-shadow: 2px 2px 5px 1px gray;
