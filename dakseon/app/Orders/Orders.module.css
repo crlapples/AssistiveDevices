@@ -135,6 +135,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .cartContainer {
+    border-top: solid white;
+  }
+  
   .shopButton {
     color: white;
     background-color: black;
@@ -159,6 +163,10 @@
         height: 20vw;
     }
 
+    .cartContainer {
+      margin-top: 20vw;
+    }
+
     .logo {
         width: 20%;
     }
@@ -171,6 +179,10 @@
 @media (min-width: 1025px) {
     .footer {
       height: 40%;
+    }
+
+    .cartContainer {
+        margin-top: 10vh;
     }
 
     .verticalOriA {
