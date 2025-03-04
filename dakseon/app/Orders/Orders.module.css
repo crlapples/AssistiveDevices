@@ -420,6 +420,54 @@
   height: 100%;
 }
 
+.shippingOptions label {
+  font-size: 3.9vh;
+  text-align: center;
+}
+
+.shippingOptions input {
+  border-radius: 100%;
+}
+
+.shippingCarriersContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  width: 90%;
+  height: 75%;
+}
+
+.fedexContainer, .upsContainer, .dhlContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  border: 0.1vh solid gray;
+}
+
+.deliveryTime {
+  font-size: 3vh;
+  color: gray;
+}
+
+.deliveryCost {
+  font-size: 3.9vh;
+}
+
+.shippingCarriersContainer img {
+  height: 100%;
+  width: 20%;
+}
+
+.estTime {
+  width: 100%
+  height: 10%;
+  font-size: 3vh;
+}
+
 .seperatorLineA {
   height: 0.5vh;
   width: 100vw;
