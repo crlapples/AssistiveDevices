@@ -196,6 +196,7 @@ const Orders = () => {
                       onChange={(e) => setFirstName(e.target.value)}
                       placeholder="First name"
                       required
+                      className={styles.halfInput}
                     />
                     <input
                       type="text"
@@ -203,6 +204,7 @@ const Orders = () => {
                       onChange={(e) => setLastName(e.target.value)}
                       placeholder="LastName"
                       required
+                      className={styles.halfInput}
                     />
                   </div>
                   <input
@@ -234,12 +236,14 @@ const Orders = () => {
                       onChange={(e) => setCity(e.target.value)}
                       placeholder="City"
                       required
+                      className={styles.thirdInput}
                     />
                     <input
                       type="text"
                       value={stateOrProvince}
                       onChange={(e) => setStateOrProvince(e.target.value)}
                       placeholder="State/province"
+                      className={styles.thirdInput}
                     />
                     <input
                       type="text"
@@ -247,6 +251,7 @@ const Orders = () => {
                       onChange={(e) => setPostal(e.target.value)}
                       placeholder="Postal code"
                       required
+                      className={styles.thirdInput}
                     />
                   </div>
                   <input
