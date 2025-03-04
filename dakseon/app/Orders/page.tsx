@@ -142,355 +142,366 @@ const Orders = () => {
       {isOnInformation && (
         <>
           <div className={styles.infoContainer}>
-            <div className={styles.flowContainer}>
-              <p>Cart</p>
-              <Image src="" alt="" width={} height={} />
-              <p><strong>Information</strong></p>
-              <Image src="" alt="" width={} height={} />
-              <p>Shipping</p>
-              <Image src="" alt="" width={} height={} />
-              <p>Payment</p>
-            </div>
-            <div className={styles.expressCheckoutContainer}>
-              <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-              <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
-              <Image src="" alt="" width={} height={} className={styles.googleExpress} />
-            </div>
-            <div className={styles.customerDetailsContainer}>
-              <p className={styles.contactP}>Contact Information</p>
-              <form>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  required
-                  className={styles.fullInput}
-                />
-                <input
-                  type="email"
-                  value={matchEmail}
-                  onChange={(e) => setMatchEmail(e.target.value)}
-                  placeholder="Confirm email"
-                  required
-                  className={styles.fullInput}
-                />
-                <div className={styles.seperatorLineB} />
-                <p className={styles.shippingP}>Shipping Details</p>
-                <input
-                  type="text"
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  placeholder="Country/region"
-                  required
-                  className={styles.fullInput}
-                />
-                <div className={styles.shippingHoriz}>
+            <div className={styles.infoContainer2}>
+              <div className={styles.flowContainer}>
+                <p>Cart</p>
+                <Image src="" alt="" width={} height={} />
+                <p><strong>Information</strong></p>
+                <Image src="" alt="" width={} height={} />
+                <p>Shipping</p>
+                <Image src="" alt="" width={} height={} />
+                <p>Payment</p>
+              </div>
+              <div className={styles.expressCheckoutContainer}>
+                <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
+                <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
+                <Image src="" alt="" width={} height={} className={styles.googleExpress} />
+              </div>
+              <div className={styles.customerDetailsContainer}>
+                <p className={styles.contactP}>Contact Information</p>
+                <form>
                   <input
-                    type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="First name"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
                     required
+                    className={styles.fullInput}
                   />
                   <input
-                    type="text"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    placeholder="LastName"
+                    type="email"
+                    value={matchEmail}
+                    onChange={(e) => setMatchEmail(e.target.value)}
+                    placeholder="Confirm email"
                     required
+                    className={styles.fullInput}
                   />
-                </div>
-                <input
-                  type="text"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  placeholder="Company (optional)"
-                  className={styles.fullInput}
-                />
-                <input
-                  type="text"
-                  value={streetAddress}
-                  onChange={(e) => setStreetAddress(e.target.value)}
-                  placeholder="Street address"
-                  required
-                  className={styles.fullInput}
-                />
-                <input
-                  type="text"
-                  value={apartment}
-                  onChange={(e) => setApartment(e.target.value)}
-                  placeholder="Apartment, suite, etc. (optional)"
-                  className={styles.fullInput}
-                />
-                <div className={styles.shippingHoriz2}>
+                  <div className={styles.seperatorLineB} />
+                  <p className={styles.shippingP}>Shipping Details</p>
                   <input
                     type="text"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    placeholder="City"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
+                    placeholder="Country/region"
                     required
+                    className={styles.fullInput}
+                  />
+                  <div className={styles.shippingHoriz}>
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="First name"
+                      required
+                    />
+                    <input
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="LastName"
+                      required
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    placeholder="Company (optional)"
+                    className={styles.fullInput}
                   />
                   <input
                     type="text"
-                    value={stateOrProvince}
-                    onChange={(e) => setStateOrProvince(e.target.value)}
-                    placeholder="State/province"
-                  />
-                  <input
-                    type="text"
-                    value={postal}
-                    onChange={(e) => setPostal(e.target.value)}
-                    placeholder="Postal code"
+                    value={streetAddress}
+                    onChange={(e) => setStreetAddress(e.target.value)}
+                    placeholder="Street address"
                     required
+                    className={styles.fullInput}
                   />
-                </div>
-                <input
-                  type="text"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Phone (optional)"
-                  className={styles.fullInput}
-                />
-                <div className={styles.informationButtons}>\
-                  <Image src="" alt="" width={} height={} />
-                  <p>Return to cart</p>
-                  <button className={styles.continueToShipping}>Continue to shipping</button>
-                </div>
-              </form>
+                  <input
+                    type="text"
+                    value={apartment}
+                    onChange={(e) => setApartment(e.target.value)}
+                    placeholder="Apartment, suite, etc. (optional)"
+                    className={styles.fullInput}
+                  />
+                  <div className={styles.shippingHoriz2}>
+                    <input
+                      type="text"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      placeholder="City"
+                      required
+                    />
+                    <input
+                      type="text"
+                      value={stateOrProvince}
+                      onChange={(e) => setStateOrProvince(e.target.value)}
+                      placeholder="State/province"
+                    />
+                    <input
+                      type="text"
+                      value={postal}
+                      onChange={(e) => setPostal(e.target.value)}
+                      placeholder="Postal code"
+                      required
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Phone (optional)"
+                    className={styles.fullInput}
+                  />
+                  <div className={styles.informationButtons}>\
+                    <Image src="" alt="" width={} height={} />
+                    <p>Return to cart</p>
+                    <button className={styles.continueToShipping}>Continue to shipping</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </>
       )}
       {isOnShipping && (
         <>
-          
-          <div className={styles.flowContainer}>
-            <p>Cart</p>
-            <Image src="" alt="" width={} height={} />
-            <p>Information</p>
-            <Image src="" alt="" width={} height={} />
-            <p><strong>Shipping</strong></p>
-            <Image src="" alt="" width={} height={} />
-            <p>Payment</p>
-          </div>
-          <div className={styles.shippingOptionsContainer}>
-            <div className={styles.shippingOptions}>
-              <label>Standard</label>
+          <div className={styles.shippingContainer}>
+            <div className={styles.shippingContainer2}>
+              <div className={styles.flowContainer}>
+                <p>Cart</p>
+                <Image src="" alt="" width={} height={} />
+                <p>Information</p>
+                <Image src="" alt="" width={} height={} />
+                <p><strong>Shipping</strong></p>
+                <Image src="" alt="" width={} height={} />
+                <p>Payment</p>
+              </div>
+              <div className={styles.shippingOptionsContainer}>
+                <div className={styles.shippingOptions}>
+                  <label>Standard</label>
+                  <input
+                    type="radio"
+                    name="standard"
+                  />
+                  <label>Priority</label>
+                  <input
+                    type="radio"
+                    name="priority"
+                  />
+                  <label>Overnight</label>
+                  <input
+                    type="radio"
+                    name="overnight"
+                  />
+                </div>
+                <div className={styles.shippingCarriersContainer}>
+                  <div className={styles.fedexContainer}>
+                    <p className={styles.deliveryTime}></p>
+                    <p className={styles.deliveryCost}></p>
+                    <Image src="" alt="" width={} height={} />
+                  </div>
+                  <div className={styles.upsContainer}>
+                    <p className={styles.deliveryTime}></p>
+                    <p className={styles.deliveryCost}></p>
+                    <Image src="" alt="" width={} height={} />
+                  </div>
+                  <div className={styles.dhlContainer}>
+                    <p className={styles.deliveryTime}></p>
+                    <p className={styles.deliveryCost}></p>
+                    <Image src="" alt="" width={} height={} />
+                  </div>
+                </div>
+              </div>
+              <p className={styles.estTime}></p>
               <input
-                type="radio"
-                name="standard"
+                type="text"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder="Special delivery instructions (optional)"
+                className={styles.notes}
               />
-              <label>Priority</label>
-              <input
-                type="radio"
-                name="priority"
-              />
-              <label>Overnight</label>
-              <input
-                type="radio"
-                name="overnight"
-              />
+              <div className={styles.shippingButtons}>\
+                <Image src="" alt="" width={} height={} />
+                <p>Return to information</p>
+                <button className={styles.continueToPayment}>Continue to payment</button>
+              </div>
             </div>
-            <div className={styles.shippingCarriersContainer}>
-              <div className={styles.fedexContainer}>
-                <p className={styles.deliveryTime}></p>
-                <p className={styles.deliveryCost}></p>
-                <Image src="" alt="" width={} height={} />
-              </div>
-              <div className={styles.upsContainer}>
-                <p className={styles.deliveryTime}></p>
-                <p className={styles.deliveryCost}></p>
-                <Image src="" alt="" width={} height={} />
-              </div>
-              <div className={styles.dhlContainer}>
-                <p className={styles.deliveryTime}></p>
-                <p className={styles.deliveryCost}></p>
-                <Image src="" alt="" width={} height={} />
-              </div>
-            </div>
-          </div>
-          <p className={styles.estTime}></p>
-          <input
-            type="text"
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="Special delivery instructions (optional)"
-            className={styles.notes}
-          />
-          <div className={styles.shippingButtons}>\
-            <Image src="" alt="" width={} height={} />
-            <p>Return to information</p>
-            <button className={styles.continueToPayment}>Continue to payment</button>
           </div>
         </>
       )}
       {isOnPayment && (
         <>
-          <div className={styles.flowContainer}>
-            <p>Cart</p>
-            <Image src="" alt="" width={} height={} />
-            <p>Information</p>
-            <Image src="" alt="" width={} height={} />
-            <p>Shipping</p>
-            <Image src="" alt="" width={} height={} />
-            <p><strong>Payment</strong></p>
-          </div>
-          <p className={styles.billingP}>Billing Information</Image>
-          <input
-            type="email"
-            value={bEmail}
-            onChange={(e) => setBEmail(e.target.value)}
-            className={styles.bFullInput}
-            placeholder="Email"
-          />
-          <input
-            type="email"
-            value={bMatchEmail}
-            onChange={(e) => setBMatchEmail(e.target.value)}
-            className={styles.bFullInput}
-            placeholder="Confirm email"
-          />
-          <input
-            type="text"
-            value={bFullName}
-            onChange={(e) => setBFullName(e.target.value)}
-            required
-            className={styles.bFullInput}
-            placeholder="Full name"
-          />
-          <input
-            type="text"
-            value={bCountry}
-            onChange={(e) => setBCountry(e.target.value)}
-            required
-            className={styles.bFullInput}
-            placeholder="Country/region"
-          />
-          <input
-            type="text"
-            value={bStreetAddress}
-            onChange={(e) => setBStreetAddress(e.target.value)}
-            required
-            className={styles.bFullInput}
-            placeholder="Street address"
-          />
-          <input
-            type="text"
-            value={bApartment}
-            onChange={(e) => setBApartment(e.target.value)}
-            className={styles.bFullInput}
-            placeholder="Apartment, suite, etc. (optional)"
-          />
-          <div className={styles.paymentHoriz}>
-            <input
-              type="text"
-              value={bCity}
-              onChange={(e) => setBCity(e.target.value)}
-              required
-              placeholder="City"
-            />
-            <input
-              type="text"
-              value={bStateOrProvince}
-              onChange={(e) => setBStateOrProvince(e.target.value)}
-              required
-              placeholder="State/province"
-            />
-            <input
-              type="text"
-              value={bPostal}
-              onChange={(e) => setBPostal(e.target.value)}
-              required
-              placeholder="Postal code"
-            />
-          </div>
-          <div className={styles.cardBrands}>
-            <Image src="" alt="" width={} height={} />
-            <Image src="" alt="" width={} height={} />
-            <Image src="" alt="" width={} height={} />
-            <Image src="" alt="" width={} height={} />
-          </div>
-          <div className={styles.cardInfoContainer}>
-            <input
-              type="text"
-              value={cardName}
-              onChange={(e) => setCardName(e.target.value)}
-              placeholder="Name on card"
-              required
-            />
-            <input
-              type="text"
-              value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
-              placeholder="Card number"
-              required
-            />
-            <div className={styles.cardHoriz}>
+          <div className={styles.paymentContainer}>
+            <div className={styles.paymentContainer2}>
+              <div className={styles.flowContainer}>
+                <p>Cart</p>
+                <Image src="" alt="" width={} height={} />
+                <p>Information</p>
+                <Image src="" alt="" width={} height={} />
+                <p>Shipping</p>
+                <Image src="" alt="" width={} height={} />
+                <p><strong>Payment</strong></p>
+              </div>
+              <p className={styles.billingP}>Billing Information</Image>
               <input
-                type="text"
-                value={cardExp}
-                onChange={(e) => setCardExp(e.target.value)}
-                placeholder="MM/YY"
-                pattern="\d{2}/\d{2}"
-                required
+                type="email"
+                value={bEmail}
+                onChange={(e) => setBEmail(e.target.value)}
+                className={styles.bFullInput}
+                placeholder="Email"
+              />
+              <input
+                type="email"
+                value={bMatchEmail}
+                onChange={(e) => setBMatchEmail(e.target.value)}
+                className={styles.bFullInput}
+                placeholder="Confirm email"
               />
               <input
                 type="text"
-                value={cardCVV}
-                onChange={(e) => setCardCVV(e.target.value)}
-                placeholder="CVV"
+                value={bFullName}
+                onChange={(e) => setBFullName(e.target.value)}
                 required
+                className={styles.bFullInput}
+                placeholder="Full name"
               />
+              <input
+                type="text"
+                value={bCountry}
+                onChange={(e) => setBCountry(e.target.value)}
+                required
+                className={styles.bFullInput}
+                placeholder="Country/region"
+              />
+              <input
+                type="text"
+                value={bStreetAddress}
+                onChange={(e) => setBStreetAddress(e.target.value)}
+                required
+                className={styles.bFullInput}
+                placeholder="Street address"
+              />
+              <input
+                type="text"
+                value={bApartment}
+                onChange={(e) => setBApartment(e.target.value)}
+                className={styles.bFullInput}
+                placeholder="Apartment, suite, etc. (optional)"
+              />
+              <div className={styles.paymentHoriz}>
+                <input
+                  type="text"
+                  value={bCity}
+                  onChange={(e) => setBCity(e.target.value)}
+                  required
+                  placeholder="City"
+                />
+                <input
+                  type="text"
+                  value={bStateOrProvince}
+                  onChange={(e) => setBStateOrProvince(e.target.value)}
+                  required
+                  placeholder="State/province"
+                />
+                <input
+                  type="text"
+                  value={bPostal}
+                  onChange={(e) => setBPostal(e.target.value)}
+                  required
+                  placeholder="Postal code"
+                />
+              </div>
+              <div className={styles.cardBrands}>
+                <Image src="" alt="" width={} height={} />
+                <Image src="" alt="" width={} height={} />
+                <Image src="" alt="" width={} height={} />
+                <Image src="" alt="" width={} height={} />
+              </div>
+              <div className={styles.cardInfoContainer}>
+                <input
+                  type="text"
+                  value={cardName}
+                  onChange={(e) => setCardName(e.target.value)}
+                  placeholder="Name on card"
+                  required
+                />
+                <input
+                  type="text"
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
+                  placeholder="Card number"
+                  required
+                />
+                <div className={styles.cardHoriz}>
+                  <input
+                    type="text"
+                    value={cardExp}
+                    onChange={(e) => setCardExp(e.target.value)}
+                    placeholder="MM/YY"
+                    pattern="\d{2}/\d{2}"
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={cardCVV}
+                    onChange={(e) => setCardCVV(e.target.value)}
+                    placeholder="CVV"
+                    required
+                  />
+                </div>
+              </div>
+              <div className={styles.paymentButtons}>\
+                <Image src="" alt="" width={} height={} />
+                <p>Return to shipping</p>
+                <button className={styles.orderButton}>Order</button>
+              </div>
             </div>
-          </div>
-          <div className={styles.paymentButtons}>\
-            <Image src="" alt="" width={} height={} />
-            <p>Return to shipping</p>
-            <button className={styles.orderButton}>Order</button>
           </div>
         </>
       )}
       {(addedWalker || addedSeat) && (isOnInformation || isOnShipping || isOnPayment) && (
         <div className={styles.itemsContainer}>
-          {addedWalker && (
-            <div className={styles.itemHoriz}>
-              <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
-              <div className={styles.itemInfo}>
-                <p className={styles.itemName}></p>
+          <div className={styles.itemsContainer2}>
+            {addedWalker && (
+              <div className={styles.itemHoriz}>
+                <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
+                <div className={styles.itemInfo}>
+                  <p className={styles.itemName}></p>
+                </div>
+                <p className={styles.afterItemQuantity}></p>
+                <p className={styles.afterItemPrice}></p>
               </div>
-              <p className={styles.afterItemQuantity}></p>
-              <p className={styles.afterItemPrice}></p>
-            </div>
-          )}
-          {addedSeat && (
-            <div className={styles.itemHoriz}>
-              <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
-              <div className={styles.itemInfo}>
-                <p className={styles.itemName}></p>
+            )}
+            {addedSeat && (
+              <div className={styles.itemHoriz}>
+                <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
+                <div className={styles.itemInfo}>
+                  <p className={styles.itemName}></p>
+                </div>
+                <p className={styles.afterItemQuantity}></p>
+                <p className={styles.afterItemPrice}></p>
               </div>
-              <p className={styles.afterItemQuantity}></p>
-              <p className={styles.afterItemPrice}></p>
+            )}
+            <div className={styles.priceContainer}>
+              <div className={styles.seperatorLineA} />
+              <div className={styles.afterSubAndShipCostContainer}>
+                <p className={styles.afterPriceType}>Subtotal</p>
+                <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                <p className={styles.afterPriceType}>Shipping</p>
+                <p className={styles.afterShippingPrice}>Calculated next step</p>
+                <p className={styles.afterPriceType}>Sales Tax</p>
+                <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
+              </div>
+              <div className={styles.seperatorLineA} />
+              <div className={styles.afterTypeAndPriceContainer}>
+                <p className={styles.afterPriceType}>Total</p>
+                <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
+              </div>
             </div>
-          )}
-          <div className={styles.priceContainer}>
-            <div className={styles.seperatorLineA} />
-            <div className={styles.afterSubAndShipCostContainer}>
-              <p className={styles.afterPriceType}>Subtotal</p>
-              <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
-              <p className={styles.afterPriceType}>Shipping</p>
-              <p className={styles.afterShippingPrice}>Calculated next step</p>
-              <p className={styles.afterPriceType}>Sales Tax</p>
-              <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
-            </div>
-            <div className={styles.seperatorLineA} />
-            <div className={styles.afterTypeAndPriceContainer}>
-              <p className={styles.afterPriceType}>Total</p>
-              <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
-            </div>
-          </div>
-          <div className={styles.promotions}>
+            <div className={styles.promotions}>
               
+            </div>
           </div>
         </div>
       )}
