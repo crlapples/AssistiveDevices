@@ -106,12 +106,15 @@ const Home: React.FC = () => {
               className={styles.heroImage2}
             />
           </div>
-          <h2>Make the Smart Choice with Dakseon</h2>
-          <ul>
-            <li>100% Satisfaction Guarantee</li>
-            <li>Minimal Expenses</li>
-            <li>Designed for Comfort & Safety</li>
-          </ul>
+          <div className={styles.pointsRow}>
+            <h2>Make the Smart Choice with Dakseon</h2>
+            <ul>
+              <li>100% Satisfaction Guarantee</li>
+              <li>Minimal Expenses</li>
+              <li>Designed for Comfort & Safety</li>
+            </ul>
+            <Image src="" alt="" width={} height={} />
+          </div>
         </section>
         <section className={styles.featuredProducts}>
           <div className={styles.horizOriA}>
@@ -141,17 +144,19 @@ const Home: React.FC = () => {
         />
         <section className={styles.testimonials}>
           <h2>What Our Customers Say</h2>
-          <div className={styles.review}>
-            <p>
-              ⭐⭐⭐⭐⭐ "Amazing quality, my dad loves the walker!" –{" "}
-              <strong>Sarah K.</strong>
-            </p>
-          </div>
-          <div className={styles.review}>
-            <p>
-              ⭐⭐⭐⭐⭐ "The shower seat is stable and comfortable." –{" "}
-              <strong>James L.</strong>
-            </p>
+          <div className={styles.reviews}>
+            <div className={styles.review}>
+              <p>
+                ⭐⭐⭐⭐⭐ "Amazing quality, my dad loves the walker!" –{" "}
+                <strong>Sarah K.</strong>
+              </p>
+            </div>
+            <div className={styles.review}>
+              <p>
+                ⭐⭐⭐⭐⭐ "The shower seat is stable and comfortable." –{" "}
+                <strong>James L.</strong>
+              </p>
+            </div>
           </div>
         </section>
         <section className={styles.ctaSection}>
