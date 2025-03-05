@@ -213,6 +213,14 @@
   padding-top: 0vh;
 }
 
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+}
+
 .review {
   display: flex;
   justify-content: flex-start;
@@ -257,6 +265,14 @@
   padding-right: 2vh;
   padding-bottom: 10vh;
   padding-top: 0vh;
+}
+
+.faqVer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
 }
 
 .faq p {
@@ -409,8 +425,33 @@
       flex-direction: row;
     }
 
+    .testimonials h2 {
+      padding: 2vh !important;
+      width: 30% !important;
+      text-align: left !important;
+    }
+
+    .reviews {
+      width: 100%;
+      margin-left: -16vh;
+    }
+
+    .review {
+      width: 70% !important;
+      height: 50% !important;
+    }
+
     .faq {
       flex-direction: row;
+    }
+
+    .faq h2 {
+      width: 30% !important;
+      padding: 2vh !important;
+    }
+
+    .faq p {
+      width: 100% !important;
     }
 
     .footer {

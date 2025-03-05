@@ -115,11 +115,13 @@ const ProductPage = ({ params }: ProductPageProps ) => {
       {/* Customer Reviews */}
         <div className={styles.testimonials}>
           <h2>What Our Customers Say</h2>
-          <div className={styles.review}>
-            <p>{product.review1}</p>
-          </div>
-          <div className={styles.review}>
-            <p>{product.review2}</p>
+          <div className={styles.reviews}>
+            <div className={styles.review}>
+              <p>{product.review1}</p>
+            </div>
+            <div className={styles.review}>
+              <p>{product.review2}</p>
+            </div>
           </div>
         </div>
 
