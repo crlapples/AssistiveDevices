@@ -16,7 +16,7 @@ export const breadcrumbMData = {
       }
     ]
   },
-  "ShowerSeat": {
+  "Shower-Seat": {
     "@type": "BreadcrumbList",
     itemListElement: [
       {

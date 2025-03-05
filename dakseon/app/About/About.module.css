@@ -42,10 +42,11 @@
   text-align: center;
   border-top: 0.5vh solid black;
   margin-top: 20vw;
+  margin-bottom: -5vh;
 }
 
 .aboutContainer h2 {
-  padding: 5vh;
+  padding: 3vh;
   font-size: 7vh;
   width: 100%;
   height: 25%;
@@ -63,6 +64,8 @@
 .secondh2 {
   background-color: rgb(155, 248, 140);
   color: black;
+  margin-bottom: -5vh;
+  z-index: 1;
 }
 
 .letters1 {
@@ -201,6 +204,10 @@
     .fda {
       width: 20%;
     }
+
+    .lastP {
+      width: 100%;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -223,5 +230,21 @@
     .horizontalOri {
       margin-bottom: 2%;
       justify-content: flex-end;
+    }
+
+    .secondh2 {
+      margin-bottom: -5vh;
+    }
+
+    .letters1 {
+      height: 30vh !important;
+    }
+
+    .letters2 {
+      height: 30vh !important;
+    }
+    
+    .letters3 {
+      height: 30vh !important;
     }
 }

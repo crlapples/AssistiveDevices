@@ -21,7 +21,7 @@ export const productMData = {
       }
     }
   },
-  "ShowerSeat": {
+  "Shower-Seat": {
     "@type": "Product",
     name: "Dakseon Bathroom Safety Seat",
     image: "",

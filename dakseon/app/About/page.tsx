@@ -17,6 +17,21 @@ const About: React.FC = () => {
       <h1>About Dakseon</h1>
       <LetterFromTopAnimation className={styles.letters1} text="At Dakseon, we are committed to providing high-quality mobility and safety products that help individuals live with greater independence and confidence." />
       
+      <div className={styles.aboutRow}>
+        <div className={styles.aboutVer}>
+          <Image src="" alt="" width={512} height={512} />
+          <p></p>
+        </div>
+        <div className={styles.aboutVer}>
+          <Image src="" alt="" width={512} height={512} />
+          <p></p>
+        </div>
+        <div className={styles.aboutVer}>
+          <Image src="" alt="" width={512} height={512} />
+          <p></p>
+        </div>
+      </div>
+
       {/* Image of happy seniors using mobility aids */}
       <div className={styles.imageContainer}>
         <Image 
