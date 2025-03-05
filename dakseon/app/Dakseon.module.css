@@ -131,7 +131,7 @@
 .newP {
   width: 100%;
   height: 20%;
-  text-align: left;
+  text-align: center;
   margin: auto;
   font-size: 3.9vh;
   background-color: rgb(155, 248, 140);
@@ -213,7 +213,6 @@
 
 .pointsRow h2 {
   font-size: 7vh !important;
-  padding-top: 7vh !important;
   text-align: left !important;
 }
 
@@ -641,6 +640,11 @@
       width: 20%;
     }
 
+    .whyChooseUs ul {
+      padding-top: 0 !important;
+      padding-bottom: 10vh !important;
+    }
+
     .whyChooseUs ul li {
       width: 90%;
       margin-left: 7vh;
@@ -689,13 +693,17 @@
       flex-direction: row;
     }
 
+    .pointsRow h2 {
+      padding-top: 7vh !important;
+    }
+
     .pointsRow2 {
       flex-direction: row;
     }
 
     .pointsRow img {
       width: 28%;
-      margin: 5vh;
+      margin: 7vh;
     }
 
     .testimonials {

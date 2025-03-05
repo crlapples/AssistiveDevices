@@ -127,7 +127,7 @@ const ProductPage = ({ params }: ProductPageProps ) => {
 
       {/* FAQs */}
         <div className={styles.faq}>
-          <h2>Frequently Asked Questions</h2>
+          <h2>Frequently<br />Asked<br />Questions</h2>
           <div className={styles.faqVer}>
             <p><strong>{product.q1}</strong></p>
             <p>{product.a1}</p>

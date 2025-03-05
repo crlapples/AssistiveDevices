@@ -19,15 +19,15 @@ const About: React.FC = () => {
       
       <div className={styles.aboutRow}>
         <div className={styles.aboutVer}>
-          <Image src="" alt="" width={512} height={512} />
+          <Image src="/ten-years-icon.png" alt="" width={512} height={512} />
           <p></p>
         </div>
         <div className={styles.aboutVer}>
-          <Image src="" alt="" width={512} height={512} />
+          <Image src="/quality-assurance-icon.png" alt="" width={512} height={512} />
           <p></p>
         </div>
         <div className={styles.aboutVer}>
-          <Image src="" alt="" width={512} height={512} />
+          <Image src="/rocket-launch-line-icon.png" alt="" width={512} height={512} />
           <p></p>
         </div>
       </div>
