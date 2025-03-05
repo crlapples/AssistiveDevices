@@ -411,6 +411,14 @@
         margin-top: 10vh;
     }
 
+    .testimonials {
+      flex-direction: row;
+    }
+
+    .faq {
+      flex-direction: row;
+    }
+
     .footer {
       height: 40%;
     }
