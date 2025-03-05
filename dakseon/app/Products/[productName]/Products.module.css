@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   align-self: flex-start;
   margin-top: 20vw;
   border-top: 0.5vh solid black;
@@ -78,10 +78,11 @@
 
 .hero h1 {
   font-size: 6vh;
-  width: 100%;
+  width: 75%;
   height: 15%;
   padding: 5vh;
   text-align: left;
+  margin-bottom: 10vh !important;
 }
 
 .tagline {
@@ -89,10 +90,8 @@
   width: 100%;
   height: 15%;
   padding: 5vh;
-  text-align: left;
+  text-align: center;
   background-color: #2f7ab6;
-  border-top: 0.5vh solid black;
-  border-bottom: 0.5vh solid black;
 }
 
 .cta {
@@ -106,7 +105,7 @@
 }
 
 .description h2 {
-  width: 100%;
+  width: 79%;
   height: 10%;
   text-align: left;
   font-size: 7vh;
@@ -180,7 +179,7 @@
   width: 100%;
   height: 20%;
   font-size: 6vh;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   padding: 6vh;
 }
@@ -331,11 +330,6 @@
     border-top: solid white;
   }
 
-  .tagline {
-    border-top: solid white;
-    border-bottom: solid white;
-  }
-  
   .buyButton {
     color: white;
     background-color: black;

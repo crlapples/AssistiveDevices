@@ -107,13 +107,15 @@ const Home: React.FC = () => {
             />
           </div>
           <div className={styles.pointsRow}>
-            <h2>Make the Smart Choice with Dakseon</h2>
-            <ul>
-              <li>100% Satisfaction Guarantee</li>
-              <li>Minimal Expenses</li>
-              <li>Designed for Comfort & Safety</li>
-            </ul>
-            <Image src="" alt="" width={} height={} />
+            <div className={styles.pointsRow2}>
+              <h2>Make the Smart Choice with Dakseon</h2>
+              <ul>
+               <li>100% Satisfaction Guarantee</li>
+               <li>Minimal Expenses</li>
+               <li>Designed for Comfort & Safety</li>
+              </ul>
+            </div>
+            <Image src="/image_fx_ (37).jpg" alt="" width={1600} height={900} />
           </div>
         </section>
         <section className={styles.featuredProducts}>

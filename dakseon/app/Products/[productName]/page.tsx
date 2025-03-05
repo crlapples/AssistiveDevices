@@ -126,11 +126,13 @@ const ProductPage = ({ params }: ProductPageProps ) => {
       {/* FAQs */}
         <div className={styles.faq}>
           <h2>Frequently Asked Questions</h2>
-          <p><strong>{product.q1}</strong></p>
-          <p>{product.a1}</p>
+          <div className={styles.faqVer}>
+            <p><strong>{product.q1}</strong></p>
+            <p>{product.a1}</p>
 
-          <p><strong>{product.q2}</strong></p>
-          <p>{product.a2}</p>
+            <p><strong>{product.q2}</strong></p>
+            <p>{product.a2}</p>
+          </div>
         </div>
         <footer className={styles.footer}>
           <div className={styles.verticalOriA}>
