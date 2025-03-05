@@ -155,8 +155,8 @@ const Orders = () => {
               </div>
               <div className={styles.expressCheckoutContainer}>
                 <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-                <Image src="" alt="" width={} height={} className={styles.paypalExpress} />
-                <Image src="" alt="" width={} height={} className={styles.googleExpress} />
+                <Image src="/download.svg" alt="" width={} height={} className={styles.paypalExpress} />
+                <Image src="/buy-buttons-black-small.png" alt="" width={} height={} className={styles.googleExpress} />
               </div>
               <div className={styles.orContainer}>
                 <p>OR</p>
