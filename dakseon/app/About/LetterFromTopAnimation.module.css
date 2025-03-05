@@ -34,7 +34,7 @@
   margin: 0; /* Remove default margin */
   font-size: 3.9vh; /* Adjust text size */
   color: black; /* Text color */
-  text-align: center;
+  text-align: left;
   padding-right: 10vw; /* Ensure text is centered */
   padding-left: 10vw;
   padding-top: 15vw;
