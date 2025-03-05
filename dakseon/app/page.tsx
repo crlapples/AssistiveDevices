@@ -65,24 +65,26 @@ const Home: React.FC = () => {
         <header className={styles.heroSection}>
           <div className={styles.heroVer}>
             <h1>Reliable Mobility & Safety Products</h1>
-            <p>
-              Enhance your independence and safety with Dakseon’s top-quality
-              walker and shower seat.
-            </p>
+            <p className={styles.firstP}>Experience a new level of independence and <span style={{ color: "#2f7ab6" }}>comfort</span> with our walker and shower seat. The walker provides <span style={{ color: "#2f7ab6" }}>stability</span> and freedom with every step, while the shower seat ensures a <span style={{ color: "#2f7ab6" }}>safe</span>, relaxing experience during your daily routine.</p>
+            <p className={styles.secondP}>Move with confidence and enjoy comfort wherever you go.</p>
             <div className={styles.buttonContainer}>
               <Link href="/walker"><button className={styles.shopButton}>Shop Now</button></Link>
             </div>
           </div>
-          <div className={styles.imageContainer1}>
+          <div className={styles.imageContainer2}>
             <Image
-              src="/image_fx_ (9).jpg"
+              src="/image_fx_.jpg"
               alt="First happy senior enjoying mobility support"
               width={1600}
               height={902}
-              className={styles.heroImage1}
+              className={styles.heroImage2}
             />
           </div>
         </header>
+        <p className={styles.newP}>
+          Enhance your independence and safety with Dakseon’s top-quality
+          walker and shower seat.
+        </p>
         <div className={styles.imageContainer1}>
           <Image
             src="/image_fx_ (9).jpg"

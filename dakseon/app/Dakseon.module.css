@@ -46,6 +46,15 @@
   border-top: 0.5vh solid black;
 }
 
+.heroVer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .heroSection h1 {
   font-size: 6.5vh;
   display: inline-block;
@@ -72,7 +81,7 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateX(300%);
+    transform: translateX(-300%);
     opacity: 0;
   }
   100% {
@@ -90,17 +99,34 @@
   }
 }
 
-.imageContainer1 {
+.firstP {
   width: 100%;
-  height: 50%;
+  height: 35%;
+  font-size: 3.9vh;
+  text-align: center;
+  padding: 5vh;
 }
 
-.heroImage1 {
+.secondP {
+  width: 100%;
+  height: 15%;
+  font-size: 2.5vh;
+  text-align: center;
+  padding: 5vh;
+}
+
+.imageContainer2 {
+  width: 100%;
+  height: 50%;
+  padding: 3vh;
+}
+
+.heroImage2 {
   width: 100%;
   height: 100%;
 }
 
-.heroSection p {
+.newP {
   width: 100%;
   height: 20%;
   text-align: center;
@@ -110,6 +136,16 @@
   color: black;
   padding: 5vh;
   margin-top: -0.5vh;
+}
+
+.imageContainer1 {
+  width: 100%;
+  height: 50%;
+}
+
+.heroImage1 {
+  width: 100%;
+  height: 100%;
 }
 
 .buttonContainer {
@@ -507,6 +543,11 @@
 
     .heroSection {
         margin-top: 20vw;
+        flex-direction: column;
+    }
+
+    .imageContainer1 {
+      padding: 0;
     }
 
     .logo {
