@@ -131,7 +131,7 @@
 .newP {
   width: 100%;
   height: 20%;
-  text-align: center;
+  text-align: left;
   margin: auto;
   font-size: 3.9vh;
   background-color: rgb(155, 248, 140);
@@ -198,6 +198,16 @@
 .heroImage2 {
   width: 100%;
   height: 100%;
+}
+
+.pointsRow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -0.5vh;
 }
 
 .whyChooseUs h2 {
@@ -380,6 +390,14 @@
   padding-right: 2vh;
   padding-bottom: 10vh;
   padding-top: 0vh;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
 }
 
 .review {
@@ -612,6 +630,14 @@
 
     .heroSection {
         margin-top: 10vh;
+    }
+
+    .pointsRow {
+      flex-direction: row;
+    }
+
+    .testimonials {
+      flex-direction: row;
     }
 
     .footer {
