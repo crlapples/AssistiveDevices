@@ -39,7 +39,7 @@ const Dropdown: React.FC = () => {
         </div></Link>
         <Link href="/Products/Walker"><div className={styles.horizOri}>
           <p>Walker</p>
-          <Image src="/walker.png" width={512} height={512} alt="" className={styles.icon} />
+          <Image src="/walkerIcon.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
         <Link href="/Products/Shower-Seat"><div className={styles.horizOri}>
           <p>Shower Seat</p>

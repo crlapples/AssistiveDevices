@@ -53,6 +53,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -10vh;
 }
 
 .heroSection h1 {
@@ -61,11 +62,11 @@
   opacity: 0;
   animation: slideIn 2s ease-out forwards;
   animation-delay: 1.5s;
-  height: 20%;
+  height: 25%;
   width: 100%;
   text-align: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   padding-left: 3vh;
   padding-right: 3vh;
 }
@@ -99,29 +100,30 @@
   }
 }
 
-.firstP {
-  width: 100%;
-  height: 35%;
-  font-size: 3.9vh;
-  text-align: center;
-  padding: 5vh;
-}
-
-.secondP {
-  width: 100%;
-  height: 15%;
+.fifthP {
+  width: 90%;
+  height: 25%;
   font-size: 2.5vh;
-  text-align: center;
-  padding: 5vh;
+  text-align: left;
+  padding: 2vh;
 }
 
-.imageContainer2 {
+.sixthP {
+  width: 90%;
+  height: 7%;
+  font-size: 2vh;
+  text-align: left;
+  padding: 2vh;
+}
+
+.imageContainer5 {
   width: 100%;
-  height: 50%;
+  height: 75%;
   padding: 3vh;
+  margin-top: -10vh;
 }
 
-.heroImage2 {
+.heroImage5 {
   width: 100%;
   height: 100%;
 }
@@ -150,8 +152,7 @@
 
 .buttonContainer {
   width: 100%;
-  height: 30%;
-  background-color: rgb(155, 248, 140);
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,6 +187,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -0.5vh;
 }
 
 .imageContainer2 {
@@ -205,8 +207,12 @@
   margin-top: -0.5vh;
   text-align: center;
   background-color: rgb(155, 248, 140);
-  padding: 7vh;
+  padding-left: 7vh;
+  padding-right: 7vh;
+  padding-bottom: 7vh;
+  padding-top: 10vh;
   color: black;
+  margin-bottom: -5vh;
 }
 
 .whyChooseUs ul {
@@ -339,6 +345,14 @@
 .letters1 {
     height: 100vh !important;
     width: 100%;
+}
+
+.tagline2 {
+  width: 100%;
+  font-size: 6vh;
+  text-align: center;
+  padding: 7vh;
+  margin-bottom: -7vh;
 }
 
 .letters2 {
@@ -544,6 +558,25 @@
     .heroSection {
         margin-top: 20vw;
         flex-direction: column;
+    }
+
+    .heroSection h1 {
+      height: 39%;
+    }
+
+    .heroVer {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .shopButton {
+      margin-top: 6vh;
+      margin-bottom: 3vh;
+    }
+
+    .imageContainer5 {
+      padding: 0;
+      margin-top: 0;
     }
 
     .imageContainer1 {

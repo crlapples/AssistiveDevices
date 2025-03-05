@@ -90,6 +90,8 @@
   width: 10vh;
   height: 10vh;
   align-self: center;
+  margin-top: 1vh;
+  filter: brightness(0);
 }
 
 .togetherV {
@@ -256,6 +258,10 @@
 
   .contactForm button {
     color: black;
+  }
+
+  .contactIcon {
+    filter: invert(1);
   }
   
   .footer {
