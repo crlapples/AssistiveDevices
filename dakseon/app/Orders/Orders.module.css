@@ -282,6 +282,10 @@
   height: 90%;
 }
 
+.paypalExPress {
+  background-color: #FFB130;
+}
+
 .orContainer {
   display: flex;
   justify-content: center;
