@@ -39,6 +39,7 @@
   border-top: 0.5vh solid black;
   margin-top: 20vw;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   padding-top: 5vh;
@@ -115,7 +116,7 @@
 }
 
 .letters1 {
-  height: calc(50vh - 10vw) !important;
+  height: calc(65vh - 12vw) !important;
   padding: 3vh !important;
 }
 
@@ -253,6 +254,21 @@
 @media (max-width: 1024px) {
     .topContainer {
         height: 20vw;
+    }
+
+    .firstIcon {
+      padding-top: 8vh;
+      flex-direction: row;
+    }
+
+    .aboutContainer h1 {
+      width: 70%;
+      text-align: left;
+    }
+
+    .firstIcon2 {
+      width: 12vh;
+      height: 12vh;
     }
 
     .aboutRow {

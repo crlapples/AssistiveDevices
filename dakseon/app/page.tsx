@@ -125,14 +125,14 @@ const Home: React.FC = () => {
           </div>
           <div className={styles.seperatorLineB} />
           <div className={styles.productCard}>
-            <Link href="/Products/Walker"><Image src="/Image1.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
+            <Link href="/Products/Walker"><Image src="/walkerWide.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
             <p>Lightweight, foldable support for everyday mobility.</p></Link>
             <Link href="/Products/Walker"><button>View Product</button></Link>
             <div className={styles.seperatorLineA} />
           </div>
           <div className={styles.productCard}>
-            <Link href="/Products/Shower-Seat"><Image src="/Image3.png" width={902} height={1600} alt="Dakseon Shower Safety Seat" />
+            <Link href="/Products/Shower-Seat"><Image src="/seatWide.png" width={902} height={1600} alt="Dakseon Shower Safety Seat" />
             <h3>Dakseon Shower Safety Seat</h3>
             <p>Secure and comfortable shower seating for added safety.</p></Link>
             <Link href="/Products/Shower-Seat"><button>View Product</button></Link>
