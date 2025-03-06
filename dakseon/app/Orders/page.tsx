@@ -75,7 +75,7 @@ const Orders = () => {
   }
 
   useEffect(() => {
-    
+    setTotalPrice(prevPrice + )
   }, [walkerQuantity]);
 
   useEffect(() => {
@@ -92,6 +92,11 @@ const Orders = () => {
       setEntrance(false);
       setIsOnInformation(true);
     }
+  };
+
+  const handleReturnCart = () => {
+    setIsOnInformation(false);
+    setEntrance(true);
   };
 
   return (
@@ -203,7 +208,7 @@ const Orders = () => {
               </div>
               <div className={styles.customerDetailsContainer}>
                 <p className={styles.contactP}>Contact Information</p>
-                <form>
+                <form onSubmit={handleContinueShipping}>
                   <input
                     type="email"
                     value={email}
@@ -303,7 +308,7 @@ const Orders = () => {
                     className={styles.fullInput}
                   />
                   <div className={styles.informationButtons}>
-                    <div className={styles.returnContainer}>
+                    <div className={styles.returnContainer} onClick={handleReturnCart}>
                       <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
                       <p>Return to cart</p>
                     </div>
