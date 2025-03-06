@@ -12,6 +12,9 @@ const Orders = () => {
   const [isOnInformation, setIsOnInformation] = useState<boolean>(false);
   const [addedWalker, setAddedWalker] = useState<boolean>(false);
   const [addedSeat, setAddedSeat] = useState<boolean>(false);
+  const [subtotalPrice, setSubtotalPrice] = useState<string>("0");
+  const [shippingPrice, setShippingPrice] = useState<number>(0);
+  const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [walkerQuantity, setWalkerQuantity] = useState<number>(0);
   const [seatQuantity, setSeatQuantity] = useState<number>(0);
   const [email, setEmail] = useState<string>("");
@@ -26,9 +29,6 @@ const Orders = () => {
   const [stateOrProvince, setStateOrProvince] = useState("");
   const [postal, setPostal] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
-  const [subtotalPrice, setSubtotalPrice] = useState<number>(0);
-  const [shippingPrice, setShippingPrice] = useState<number>(0);
-  const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
   const [fedexPrice, setFedexPrice] = useState<number>(0);
@@ -130,6 +130,16 @@ const Orders = () => {
   const handleDhl = () => {
     setSelectedCarrier("dhl");
     sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleReturnInformation = () => {
+    setIsOnShipping(false);
+    setIsOnInformation(true);
+  };
+
+  const handleContinuePayment = () => {
+    setIsOnShipping(false);
+    setIsOnPayment(true);
   };
 
   return (
@@ -373,21 +383,22 @@ const Orders = () => {
                   <label>Standard</label>
                   <input
                     type="radio"
-                    name="standard"
+                    name="shipping"
+                    defaultChecked
                   />
                 </div>
                 <div className={styles.shippingOptions}>
                   <label>Priority</label>
                   <input
                     type="radio"
-                    name="priority"
+                    name="shipping"
                   />
                 </div>
                 <div className={styles.shippingOptions}>
                   <label>Overnight</label>
                   <input
                     type="radio"
-                    name="overnight"
+                    name="shipping"
                   />
                 </div>
                 <div className={styles.shippingCarriersContainer}>
@@ -416,10 +427,12 @@ const Orders = () => {
                 placeholder="Special delivery instructions (optional)"
                 className={styles.notes}
               />
-              <div className={styles.shippingButtons}>\
-                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
-                <p>Return to information</p>
-                <button className={styles.continueToPayment}>Continue to payment</button>
+              <div className={styles.shippingButtons}>
+                <div className={styles.returnContainer} onClick={handleReturnInformation}>
+                  <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                  <p>Return to information</p>
+                </div>
+                <button className={styles.continueToPayment} onClick={handleContinuePayment}>Continue to payment</button>
               </div>
             </div>
           </div>
