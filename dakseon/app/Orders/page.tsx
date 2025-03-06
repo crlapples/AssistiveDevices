@@ -31,6 +31,13 @@ const Orders = () => {
   const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
+  const [fedexPrice, setFedexPrice] = useState<number>(0);
+  const [fedexTime, setFedexTime] = useState<string>(0);
+  const [upsPrice, setUpsPrice] = useState<number>(0);
+  const [upsTime, setUpsTime] = useState<string>(0);
+  const [dhlPrice, setDhlPrice] = useState<number>(0);
+  const [dhlTime, setDhlTime] = useState<string>(0);
+  const [selectedCarrier, setSelectedCarrier] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
   const [bEmail, setBEmail] = useState<string>("");
@@ -53,6 +60,7 @@ const Orders = () => {
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
+  const shippingPrices = { }
   
   window.onload = function() {
     if (sessionStorage.getItem('entrance') === null) {
@@ -61,6 +69,10 @@ const Orders = () => {
       setEntrance(false);
     }
   };
+
+  useEffect(() => {
+    setTotalPrice(prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity)
+  }, [walkerQuantity, seatQuantity, prices]);
 
   if (sessionStorage.getItem('walkerYes') === 'true') {
     setNoItems(false);
@@ -73,15 +85,7 @@ const Orders = () => {
     setAddedSeat(true);
     setSeatQuantity(1);
   }
-
-  useEffect(() => {
-    setTotalPrice(prevPrice + )
-  }, [walkerQuantity]);
-
-  useEffect(() => {
-    
-  }, [seatQuantity]);
-
+  
   const handleContinue = () => {
     if (walkerQuantity === 0 && seatQuantity === 0) {
       setEntrance(true);
@@ -94,9 +98,26 @@ const Orders = () => {
     }
   };
 
+  const handlePaypal = () => {
+    
+  };
+
+  const handleGoogle = () => {
+    
+  };
+
   const handleReturnCart = () => {
     setIsOnInformation(false);
     setEntrance(true);
+  };
+
+  const handleContinueShipping = () => {
+    setIsOnInformation(false);
+    setIsOnShipping(true);
+  };
+
+  const handleFedex = () => {
+    setSelectedCarrier("fedex");
   };
 
   return (
@@ -140,6 +161,7 @@ const Orders = () => {
                           <p>-</p>
                           <input
                             type="number"
+                            min="0"
                             value={walkerQuantity}
                             onChange={(e) => setWalkerQuantity(parseInt(e.target.value, 10) || 0)}
                           />
@@ -166,6 +188,7 @@ const Orders = () => {
                           <p>-</p>
                           <input
                             type="number"
+                            min="0"
                             value={seatQuantity}
                             onChange={(e) => setSeatQuantity(parseInt(e.target.value, 10) || 0)}
                           />
@@ -312,7 +335,7 @@ const Orders = () => {
                       <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
                       <p>Return to cart</p>
                     </div>
-                    <button className={styles.continueToShipping}>Continue to shipping</button>
+                    <button type="submit" className={styles.continueToShipping}>Continue to shipping</button>
                   </div>
                 </form>
               </div>
@@ -356,17 +379,17 @@ const Orders = () => {
                   />
                 </div>
                 <div className={styles.shippingCarriersContainer}>
-                  <div className={styles.fedexContainer}>
+                  <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/fedex-seeklogo.png" alt="" width={} height={} />
                   </div>
-                  <div className={styles.upsContainer}>
+                  <div className={styles.upsContainer} onClick={handleUps}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={} height={} />
                   </div>
-                  <div className={styles.dhlContainer}>
+                  <div className={styles.dhlContainer} onClick={handleDhl}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/dhl-1.svg" alt="" width={} height={} />
