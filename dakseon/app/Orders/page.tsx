@@ -32,11 +32,11 @@ const Orders = () => {
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
   const [fedexPrice, setFedexPrice] = useState<number>(0);
-  const [fedexTime, setFedexTime] = useState<string>(0);
+  const [fedexTime, setFedexTime] = useState<string>("");
   const [upsPrice, setUpsPrice] = useState<number>(0);
-  const [upsTime, setUpsTime] = useState<string>(0);
+  const [upsTime, setUpsTime] = useState<string>("");
   const [dhlPrice, setDhlPrice] = useState<number>(0);
-  const [dhlTime, setDhlTime] = useState<string>(0);
+  const [dhlTime, setDhlTime] = useState<string>("");
   const [selectedCarrier, setSelectedCarrier] = useState<string>("");
   const [selectedTrue, setSelectedTrue] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
@@ -62,32 +62,40 @@ const Orders = () => {
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
-  const shippingPrices = { }
+  const shippingPrices = { };
   
-  window.onload = function() {
-    if (sessionStorage.getItem('entrance') === null) {
-      sessionStorage.setItem('entrance', 'false');
-    } else {
-      setEntrance(false);
-    }
-  };
+  if (typeof window !== "undefined") {
+    let a = true;
+    window.onload = function() {
+      if (sessionStorage.getItem('entrance') === null) {
+        sessionStorage.setItem('entrance', 'false');
+      } else {
+        setEntrance(false);
+      }
+    };
+  }
 
   useEffect(() => {
-    setSubtotalPrice(prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
-    setTotalPrice(subtotalPrice + shippingPrice + salesTaxPrice);
+    if (sessionStorage.getItem('walkerYes') === 'true') {
+      setNoItems(false);
+      setAddedWalker(true);
+      setWalkerQuantity(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('seatYes') === 'true') {
+      setNoItems(false);
+      setAddedSeat(true);
+      setSeatQuantity(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
+    setSubtotalPrice(newSubtotal.toString());
+    setTotalPrice(newSubtotal + shippingPrice + salesTaxPrice);
   }, [walkerQuantity, seatQuantity, prices, subtotalPrice, shippingPrice, salesTaxPrice]);
-
-  if (sessionStorage.getItem('walkerYes') === 'true') {
-    setNoItems(false);
-    setAddedWalker(true);
-    setWalkerQuantity(1);
-  }
-
-  if (sessionStorage.getItem('seatYes') === 'true' {
-    setNoItems(false);
-    setAddedSeat(true);
-    setSeatQuantity(1);
-  }
   
   const handleContinue = () => {
     if (walkerQuantity === 0 && seatQuantity === 0) {
@@ -158,8 +166,10 @@ const Orders = () => {
     }
   };
 
+  const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
+
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContainer} style={{ justifyContent: entrance ? 'center' : 'space-between' }}>
       <div className={styles.topContainer}>
         <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
         <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
@@ -175,11 +185,11 @@ const Orders = () => {
               <>
                 <div className={styles.flowContainer2}>
                   <p><strong>Cart</strong></p>
-                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Information</p>
-                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Shipping</p>
-                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Payment</p>
                 </div>
                 {addedWalker && (
@@ -188,13 +198,11 @@ const Orders = () => {
                       <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
                       <div className={styles.entranceVer}>
                         <p className={styles.entranceItemBrand}>Dakseon</p>
-                        <p className={styles.entranceName}></p>
-                        <p className={styles.entranceTaglineDesc}></p>
-                        <p className={styles.entranceItemSKU}></p>
-                        <p className={styles.entranceItemSpecs}></p>
+                        <p className={styles.entranceName}>Walker</p>
+                        <p className={styles.entranceItemSKU}>ABC123</p>
                       </div>
                       <div className={styles.entranceVer2}>
-                        <p className={styles.entranceItemPrice}></p>
+                        <p className={styles.entranceItemPrice}>$100.00</p>
                         <div className={styles.entranceHoriz2}>
                           <p>-</p>
                           <input
@@ -252,17 +260,17 @@ const Orders = () => {
             <div className={styles.infoContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Information</strong></p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Shipping</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Payment</p>
               </div>
               <div className={styles.expressCheckoutContainer}>
                 <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-                <Image src="/download.svg" alt="" width={} height={} className={styles.paypalExpress} />
-                <Image src="/buy-buttons-black-small.png" alt="" width={} height={} className={styles.googleExpress} />
+                <Image src="/download.svg" alt="" width={568} height={300} className={styles.paypalExpress} />
+                <Image src="/buy-buttons-black-small.png" alt="" width={568} height={300} className={styles.googleExpress} />
               </div>
               <div className={styles.orContainer}>
                 <p>OR</p>
@@ -370,7 +378,7 @@ const Orders = () => {
                   />
                   <div className={styles.informationButtons}>
                     <div className={styles.returnContainer} onClick={handleReturnCart}>
-                      <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                      <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
                       <p>Return to cart</p>
                     </div>
                     <button type="submit" className={styles.continueToShipping}>Continue to shipping</button>
@@ -387,11 +395,11 @@ const Orders = () => {
             <div className={styles.shippingContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Information</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Shipping</strong></p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Payment</p>
               </div>
               <div className={styles.shippingOptionsContainer}>
@@ -421,17 +429,17 @@ const Orders = () => {
                   <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/fedex-seeklogo.png" alt="" width={} height={} />
+                    <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} />
                   </div>
                   <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={} height={} />
+                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={512} height={512} />
                   </div>
                   <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/dhl-1.svg" alt="" width={} height={} />
+                    <Image src="/dhl-1.svg" alt="" width={512} height={512} />
                   </div>
                 </div>
               </div>
@@ -445,7 +453,7 @@ const Orders = () => {
               />
               <div className={styles.shippingButtons}>
                 <div className={styles.returnContainer} onClick={handleReturnInformation}>
-                  <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
                   <p>Return to information</p>
                 </div>
                 <button className={styles.continueToPayment} onClick={handleContinuePayment}>Continue to payment</button>
@@ -460,11 +468,11 @@ const Orders = () => {
             <div className={styles.paymentContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Information</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Shipping</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Payment</strong></p>
               </div>
               <p className={styles.billingP}>Billing Information</p>
@@ -538,10 +546,10 @@ const Orders = () => {
                   />
                 </div>
                 <div className={styles.cardBrands}>
-                  <Image src="" alt="" width={} height={} />
-                  <Image src="" alt="" width={} height={} />
-                  <Image src="" alt="" width={} height={} />
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
                 </div>
                 <div className={styles.cardInfoContainer}>
                   <input
@@ -580,7 +588,7 @@ const Orders = () => {
                 </div>
                 <div className={styles.paymentButtons}>\
                   <div className={styles.returnContainer} onClick={handleReturnShipping}>
-                    <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                    <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
                     <p>Return to shipping</p>
                   </div>
                   <button type="submit" className={styles.orderButton}>Order</button>
@@ -622,7 +630,7 @@ const Orders = () => {
               <div className={styles.afterSubAndShipCostContainer}>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Subtotal</p>
-                  <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                  <p className={styles.afterSubtotalPrice}>{newSubtotal.toFixed(2)}</p>
                 </div>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Shipping</p>
@@ -651,7 +659,7 @@ const Orders = () => {
         <div className={styles.orderConfirmationContainer}>
           <div className={styles.orderConfirmationContainer2}>
             <div className={styles.orderConfirmedMsg}>
-              <Image src="/success-green-check-mark-icon.png" alt="" width={} height={} />
+              <Image src="/success-green-check-mark-icon.png" alt="" width={512} height={512} />
               <h2>Thank you for your order!</h2>
               <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
             </div>
