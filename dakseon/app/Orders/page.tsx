@@ -72,8 +72,9 @@ const Orders = () => {
   };
 
   useEffect(() => {
-    setTotalPrice(prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity)
-  }, [walkerQuantity, seatQuantity, prices]);
+    setSubtotalPrice(prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
+    setTotalPrice(subtotalPrice + shippingPrice + salesTaxPrice);
+  }, [walkerQuantity, seatQuantity, prices, subtotalPrice, shippingPrice, salesTaxPrice]);
 
   if (sessionStorage.getItem('walkerYes') === 'true') {
     setNoItems(false);
