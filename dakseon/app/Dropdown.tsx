@@ -53,6 +53,10 @@ const Dropdown: React.FC = () => {
           <p>Contact Us</p>
           <Image src="/landline-line-icon.png" width={512} height={512} alt="" className={styles.icon} />
         </div></Link>
+        <Link href="/Orders"><div className={styles.horizOri}>
+          <p>Orders</p>
+          <Image src="/purchase-order-icon.png" width={512} height={512} alt="" className={styles.icon} />
+        </div></Link>
       </div>
     </div>
   );

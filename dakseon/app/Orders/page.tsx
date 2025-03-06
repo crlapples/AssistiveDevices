@@ -54,6 +54,8 @@ const Orders = () => {
 
   const prices = { "walker": 100, "seat": 50 };
   
+  
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.topContainer}>
