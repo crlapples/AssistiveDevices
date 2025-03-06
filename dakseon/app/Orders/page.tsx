@@ -53,7 +53,7 @@ const Orders = () => {
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
-  
+
   
 
   return (
