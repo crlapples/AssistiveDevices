@@ -7,7 +7,7 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 
 const Orders = () => {
-  const [noItems, setNoItems] = useState<boolean>(false);
+  const [noItems, setNoItems] = useState<boolean>(true);
   const [entrance, setEntrance] = useState<boolean>(true);
   const [isOnInformation, setIsOnInformation] = useState<boolean>(false);
   const [addedWalker, setAddedWalker] = useState<boolean>(false);
@@ -54,7 +54,45 @@ const Orders = () => {
 
   const prices = { "walker": 100, "seat": 50 };
   
-  
+  window.onload = function() {
+    if (sessionStorage.getItem('entrance') === null) {
+      sessionStorage.setItem('entrance', 'false');
+    } else {
+      setEntrance(false);
+    }
+  };
+
+  if (sessionStorage.getItem('walkerYes') === 'true') {
+    setNoItems(false);
+    setAddedWalker(true);
+    setWalkerQuantity(1);
+  }
+
+  if (sessionStorage.getItem('seatYes') === 'true' {
+    setNoItems(false);
+    setAddedSeat(true);
+    setSeatQuantity(1);
+  }
+
+  useEffect(() => {
+    
+  }, [walkerQuantity]);
+
+  useEffect(() => {
+    
+  }, [seatQuantity]);
+
+  const handleContinue = () => {
+    if (walkerQuantity === 0 && seatQuantity === 0) {
+      setEntrance(true);
+      setNoItems(true);
+      setAddedWalker(false);
+      setAddedSeat(false);
+    } else {
+      setEntrance(false);
+      setIsOnInformation(true);
+    }
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -73,11 +111,11 @@ const Orders = () => {
               <>
                 <div className={styles.flowContainer2}>
                   <p><strong>Cart</strong></p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                   <p>Information</p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                   <p>Shipping</p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
                   <p>Payment</p>
                 </div>
                 {addedWalker && (
@@ -136,7 +174,7 @@ const Orders = () => {
                   <p className={styles.entrancePriceType}>Total</p>
                   <p className={styles.entranceTotalPrice}>{totalPrice.toFixed(2)}</p>
                 </div>
-                <button className={styles.continueToInfo}>Continue</button>
+                <button className={styles.continueToInfo} onClick={handleContinue}>Continue</button>
               </>
             )}
           </div>
