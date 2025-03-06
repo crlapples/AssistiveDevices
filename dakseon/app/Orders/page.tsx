@@ -246,7 +246,7 @@ const Orders = () => {
                 )}
                 <div className={styles.entranceTotalPriceContainer}>
                   <p className={styles.entrancePriceType}>Total</p>
-                  <p className={styles.entranceTotalPrice}>{totalPrice.toFixed(2)}</p>
+                  <p className={styles.entranceTotalPrice}>{`$${totalPrice.toFixed(2)}`}</p>
                 </div>
                 <button className={styles.continueToInfo} onClick={handleContinue}>Continue</button>
               </>
