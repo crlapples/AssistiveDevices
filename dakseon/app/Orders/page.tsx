@@ -38,6 +38,7 @@ const Orders = () => {
   const [dhlPrice, setDhlPrice] = useState<number>(0);
   const [dhlTime, setDhlTime] = useState<string>(0);
   const [selectedCarrier, setSelectedCarrier] = useState<string>("");
+  const [selectedTrue, setSelectedTrue] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
   const [bEmail, setBEmail] = useState<string>("");
@@ -118,6 +119,17 @@ const Orders = () => {
 
   const handleFedex = () => {
     setSelectedCarrier("fedex");
+    sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleUps = () => {
+    setSelectedCarrier("ups");
+    sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleDhl = () => {
+    setSelectedCarrier("dhl");
+    sessionStorage.setItem("selectedTrue", "true");
   };
 
   return (
@@ -379,17 +391,17 @@ const Orders = () => {
                   />
                 </div>
                 <div className={styles.shippingCarriersContainer}>
-                  <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#" : "none" }}>
+                  <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/fedex-seeklogo.png" alt="" width={} height={} />
                   </div>
-                  <div className={styles.upsContainer} onClick={handleUps}>
+                  <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={} height={} />
                   </div>
-                  <div className={styles.dhlContainer} onClick={handleDhl}>
+                  <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
                     <Image src="/dhl-1.svg" alt="" width={} height={} />
