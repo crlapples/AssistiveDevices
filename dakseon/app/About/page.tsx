@@ -14,21 +14,24 @@ const About: React.FC = () => {
         <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
         <Dropdown />
       </div>
+      <div className={styles.firstIcon}>
+        <Image src="/medicine-wellness-icon.png" alt="" width={512} height={512} className={styles.firstIcon2} />
+      </div>
       <h1>About Dakseon</h1>
       <LetterFromTopAnimation className={styles.letters1} text="At Dakseon, we are committed to providing high-quality mobility and safety products that help individuals live with greater independence and confidence." />
       
       <div className={styles.aboutRow}>
         <div className={styles.aboutVer}>
-          <Image src="/ten-years-icon.png" alt="" width={512} height={512} />
-          <p></p>
+          <Image src="/ten-years-icon.png" alt="" width={512} height={512} className={styles.secondIcon} />
+          <p>Celebrating 10 years of excellence in medical equipment, delivering trusted solutions and unparalleled customer satisfaction.</p>
         </div>
         <div className={styles.aboutVer}>
-          <Image src="/quality-assurance-icon.png" alt="" width={512} height={512} />
-          <p></p>
+          <Image src="/quality-assurance-icon.png" alt="" width={512} height={512} className={styles.thirdIcon} />
+          <p>Committed to quality assurance, delivering reliable and durable mobility aids for enhanced safety and comfort.</p>
         </div>
         <div className={styles.aboutVer}>
-          <Image src="/rocket-launch-line-icon.png" alt="" width={512} height={512} />
-          <p></p>
+          <Image src="/rocket-launch-line-icon.png" alt="" width={512} height={512} className={styles.thirdIcon} />
+          <p>Our mission is to provide high-quality, reliable mobility aids and healthcare solutions, ensuring safety, comfort, and independence for every customer.</p>
         </div>
       </div>
 
