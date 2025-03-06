@@ -7,11 +7,14 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 
 const Orders = () => {
-  const [noItems, setNoItems] = useState<boolean>(false);
+  const [noItems, setNoItems] = useState<boolean>(true);
   const [entrance, setEntrance] = useState<boolean>(true);
   const [isOnInformation, setIsOnInformation] = useState<boolean>(false);
   const [addedWalker, setAddedWalker] = useState<boolean>(false);
   const [addedSeat, setAddedSeat] = useState<boolean>(false);
+  const [subtotalPrice, setSubtotalPrice] = useState<string>("0");
+  const [shippingPrice, setShippingPrice] = useState<number>(0);
+  const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [walkerQuantity, setWalkerQuantity] = useState<number>(0);
   const [seatQuantity, setSeatQuantity] = useState<number>(0);
   const [email, setEmail] = useState<string>("");
@@ -26,11 +29,16 @@ const Orders = () => {
   const [stateOrProvince, setStateOrProvince] = useState("");
   const [postal, setPostal] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
-  const [subtotalPrice, setSubtotalPrice] = useState<number>(0);
-  const [shippingPrice, setShippingPrice] = useState<number>(0);
-  const [salesTaxPrice, setSalesTaxPrice] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isOnShipping, setIsOnShipping] = useState<boolean>(false);
+  const [fedexPrice, setFedexPrice] = useState<number>(0);
+  const [fedexTime, setFedexTime] = useState<string>("");
+  const [upsPrice, setUpsPrice] = useState<number>(0);
+  const [upsTime, setUpsTime] = useState<string>("");
+  const [dhlPrice, setDhlPrice] = useState<number>(0);
+  const [dhlTime, setDhlTime] = useState<string>("");
+  const [selectedCarrier, setSelectedCarrier] = useState<string>("");
+  const [selectedTrue, setSelectedTrue] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
   const [bEmail, setBEmail] = useState<string>("");
@@ -46,6 +54,7 @@ const Orders = () => {
   const [cardNumber, setCardNumber] = useState<string>("");
   const [cardExp, setCardExp] = useState<string>("");
   const [cardCVV, setCardCVV] = useState<string>("");
+  const [paymentCleared, setPaymentCleared] = useState<boolean>(false);
   const [isOrderConfirmed, setIsOrderConfirmed] = useState<boolean>(false);
   const [orderId, setOrderId] = useState<string>("");
   const [invoiceItem1, setInvoiceItem1] = useState<string>("");
@@ -53,11 +62,114 @@ const Orders = () => {
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
 
   const prices = { "walker": 100, "seat": 50 };
-
+  const shippingPrices = { };
   
+  if (typeof window !== "undefined") {
+    let a = true;
+    window.onload = function() {
+      if (sessionStorage.getItem('entrance') === null) {
+        sessionStorage.setItem('entrance', 'false');
+      } else {
+        setEntrance(false);
+      }
+    };
+  }
+
+  useEffect(() => {
+    if (sessionStorage.getItem('walkerYes') === 'true') {
+      setNoItems(false);
+      setAddedWalker(true);
+      setWalkerQuantity(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('seatYes') === 'true') {
+      setNoItems(false);
+      setAddedSeat(true);
+      setSeatQuantity(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
+    setSubtotalPrice(newSubtotal.toString());
+    setTotalPrice(newSubtotal + shippingPrice + salesTaxPrice);
+  }, [walkerQuantity, seatQuantity, prices, subtotalPrice, shippingPrice, salesTaxPrice]);
+  
+  const handleContinue = () => {
+    if (walkerQuantity === 0 && seatQuantity === 0) {
+      setEntrance(true);
+      setNoItems(true);
+      setAddedWalker(false);
+      setAddedSeat(false);
+    } else {
+      setEntrance(false);
+      setIsOnInformation(true);
+    }
+  };
+
+  const handlePaypal = () => {
+    
+  };
+
+  const handleGoogle = () => {
+    
+  };
+
+  const handleReturnCart = () => {
+    setIsOnInformation(false);
+    setEntrance(true);
+  };
+
+  const handleContinueShipping = () => {
+    setIsOnInformation(false);
+    setIsOnShipping(true);
+  };
+
+  const handleFedex = () => {
+    setSelectedCarrier("fedex");
+    sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleUps = () => {
+    setSelectedCarrier("ups");
+    sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleDhl = () => {
+    setSelectedCarrier("dhl");
+    sessionStorage.setItem("selectedTrue", "true");
+  };
+
+  const handleReturnInformation = () => {
+    setIsOnShipping(false);
+    setIsOnInformation(true);
+  };
+
+  const handleContinuePayment = () => {
+    setIsOnShipping(false);
+    setIsOnPayment(true);
+  };
+
+  const handleReturnShipping = () => {
+    setIsOnPayment(false);
+    setIsOnShipping(true);
+  };
+
+  const handlePayment = () => {
+
+    
+    if (paymentCleared === true) {
+      setIsOrderConfirmed(true);
+      setIsOnPayment(false);
+    }
+  };
+
+  const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContainer} style={{ justifyContent: entrance ? 'center' : 'space-between' }}>
       <div className={styles.topContainer}>
         <Image src="/logo.png" alt="Dakseon Logo" width={512} height={512} className={styles.logo} />
         <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
@@ -73,11 +185,11 @@ const Orders = () => {
               <>
                 <div className={styles.flowContainer2}>
                   <p><strong>Cart</strong></p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Information</p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Shipping</p>
-                  <Image src="" alt="" width={} height={} />
+                  <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                   <p>Payment</p>
                 </div>
                 {addedWalker && (
@@ -86,17 +198,16 @@ const Orders = () => {
                       <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
                       <div className={styles.entranceVer}>
                         <p className={styles.entranceItemBrand}>Dakseon</p>
-                        <p className={styles.entranceName}></p>
-                        <p className={styles.entranceTaglineDesc}></p>
-                        <p className={styles.entranceItemSKU}></p>
-                        <p className={styles.entranceItemSpecs}></p>
+                        <p className={styles.entranceName}>Walker</p>
+                        <p className={styles.entranceItemSKU}>ABC123</p>
                       </div>
                       <div className={styles.entranceVer2}>
-                        <p className={styles.entranceItemPrice}></p>
+                        <p className={styles.entranceItemPrice}>$100.00</p>
                         <div className={styles.entranceHoriz2}>
                           <p>-</p>
                           <input
                             type="number"
+                            min="0"
                             value={walkerQuantity}
                             onChange={(e) => setWalkerQuantity(parseInt(e.target.value, 10) || 0)}
                           />
@@ -123,6 +234,7 @@ const Orders = () => {
                           <p>-</p>
                           <input
                             type="number"
+                            min="0"
                             value={seatQuantity}
                             onChange={(e) => setSeatQuantity(parseInt(e.target.value, 10) || 0)}
                           />
@@ -136,7 +248,7 @@ const Orders = () => {
                   <p className={styles.entrancePriceType}>Total</p>
                   <p className={styles.entranceTotalPrice}>{totalPrice.toFixed(2)}</p>
                 </div>
-                <button className={styles.continueToInfo}>Continue</button>
+                <button className={styles.continueToInfo} onClick={handleContinue}>Continue</button>
               </>
             )}
           </div>
@@ -148,24 +260,24 @@ const Orders = () => {
             <div className={styles.infoContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Information</strong></p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Shipping</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Payment</p>
               </div>
               <div className={styles.expressCheckoutContainer}>
                 <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-                <Image src="/download.svg" alt="" width={} height={} className={styles.paypalExpress} />
-                <Image src="/buy-buttons-black-small.png" alt="" width={} height={} className={styles.googleExpress} />
+                <Image src="/download.svg" alt="" width={568} height={300} className={styles.paypalExpress} />
+                <Image src="/buy-buttons-black-small.png" alt="" width={568} height={300} className={styles.googleExpress} />
               </div>
               <div className={styles.orContainer}>
                 <p>OR</p>
               </div>
               <div className={styles.customerDetailsContainer}>
                 <p className={styles.contactP}>Contact Information</p>
-                <form>
+                <form onSubmit={handleContinueShipping}>
                   <input
                     type="email"
                     value={email}
@@ -265,11 +377,11 @@ const Orders = () => {
                     className={styles.fullInput}
                   />
                   <div className={styles.informationButtons}>
-                    <div className={styles.returnContainer}>
-                      <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                    <div className={styles.returnContainer} onClick={handleReturnCart}>
+                      <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
                       <p>Return to cart</p>
                     </div>
-                    <button className={styles.continueToShipping}>Continue to shipping</button>
+                    <button type="submit" className={styles.continueToShipping}>Continue to shipping</button>
                   </div>
                 </form>
               </div>
@@ -283,11 +395,11 @@ const Orders = () => {
             <div className={styles.shippingContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Information</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Shipping</strong></p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Payment</p>
               </div>
               <div className={styles.shippingOptionsContainer}>
@@ -295,38 +407,39 @@ const Orders = () => {
                   <label>Standard</label>
                   <input
                     type="radio"
-                    name="standard"
+                    name="shipping"
+                    defaultChecked
                   />
                 </div>
                 <div className={styles.shippingOptions}>
                   <label>Priority</label>
                   <input
                     type="radio"
-                    name="priority"
+                    name="shipping"
                   />
                 </div>
                 <div className={styles.shippingOptions}>
                   <label>Overnight</label>
                   <input
                     type="radio"
-                    name="overnight"
+                    name="shipping"
                   />
                 </div>
                 <div className={styles.shippingCarriersContainer}>
-                  <div className={styles.fedexContainer}>
+                  <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/fedex-seeklogo.png" alt="" width={} height={} />
+                    <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} />
                   </div>
-                  <div className={styles.upsContainer}>
+                  <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={} height={} />
+                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={512} height={512} />
                   </div>
-                  <div className={styles.dhlContainer}>
+                  <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
                     <p className={styles.deliveryTime}></p>
                     <p className={styles.deliveryCost}></p>
-                    <Image src="/dhl-1.svg" alt="" width={} height={} />
+                    <Image src="/dhl-1.svg" alt="" width={512} height={512} />
                   </div>
                 </div>
               </div>
@@ -338,10 +451,12 @@ const Orders = () => {
                 placeholder="Special delivery instructions (optional)"
                 className={styles.notes}
               />
-              <div className={styles.shippingButtons}>\
-                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
-                <p>Return to information</p>
-                <button className={styles.continueToPayment}>Continue to payment</button>
+              <div className={styles.shippingButtons}>
+                <div className={styles.returnContainer} onClick={handleReturnInformation}>
+                  <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
+                  <p>Return to information</p>
+                </div>
+                <button className={styles.continueToPayment} onClick={handleContinuePayment}>Continue to payment</button>
               </div>
             </div>
           </div>
@@ -353,128 +468,132 @@ const Orders = () => {
             <div className={styles.paymentContainer2}>
               <div className={styles.flowContainer}>
                 <p>Cart</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Information</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Shipping</p>
-                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={} height={} />
+                <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p><strong>Payment</strong></p>
               </div>
               <p className={styles.billingP}>Billing Information</p>
-              <input
-                type="email"
-                value={bEmail}
-                onChange={(e) => setBEmail(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Email"
-              />
-              <input
-                type="email"
-                value={bMatchEmail}
-                onChange={(e) => setBMatchEmail(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Confirm email"
-              />
-              <input
-                type="text"
-                value={bFullName}
-                onChange={(e) => setBFullName(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Full name"
-              />
-              <input
-                type="text"
-                value={bCountry}
-                onChange={(e) => setBCountry(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Country/region"
-              />
-              <input
-                type="text"
-                value={bStreetAddress}
-                onChange={(e) => setBStreetAddress(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Street address"
-              />
-              <input
-                type="text"
-                value={bApartment}
-                onChange={(e) => setBApartment(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Apartment, suite, etc. (optional)"
-              />
-              <div className={styles.paymentHoriz}>
+              <form onSubmit={handlePayment}>
                 <input
-                  type="text"
-                  value={bCity}
-                  onChange={(e) => setBCity(e.target.value)}
-                  required
-                  placeholder="City"
+                  type="email"
+                  value={bEmail}
+                  onChange={(e) => setBEmail(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Email"
+                />
+                <input
+                  type="email"
+                  value={bMatchEmail}
+                  onChange={(e) => setBMatchEmail(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Confirm email"
                 />
                 <input
                   type="text"
-                  value={bStateOrProvince}
-                  onChange={(e) => setBStateOrProvince(e.target.value)}
+                  value={bFullName}
+                  onChange={(e) => setBFullName(e.target.value)}
                   required
-                  placeholder="State/province"
+                  className={styles.bFullInput}
+                  placeholder="Full name"
                 />
                 <input
                   type="text"
-                  value={bPostal}
-                  onChange={(e) => setBPostal(e.target.value)}
+                  value={bCountry}
+                  onChange={(e) => setBCountry(e.target.value)}
                   required
-                  placeholder="Postal code"
-                />
-              </div>
-              <div className={styles.cardBrands}>
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-              </div>
-              <div className={styles.cardInfoContainer}>
-                <input
-                  type="text"
-                  value={cardName}
-                  onChange={(e) => setCardName(e.target.value)}
-                  placeholder="Name on card"
-                  className={styles.cardFullInput}
-                  required
+                  className={styles.bFullInput}
+                  placeholder="Country/region"
                 />
                 <input
                   type="text"
-                  value={cardNumber}
-                  onChange={(e) => setCardNumber(e.target.value)}
-                  placeholder="Card number"
-                  className={styles.cardFullInput}
+                  value={bStreetAddress}
+                  onChange={(e) => setBStreetAddress(e.target.value)}
                   required
+                  className={styles.bFullInput}
+                  placeholder="Street address"
                 />
-                <div className={styles.cardHoriz}>
+                <input
+                  type="text"
+                  value={bApartment}
+                  onChange={(e) => setBApartment(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Apartment, suite, etc. (optional)"
+                />
+                <div className={styles.paymentHoriz}>
                   <input
                     type="text"
-                    value={cardExp}
-                    onChange={(e) => setCardExp(e.target.value)}
-                    placeholder="MM/YY"
-                    pattern="\d{2}/\d{2}"
+                    value={bCity}
+                    onChange={(e) => setBCity(e.target.value)}
                     required
+                    placeholder="City"
                   />
                   <input
                     type="text"
-                    value={cardCVV}
-                    onChange={(e) => setCardCVV(e.target.value)}
-                    placeholder="CVV"
+                    value={bStateOrProvince}
+                    onChange={(e) => setBStateOrProvince(e.target.value)}
                     required
+                    placeholder="State/province"
+                  />
+                  <input
+                    type="text"
+                    value={bPostal}
+                    onChange={(e) => setBPostal(e.target.value)}
+                    required
+                    placeholder="Postal code"
                   />
                 </div>
-              </div>
-              <div className={styles.paymentButtons}>\
-                <Image src="" alt="" width={} height={} />
-                <p>Return to shipping</p>
-                <button className={styles.orderButton}>Order</button>
-              </div>
+                <div className={styles.cardBrands}>
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
+                  <Image src="" alt="" width={400} height={300} />
+                </div>
+                <div className={styles.cardInfoContainer}>
+                  <input
+                    type="text"
+                    value={cardName}
+                    onChange={(e) => setCardName(e.target.value)}
+                    placeholder="Name on card"
+                    className={styles.cardFullInput}
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                    placeholder="Card number"
+                    className={styles.cardFullInput}
+                    required
+                  />
+                  <div className={styles.cardHoriz}>
+                    <input
+                      type="text"
+                      value={cardExp}
+                      onChange={(e) => setCardExp(e.target.value)}
+                      placeholder="MM/YY"
+                      pattern="\d{2}/\d{2}"
+                      required
+                    />
+                    <input
+                      type="text"
+                      value={cardCVV}
+                      onChange={(e) => setCardCVV(e.target.value)}
+                      placeholder="CVV"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className={styles.paymentButtons}>\
+                  <div className={styles.returnContainer} onClick={handleReturnShipping}>
+                    <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
+                    <p>Return to shipping</p>
+                  </div>
+                  <button type="submit" className={styles.orderButton}>Order</button>
+                </div>
+              </form>
             </div>
           </div>
         </>
@@ -484,7 +603,7 @@ const Orders = () => {
           <div className={styles.itemsContainer2}>
             {addedWalker && (
               <div className={styles.itemHoriz}>
-                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={902} height={1600} className={styles.itemImage} />
+                <Image src="/walkerWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
@@ -496,7 +615,7 @@ const Orders = () => {
             )}
             {addedSeat && (
               <div className={styles.itemHoriz}>
-                <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
+                <Image src="/seatWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
@@ -511,7 +630,7 @@ const Orders = () => {
               <div className={styles.afterSubAndShipCostContainer}>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Subtotal</p>
-                  <p className={styles.afterSubtotalPrice}>{subtotalPrice.toFixed(2)}</p>
+                  <p className={styles.afterSubtotalPrice}>{newSubtotal.toFixed(2)}</p>
                 </div>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Shipping</p>
@@ -540,7 +659,7 @@ const Orders = () => {
         <div className={styles.orderConfirmationContainer}>
           <div className={styles.orderConfirmationContainer2}>
             <div className={styles.orderConfirmedMsg}>
-              <Image src="/success-green-check-mark-icon.png" alt="" width={} height={} />
+              <Image src="/success-green-check-mark-icon.png" alt="" width={512} height={512} />
               <h2>Thank you for your order!</h2>
               <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
             </div>

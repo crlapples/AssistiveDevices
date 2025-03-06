@@ -9,6 +9,7 @@ import BreadcrumbMetadata from "./Breadcrumb";
 import { productPageData } from "./ProductData2";
 import Dropdown from './Dropdown';
 import LetterFromTopAnimation from './LetterFromTopAnimation';
+import BuyButton from './BuyButton';
 
 interface ProductPageProps {
   params: {
@@ -35,6 +36,7 @@ interface ProductPageData {
   a1: string;
   q2: string;
   a2: string;
+  session: string;
 }
 
 export function generateStaticParams() {
@@ -57,6 +59,10 @@ const ProductPage = ({ params }: ProductPageProps ) => {
   const { productName, breadPageName, pageName } = params;
   const product = productPageData[productName as keyof typeof productPageData];
   const metadata = getMetadata({ pageName: productName });
+
+  const handleBuy = () => {
+    sessionStorage.setItem(product.session, "true");
+  };
 
   return (
     <>
@@ -85,7 +91,7 @@ const ProductPage = ({ params }: ProductPageProps ) => {
 
                       {/* Call to Action */}
         <div className={styles.cta}>
-          <Link href={product.link}><button className={styles.buyButton}>Buy Now</button></Link>
+          <BuyButton sessionKey={product.session} link={product.link} className={styles.buyButton} />
           <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
 

@@ -16,7 +16,7 @@ export const productPageData = {
         icon4: "/wheel-icon (1).png",
         benefit4: "Smooth Movement: Two front wheels & anti-slip feet",
         icon4Alt: "",
-        link: "",
+        link: "/Orders",
         descriptionTagline: "The Dakseon Advantage",
         description: "Experience greater mobility and independence with the Dakseon Foldable Walker. Designed for ease of use, this lightweight and durable walker provides stability and comfort for everyday movement. Whether indoors or outdoors, its sturdy aluminum frame and foldable design ensure convenience and reliability.",
         review1: "⭐⭐⭐⭐⭐ 'This walker is a lifesaver! Lightweight yet sturdy.' – Jane D.",
@@ -24,7 +24,8 @@ export const productPageData = {
         q1: "Q: Is the walker adjustable?",
         a1: "A: No, this model is foldable but has a fixed height.",
         q2: "Q: How fast is shipping?",
-        a2: "A: We ship within 2 business days with fast delivery options available."
+        a2: "A: We ship within 2 business days with fast delivery options available.",
+        session: "walkerYes"
     },
     "Shower-Seat": {
         image: "/seatWide.png",
@@ -43,7 +44,7 @@ export const productPageData = {
         icon4: "/comfortable-comfort-icon.png",
         benefit4: "Comfortable Design – Ergonomic seat for stress-free showering",
         icon4Alt: "",
-        link: "",
+        link: "/Orders",
         descriptionTagline: "Experience the Dakseon Difference",
         description: "Enjoy a safe and relaxing bath experience with the GoAid Bathroom Safety Seat. Designed for individuals needing extra stability, this shower seat provides comfort and security. The durable, water-resistant materials and non-slip feet ensure reliable support in any bathroom setting.",
         review1: "⭐⭐⭐⭐⭐ 'This seat made showering so much easier for my dad!' – Anna R.",
@@ -51,6 +52,7 @@ export const productPageData = {
         q1: "Q: Can the seat be used in bathtubs as well as showers?",
         a1: "A: Absolutely! The non-slip rubber feet provide stability on both shower floors and bathtubs, reducing the risk of slipping.",
         q2: "Q: Can it be used in medical or assisted living facilities??",
-        a2: "A: Yes, the Dakseon Bathroom Safety Seat is durable and reliable, making it suitable for home use, hospitals, rehab centers, and assisted living facilities."
+        a2: "A: Yes, the Dakseon Bathroom Safety Seat is durable and reliable, making it suitable for home use, hospitals, rehab centers, and assisted living facilities.",
+        session: "seatYes"
     }
 };
