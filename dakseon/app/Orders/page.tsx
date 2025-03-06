@@ -54,6 +54,7 @@ const Orders = () => {
   const [cardNumber, setCardNumber] = useState<string>("");
   const [cardExp, setCardExp] = useState<string>("");
   const [cardCVV, setCardCVV] = useState<string>("");
+  const [paymentCleared, setPaymentCleared] = useState<boolean>(false);
   const [isOrderConfirmed, setIsOrderConfirmed] = useState<boolean>(false);
   const [orderId, setOrderId] = useState<string>("");
   const [invoiceItem1, setInvoiceItem1] = useState<string>("");
@@ -141,6 +142,20 @@ const Orders = () => {
   const handleContinuePayment = () => {
     setIsOnShipping(false);
     setIsOnPayment(true);
+  };
+
+  const handleReturnShipping = () => {
+    setIsOnPayment(false);
+    setIsOnShipping(true);
+  };
+
+  const handlePayment = () => {
+
+    
+    if (paymentCleared === true) {
+      setIsOrderConfirmed(true);
+      setIsOnPayment(false);
+    }
   };
 
   return (
@@ -453,120 +468,124 @@ const Orders = () => {
                 <p><strong>Payment</strong></p>
               </div>
               <p className={styles.billingP}>Billing Information</p>
-              <input
-                type="email"
-                value={bEmail}
-                onChange={(e) => setBEmail(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Email"
-              />
-              <input
-                type="email"
-                value={bMatchEmail}
-                onChange={(e) => setBMatchEmail(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Confirm email"
-              />
-              <input
-                type="text"
-                value={bFullName}
-                onChange={(e) => setBFullName(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Full name"
-              />
-              <input
-                type="text"
-                value={bCountry}
-                onChange={(e) => setBCountry(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Country/region"
-              />
-              <input
-                type="text"
-                value={bStreetAddress}
-                onChange={(e) => setBStreetAddress(e.target.value)}
-                required
-                className={styles.bFullInput}
-                placeholder="Street address"
-              />
-              <input
-                type="text"
-                value={bApartment}
-                onChange={(e) => setBApartment(e.target.value)}
-                className={styles.bFullInput}
-                placeholder="Apartment, suite, etc. (optional)"
-              />
-              <div className={styles.paymentHoriz}>
+              <form onSubmit={handlePayment}>
                 <input
-                  type="text"
-                  value={bCity}
-                  onChange={(e) => setBCity(e.target.value)}
-                  required
-                  placeholder="City"
+                  type="email"
+                  value={bEmail}
+                  onChange={(e) => setBEmail(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Email"
+                />
+                <input
+                  type="email"
+                  value={bMatchEmail}
+                  onChange={(e) => setBMatchEmail(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Confirm email"
                 />
                 <input
                   type="text"
-                  value={bStateOrProvince}
-                  onChange={(e) => setBStateOrProvince(e.target.value)}
+                  value={bFullName}
+                  onChange={(e) => setBFullName(e.target.value)}
                   required
-                  placeholder="State/province"
+                  className={styles.bFullInput}
+                  placeholder="Full name"
                 />
                 <input
                   type="text"
-                  value={bPostal}
-                  onChange={(e) => setBPostal(e.target.value)}
+                  value={bCountry}
+                  onChange={(e) => setBCountry(e.target.value)}
                   required
-                  placeholder="Postal code"
-                />
-              </div>
-              <div className={styles.cardBrands}>
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-                <Image src="" alt="" width={} height={} />
-              </div>
-              <div className={styles.cardInfoContainer}>
-                <input
-                  type="text"
-                  value={cardName}
-                  onChange={(e) => setCardName(e.target.value)}
-                  placeholder="Name on card"
-                  className={styles.cardFullInput}
-                  required
+                  className={styles.bFullInput}
+                  placeholder="Country/region"
                 />
                 <input
                   type="text"
-                  value={cardNumber}
-                  onChange={(e) => setCardNumber(e.target.value)}
-                  placeholder="Card number"
-                  className={styles.cardFullInput}
+                  value={bStreetAddress}
+                  onChange={(e) => setBStreetAddress(e.target.value)}
                   required
+                  className={styles.bFullInput}
+                  placeholder="Street address"
                 />
-                <div className={styles.cardHoriz}>
+                <input
+                  type="text"
+                  value={bApartment}
+                  onChange={(e) => setBApartment(e.target.value)}
+                  className={styles.bFullInput}
+                  placeholder="Apartment, suite, etc. (optional)"
+                />
+                <div className={styles.paymentHoriz}>
                   <input
                     type="text"
-                    value={cardExp}
-                    onChange={(e) => setCardExp(e.target.value)}
-                    placeholder="MM/YY"
-                    pattern="\d{2}/\d{2}"
+                    value={bCity}
+                    onChange={(e) => setBCity(e.target.value)}
                     required
+                    placeholder="City"
                   />
                   <input
                     type="text"
-                    value={cardCVV}
-                    onChange={(e) => setCardCVV(e.target.value)}
-                    placeholder="CVV"
+                    value={bStateOrProvince}
+                    onChange={(e) => setBStateOrProvince(e.target.value)}
                     required
+                    placeholder="State/province"
+                  />
+                  <input
+                    type="text"
+                    value={bPostal}
+                    onChange={(e) => setBPostal(e.target.value)}
+                    required
+                    placeholder="Postal code"
                   />
                 </div>
-              </div>
-              <div className={styles.paymentButtons}>\
-                <Image src="" alt="" width={} height={} />
-                <p>Return to shipping</p>
-                <button className={styles.orderButton}>Order</button>
-              </div>
+                <div className={styles.cardBrands}>
+                  <Image src="" alt="" width={} height={} />
+                  <Image src="" alt="" width={} height={} />
+                  <Image src="" alt="" width={} height={} />
+                  <Image src="" alt="" width={} height={} />
+                </div>
+                <div className={styles.cardInfoContainer}>
+                  <input
+                    type="text"
+                    value={cardName}
+                    onChange={(e) => setCardName(e.target.value)}
+                    placeholder="Name on card"
+                    className={styles.cardFullInput}
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                    placeholder="Card number"
+                    className={styles.cardFullInput}
+                    required
+                  />
+                  <div className={styles.cardHoriz}>
+                    <input
+                      type="text"
+                      value={cardExp}
+                      onChange={(e) => setCardExp(e.target.value)}
+                      placeholder="MM/YY"
+                      pattern="\d{2}/\d{2}"
+                      required
+                    />
+                    <input
+                      type="text"
+                      value={cardCVV}
+                      onChange={(e) => setCardCVV(e.target.value)}
+                      placeholder="CVV"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className={styles.paymentButtons}>\
+                  <div className={styles.returnContainer} onClick={handleReturnShipping}>
+                    <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={} height={} />
+                    <p>Return to shipping</p>
+                  </div>
+                  <button type="submit" className={styles.orderButton}>Order</button>
+                </div>
+              </form>
             </div>
           </div>
         </>
@@ -576,7 +595,7 @@ const Orders = () => {
           <div className={styles.itemsContainer2}>
             {addedWalker && (
               <div className={styles.itemHoriz}>
-                <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={902} height={1600} className={styles.itemImage} />
+                <Image src="/walkerWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
@@ -588,7 +607,7 @@ const Orders = () => {
             )}
             {addedSeat && (
               <div className={styles.itemHoriz}>
-                <Image src="" alt="" width={902} height={1600} className={styles.itemImage} />
+                <Image src="/seatWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
                   <p className={styles.itemName}></p>
                 </div>
