@@ -195,7 +195,7 @@ const Orders = () => {
                 {addedWalker && (
                   <div className={styles.entranceItemContainer}>
                     <div className={styles.entranceHoriz}>
-                      <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
+                      <Image src="/walkerWide.png" alt="" width={1600} height={902} className={styles.entranceImage} />
                       <div className={styles.entranceVer}>
                         <p className={styles.entranceItemBrand}>Dakseon</p>
                         <p className={styles.entranceName}>Walker</p>
@@ -218,18 +218,18 @@ const Orders = () => {
                   </div>
                 )}
                 {addedSeat && (
-                  <div className={styles.entranceItemContainer}>
+                  <div className={styles.entranceItemContainer2}>
                     <div className={styles.entranceHoriz}>
-                      <Image src="" alt="" width={902} height={1600} className={styles.entranceImage} />
+                      <Image src="/seatWide.png" alt="" width={1600} height={902} className={styles.entranceImage} />
                       <div className={styles.entranceVer}>
                         <p className={styles.entranceItemBrand}>Dakseon</p>
-                        <p className={styles.entranceName}></p>
+                        <p className={styles.entranceName}>Shower Seat</p>
                         <p className={styles.entranceTaglineDesc}></p>
-                        <p className={styles.entranceItemSKU}></p>
+                        <p className={styles.entranceItemSKU}>123ABC</p>
                         <p className={styles.entranceItemSpecs}></p>
                       </div>
                       <div className={styles.entranceVer2}>
-                        <p className={styles.entranceItemPrice}></p>
+                        <p className={styles.entranceItemPrice}>$50.00</p>
                         <div className={styles.entranceHoriz2}>
                           <p>-</p>
                           <input

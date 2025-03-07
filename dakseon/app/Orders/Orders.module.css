@@ -38,7 +38,7 @@
 
 .cartContainer {
   width: 95%;
-  height: 100%;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,7 +91,18 @@
   gap: 3vh;
   width: 90%;
   height: 100%;
-  margin-top: 3vh;
+  margin-top: 6vh;
+}
+
+.entranceItemContainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  width: 90%;
+  height: 100%;
+  margin-top: 0vh;
 }
 
 .entranceHoriz {
@@ -146,6 +157,7 @@
   width: 30vh;
   height: 50%;
   gap: 3vh;
+  margin-top: 0.5vh;
 }
 
 .entranceItemPrice {
@@ -1005,6 +1017,8 @@
   }
 }
 
+@media screen and (min-width:)
+
 @media (max-width: 1024px) {
     .topContainer {
         height: 20vw;
@@ -1021,7 +1035,55 @@
     .fda {
       width: 20%;
     }
-}
+
+    .cartContainer {
+      height: 100%;
+    }
+
+    .entranceHoriz {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .entranceHoriz img {
+      width: 100%;
+      height: 60%;
+      margin-bottom: 5vh;
+    }
+
+    .entranceVer {
+      width: 100%;
+    }
+
+    .entranceVer2 {
+      width: 100%;
+      margin-top: 3vh;
+    }
+
+    .entranceItemContainer2 {
+      margin-top: 6vh;
+    }
+
+    .entranceTotalPriceContainer {
+      width: 90%;
+      gap: 25%;
+      margin-top: 7vh;
+    }
+
+    .entranceTotalPrice {
+      width: 50%;
+      margin-left: 0;
+    }
+
+    .entrancePriceType {
+      width: 50%;
+    }
+
+    .continueToInfo {
+      margin-top: 7.5vh;
+      margin-bottom: 5vh;
+    }
+  }
 
 @media (min-width: 1025px) {
     .footer {
