@@ -428,25 +428,25 @@ const Orders = () => {
                     name="shipping"
                   />
                 </div>
-                <div className={styles.shippingCarriersContainer}>
-                  <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
-                    <p className={styles.deliveryTime}></p>
-                    <p className={styles.deliveryCost}></p>
-                    <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} />
-                  </div>
-                  <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
-                    <p className={styles.deliveryTime}></p>
-                    <p className={styles.deliveryCost}></p>
-                    <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={512} height={512} />
-                  </div>
-                  <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
-                    <p className={styles.deliveryTime}></p>
-                    <p className={styles.deliveryCost}></p>
-                    <Image src="/dhl-1.svg" alt="" width={512} height={512} />
-                  </div>
+              </div>
+              <div className={styles.shippingCarriersContainer}>
+                <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
+                  <p className={styles.deliveryTime}>Est. Example Date</p>
+                  <p className={styles.deliveryCost}>$100.00</p>
+                  <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} />
+                </div>
+                <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
+                  <p className={styles.deliveryTime}>Est. Example Date</p>
+                  <p className={styles.deliveryCost}>$100.00</p>
+                  <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={512} height={512} />
+                </div>
+                <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
+                  <p className={styles.deliveryTime}>Est. Example Date</p>
+                  <p className={styles.deliveryCost}>$100.00</p>
+                  <Image src="/dhl-1.svg" alt="" width={512} height={512} />
                 </div>
               </div>
-              <p className={styles.estTime}></p>
+              <p className={styles.estTime}>Your item will be shipped: example date</p>
               <input
                 type="text"
                 value={notes}
