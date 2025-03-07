@@ -267,13 +267,15 @@ const Orders = () => {
                 <Image src="/arrow-thin-chevron-right-icon.png" alt="" width={512} height={512} />
                 <p>Payment</p>
               </div>
-              <div className={styles.expressCheckoutContainer}>
-                <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
+              <fieldset className={styles.expressCheckoutContainer}>
+                <legend>EXPRESS CHECKOUT</legend>
                 <div className={styles.paypalContainer}>
                   <Image src="/download.svg" alt="" width={1200} height={400} className={styles.paypalExpress} />
                 </div>
-                <Image src="/buy-buttons-black-small.png" alt="" width={1200} height={400} className={styles.googleExpress} />
-              </div>
+                <div className={styles.googleContainer}>
+                  <Image src="/buy-buttons-black-small.png" alt="" width={1200} height={400} className={styles.googleExpress} />
+                </div>
+              </fieldset>
               <div className={styles.orContainer}>
                 <p>OR</p>
               </div>
@@ -297,7 +299,6 @@ const Orders = () => {
                     className={styles.fullInput}
                   />
                   <div className={styles.seperatorLineB} />
-                  <p className={styles.shippingP}>Shipping Details</p>
                   <input
                     type="text"
                     value={country}
@@ -319,7 +320,7 @@ const Orders = () => {
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
-                      placeholder="LastName"
+                      placeholder="Last name"
                       required
                       className={styles.halfInput}
                     />
@@ -607,11 +608,11 @@ const Orders = () => {
               <div className={styles.itemHoriz}>
                 <Image src="/walkerWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
-                  <p className={styles.itemName}></p>
+                  <p className={styles.itemName}>Walker</p>
                 </div>
                 <div className={styles.itemInfo2}>
-                  <p className={styles.afterItemQuantity}></p>
-                  <p className={styles.afterItemPrice}></p>
+                  <p className={styles.afterItemPrice}>$100.00</p>
+                  <p className={styles.afterItemQuantity}>test</p>
                 </div>
               </div>
             )}
@@ -619,11 +620,11 @@ const Orders = () => {
               <div className={styles.itemHoriz}>
                 <Image src="/seatWide.png" alt="" width={1600} height={902} className={styles.itemImage} />
                 <div className={styles.itemInfo}>
-                  <p className={styles.itemName}></p>
+                  <p className={styles.itemName}>Shower Seat</p>
                 </div>
                 <div className={styles.itemInfo2}>
-                  <p className={styles.afterItemQuantity}></p>
-                  <p className={styles.afterItemPrice}></p>
+                  <p className={styles.afterItemPrice}>$50.00</p>
+                  <p className={styles.afterItemQuantity}>test</p>
                 </div>
               </div>
             )}
