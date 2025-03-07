@@ -91,7 +91,7 @@ const ProductPage = ({ params }: ProductPageProps ) => {
 
                       {/* Call to Action */}
         <div className={styles.cta}>
-          <BuyButton sessionKey={product.session} link={product.link} className={styles.buyButton} />
+          <BuyButton sessionKey={product.session} link={product.link} linkClassName={styles.link} buttonClassName={styles.buyButton} />
           <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
 

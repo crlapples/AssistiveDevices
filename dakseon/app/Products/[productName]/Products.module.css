@@ -104,6 +104,10 @@
   margin-top: -5%;
 }
 
+.cta:hover {
+  cursor: pointer;
+}
+
 .description h2 {
   width: 80%;
   height: 10%;
@@ -119,6 +123,17 @@
   justify-content: center;
   align-items: center;
   margin-top: 10vh;
+}
+
+.link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link:hover {
+  cursor: pointer;
 }
 
 .buyButton {
@@ -137,6 +152,7 @@
   font-weight: bold;
   box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
   z-index: 0;
+  border: none;
 }
 
 .buyButton:hover {

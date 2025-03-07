@@ -269,15 +269,17 @@ const Orders = () => {
               </div>
               <div className={styles.expressCheckoutContainer}>
                 <p className={styles.expressTitle}>EXPRESS CHECKOUT</p>
-                <Image src="/download.svg" alt="" width={568} height={300} className={styles.paypalExpress} />
-                <Image src="/buy-buttons-black-small.png" alt="" width={568} height={300} className={styles.googleExpress} />
+                <div className={styles.paypalContainer}>
+                  <Image src="/download.svg" alt="" width={1200} height={400} className={styles.paypalExpress} />
+                </div>
+                <Image src="/buy-buttons-black-small.png" alt="" width={1200} height={400} className={styles.googleExpress} />
               </div>
               <div className={styles.orContainer}>
                 <p>OR</p>
               </div>
               <div className={styles.customerDetailsContainer}>
                 <p className={styles.contactP}>Contact Information</p>
-                <form onSubmit={handleContinueShipping}>
+                <form className={styles.form1} onSubmit={handleContinueShipping}>
                   <input
                     type="email"
                     value={email}

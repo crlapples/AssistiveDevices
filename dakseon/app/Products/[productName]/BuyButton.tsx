@@ -2,22 +2,24 @@
 
 import React from "react";
 import Link from 'next/link';
+import styles from "./BuyButton.module.css";
 
 interface BuyButtonProps {
   sessionKey: string;
   link: string;
-  className?: string;
+  linkClassName?: string;
+  buttonClassName?: string;
 }
 
-const BuyButton: React.FC<BuyButtonProps> = ({ sessionKey, link, className }) => {
+const BuyButton: React.FC<BuyButtonProps> = ({ sessionKey, link, linkClassName, buttonClassName }) => {
   const handleBuy = () => {
     sessionStorage.setItem(sessionKey, "true");
   };
 
   return (
-    <Link href={link}>
-      <button className={className} onClick={handleBuy}>Buy Now</button>
-    </Link>
+    <a href={link} className={linkClassName}>
+      <button className={buttonClassName} onClick={handleBuy}>Buy Now</button>
+    </a>
   );
 };
 
