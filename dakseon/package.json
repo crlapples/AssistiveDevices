@@ -1,12 +1,14 @@
 {
   "name": "dakseon",
+  "homepage": "https://crlapples.github.io/AssistiveDevices",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && touch ./out/.nojekyll && gh-pages -d out"
   },
   "dependencies": {
     "next": "^14.0.4",

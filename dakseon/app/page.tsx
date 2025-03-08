@@ -149,13 +149,13 @@ const Home: React.FC = () => {
           <div className={styles.reviews}>
             <div className={styles.review}>
               <p>
-                ⭐⭐⭐⭐⭐ "Amazing quality, my dad loves the walker!" –{" "}
+                ⭐⭐⭐⭐⭐ Amazing quality, my dad loves the walker!
                 <strong>Sarah K.</strong>
               </p>
             </div>
             <div className={styles.review}>
               <p>
-                ⭐⭐⭐⭐⭐ "The shower seat is stable and comfortable." –{" "}
+                ⭐⭐⭐⭐⭐ The shower seat is stable and comfortable.
                 <strong>James L.</strong>
               </p>
             </div>

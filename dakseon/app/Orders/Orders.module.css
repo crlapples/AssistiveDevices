@@ -963,20 +963,20 @@
 }
 
 .orderConfirmedMsg img {
-  width: 15vh;
-  height: 15vh;
-  padding: 5vh;
+  width: 10vh;
+  height: 10vh;
+  margin: 5vh;
 }
 
 .orderConfirmedMsg h2 {
-  font-size: 7vh;
-  text-align: center;
+  font-size: 5vh;
+  text-align: left;
   width: 100%;
-  padding: 7vh;
+  padding-left: 7vh;
 }
 
 .orderConfirmedMsg p {
-  font-size: 5vh;
+  font-size: 3vh;
   text-align: left;
   width: 100%;
   padding: 7vh;

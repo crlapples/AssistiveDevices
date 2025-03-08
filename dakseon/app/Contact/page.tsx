@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
         <Image src="/headphone-headset-icon.png" alt="" width={512} height={512} className={styles.mainIcon2} />
       </div>
       <h1>Contact Us</h1>
-      <p className={styles.query}>Have a question? Need help with an order? Reach out and we'll be happy to assist!</p>
+      <p className={styles.query}>Have a question? Need help with an order? Reach out and we will be happy to assist!</p>
 
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <div className={styles.together}>

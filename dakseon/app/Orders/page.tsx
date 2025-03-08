@@ -181,7 +181,7 @@ const Orders = () => {
         <div className={styles.cartContainer}>
           <div className={styles.cartContainer2}>
             {noItems && (
-              <p className={styles.noItemsMsg}>There's nothing here. Add items to your cart to continue.</p>
+              <p className={styles.noItemsMsg}>There is nothing here. Add items to your cart to continue.</p>
             )}
             {(addedWalker || addedSeat) && (
               <>
