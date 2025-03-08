@@ -1171,8 +1171,16 @@
       margin-right: auto;
     }
 
+    .googleExpress {
+      object-fit: contain;
+    }
+
     .customerDetailsContainer input {
       font-size: 1.8vh;
+    }
+
+    .customerDetailsContainer form {
+      width: 100%;
     }
 
     .itemsContainer {
