@@ -7,6 +7,7 @@ import Image from "next/image";
 import CompanyIntro from "./CompanyIntro";
 import Dropdown from "./Dropdown";
 import LetterFromTopAnimation from "./LetterFromTopAnimation";
+import BuyButton from "./BuyButton";
 
 export const metadata: Metadata = {
   title: "Dakseon - Premium Walker & Shower Seat for Safety and Comfort",
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
             <p className={styles.fifthP}>Experience a new level of independence and <span style={{ color: "#2f7ab6" }}>comfort</span> with our walker and shower seat. The walker provides <span style={{ color: "#2f7ab6" }}>stability</span> and freedom with every step, while the shower seat ensures a <span style={{ color: "#2f7ab6" }}>safe</span>, relaxing experience during your daily routine.</p>
             <p className={styles.sixthP}><span style={{ color: "#2f7ab6" }}>Move with confidence</span> and enjoy comfort wherever you go with Dakseon.</p>
             <div className={styles.buttonContainer}>
-              <Link href="/walker"><button className={styles.shopButton}>Shop Now</button></Link>
+              <BuyButton sessionKey1="walkerYes" sessionKey2="seatYes" link="/Orders" linkClassName={styles.link} buttonClassName={styles.shopButton} />
             </div>
           </div>
           <div className={styles.imageContainer5}>
@@ -149,21 +150,19 @@ const Home: React.FC = () => {
           <div className={styles.reviews}>
             <div className={styles.review}>
               <p>
-                ⭐⭐⭐⭐⭐ Amazing quality, my dad loves the walker!
-                <strong>Sarah K.</strong>
+                ⭐⭐⭐⭐⭐ Amazing quality, my dad loves the walker! - <strong>Sarah K.</strong>
               </p>
             </div>
             <div className={styles.review}>
               <p>
-                ⭐⭐⭐⭐⭐ The shower seat is stable and comfortable.
-                <strong>James L.</strong>
+                ⭐⭐⭐⭐⭐ The shower seat is stable and comfortable. - <strong>James L.</strong>
               </p>
             </div>
           </div>
         </section>
         <section className={styles.ctaSection}>
           <h2>Ready to Improve Your Mobility & Safety?</h2>
-          <Link href="/Walker"><button className={styles.shopButton}>Shop Now</button></Link>
+          <BuyButton sessionKey1="walkerYes" sessionKey2="seatYes" link="/Orders" linkClassName={styles.link} buttonClassName={styles.shopButton} />
         </section>
         <footer className={styles.footer}>
           <div className={styles.verticalOriA}>

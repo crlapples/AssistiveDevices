@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
       </form>
 
       <h2>Direct Contact</h2>
-      <p className={styles.contactEmail}>Email: support@goaid.com</p>
+      <p className={styles.contactEmail}>Email: abc@gmail.com</p>
       <footer className={styles.footer}>
         <div className={styles.verticalOriA}>
           <strong>

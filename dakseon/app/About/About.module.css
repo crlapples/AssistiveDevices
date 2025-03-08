@@ -130,6 +130,10 @@
   padding: 3vh !important;
 }
 
+.letters3 p {
+  color: black !important;
+}
+
 .thirdp {
   background-color: rgb(155, 248, 140);
   color: black;
