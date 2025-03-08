@@ -46,6 +46,8 @@
   margin-top: 23vw;
   border: 0.1vh solid gray !important;
   padding: 5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cartContainer2 {
@@ -459,7 +461,7 @@
 .informationButtons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 20%;
   margin-top: 1vh;
@@ -469,7 +471,7 @@
 .returnContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 50%;
   height: 100%;
 }
@@ -477,6 +479,8 @@
 .returnContainer img {
   width: 2.5vh;
   height: 2.5vh;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .returnContainer p {
@@ -487,7 +491,8 @@
   padding-top: 1vh;
   padding-bottom: 1vh;
   width: 100%;
-  height: 6vh;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .continueToShipping {
@@ -579,7 +584,7 @@
   width: 77%;
   height: 30%;
   border: 0.1vh solid gray;
-  padding: 0.2vh;
+  padding: 0.2vh !important;
 }
 
 .deliveryTime {
@@ -593,14 +598,15 @@
 
 .shippingCarriersContainer img {
   height: 100%;
-  width: 20%;
+  width: 10%;
 }
 
 .estTime {
-  width: 100%;
+  width: 75%;
   height: 10%;
   font-size: 2.3vh;
   text-align: center;
+  padding-top: 1.5vh;
 }
 
 .notes {
@@ -615,8 +621,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 10%;
+  width: 90%;
+  height: 20%;
+  margin-top: 1vh;
+  margin-bottom: -20vh;
 }
 
 .continueToPayment {
@@ -627,14 +635,16 @@
   padding-left: 2vw;
   margin-bottom: 5vh;
   font-size: 3vh;
-  margin-top: 3vh;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  margin-bottom: auto;
+  color: black;
   background-color: #2f7ab6;
   font-weight: bold;
   box-shadow: 2px 2px 5px 1px gray; /* Stronger shadow */
   z-index: 0;
+  width: 50%;
 }
 
 .continueToPayment:hover {
@@ -1097,7 +1107,7 @@
 
 @media screen and (min-width: 0px) and (max-width: 350px) {
   .continueToShipping {
-    margin-bottom: 2vh;
+    margin-top: -0.5vh !important;
   }
 }
 
@@ -1192,6 +1202,23 @@
 
     .customerDetailsContainer input {
       font-size: 1.8vh;
+    }
+
+    .shippingContainer {
+      width: 95%;
+    }
+
+    .deliveryCost, .deliveryTime {
+      font-size: 2vh;
+    }
+
+    .upsLogo {
+      height: 100% !important;
+    }
+
+    .notes {
+      margin-top: 3vh;
+      font-size: 2vh;
     }
 
     .itemsContainer {

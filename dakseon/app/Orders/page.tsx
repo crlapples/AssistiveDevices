@@ -433,12 +433,12 @@ const Orders = () => {
                 <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
                   <p className={styles.deliveryCost}>$100.00</p>
-                  <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} />
+                  <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} className={styles.fedexLogo} />
                 </div>
                 <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
                   <p className={styles.deliveryCost}>$100.00</p>
-                  <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={512} height={512} />
+                  <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={400} height={300} className={styles.upsLogo} />
                 </div>
                 <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
