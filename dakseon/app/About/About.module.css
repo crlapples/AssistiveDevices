@@ -219,10 +219,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .firstIcon {
-    background-color: white;
-  }
-
   .firstIcon2 {
     filter: invert(1);
   }

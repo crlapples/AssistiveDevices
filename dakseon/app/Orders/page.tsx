@@ -60,6 +60,16 @@ const Orders = () => {
   const [invoiceItem1, setInvoiceItem1] = useState<string>("");
   const [invoiceTotal1, setInvoiceTotal1] = useState<number>(0);
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
+  const [totalWalkerPrice, setTotalWalkerPrice] = useState<number>(0);
+  const [totalSeatPrice, setTotalSeatPrice] = useState<number>(0);
+
+  useEffect(() => {
+    setTotalWalkerPrice(walkerQuantity * 100);
+  }, [walkerQuantity]);
+
+  useEffect(() => {
+    setTotalSeatPrice(seatQuantity * 50);
+  }, [seatQuantity]);
 
   const prices = { "walker": 100, "seat": 50 };
   const shippingPrices = { };
@@ -93,7 +103,7 @@ const Orders = () => {
 
   useEffect(() => {
     const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
-    setSubtotalPrice(newSubtotal.toString());
+    setSubtotalPrice(newSubtotal.toFixed(2).toString());
     setTotalPrice(newSubtotal + shippingPrice + salesTaxPrice);
   }, [walkerQuantity, seatQuantity, prices, subtotalPrice, shippingPrice, salesTaxPrice]);
   
@@ -667,56 +677,67 @@ const Orders = () => {
               <h2>Thank you for your order!</h2>
               <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
             </div>
-            <div className={styles.orderInvoice}>
-              <div className={styles.orderHoriz1}>
-                <p className={styles.first}><strong>Items</strong></p>
-                <p className={styles.second}><strong>Qty.</strong></p>
-                <p className={styles.third}><strong>Cost</strong></p>
-                <p className={styles.fourth}><strong>SKU</strong></p>
-                <p className={styles.fifth}></p>
-                <p className={styles.sixth}><strong>Total</strong></p>
-              </div>
-              <div className={styles.orderHoriz}>
-                <p className={styles.first}>{invoiceItem1}</p>
-                <p className={styles.second}></p>
-                <p className={styles.third}></p>
-                <p className={styles.fourth}></p>
-                <p className={styles.fifth}></p>
-                <p className={styles.sixth}>{invoiceTotal1.toFixed(2)}</p>
-              </div>
-              <div className={styles.orderHoriz}>
-                <p className={styles.first}></p>
-                <p className={styles.second}></p>
-                <p className={styles.third}></p>
-                <p className={styles.fourth}></p>
-                <p className={styles.fifth}>Subtotal</p>
-                <p className={styles.sixth}></p>
-              </div>
-              <div className={styles.orderHoriz}>
-                <p className={styles.first}></p>
-                <p className={styles.second}></p>
-                <p className={styles.third}></p>
-                <p className={styles.fourth}></p>
-                <p className={styles.fifth}>Shipping</p>
-                <p className={styles.sixth}></p>
-              </div>
-              <div className={styles.orderHoriz}>
-                <p className={styles.first}></p>
-                <p className={styles.second}></p>
-                <p className={styles.third}></p>
-                <p className={styles.fourth}></p>
-                <p className={styles.fifth}>Sales Tax</p>
-                <p className={styles.sixth}></p>
-              </div>
-              <div className={styles.orderHoriz}>
-                <p className={styles.first}></p>
-                <p className={styles.second}></p>
-                <p className={styles.third}></p>
-                <p className={styles.fourth}></p>
-                <p className={styles.fifth}></p>
-                <p className={styles.sixth}>{invoiceTotal5.toFixed(2)}</p>
-              </div>
-            </div>
+            <table className={styles.orderInvoice}>
+              <caption className={styles.caption}>Order Details</caption>
+              <tr className={styles.orderHoriz1}>
+                <td className={styles.first}><strong>Items</strong></td>
+                <td className={styles.second}><strong>Qty.</strong></td>
+                <td className={styles.third}><strong>Cost</strong></td>
+                <td className={styles.fourth}><strong>SKU</strong></td>
+                <td className={styles.fifth}></td>
+                <td className={styles.sixth}><strong>Total</strong></td>
+              </tr>
+              <tr className={styles.orderHoriz}>
+                <td className={styles.first}>Walker</td>
+                <td className={styles.second}>{walkerQuantity}</td>
+                <td className={styles.third}>$100.00</td>
+                <td className={styles.fourth}>ABC123</td>
+                <td className={styles.fifth}></td>
+                <td className={styles.sixth}>${totalWalkerPrice.toFixed(2)}</td>
+              </tr>
+              {addedSeat && (
+                <tr className={styles.orderHoriz}>
+                <td className={styles.first}>Shower Seat</td>
+                <td className={styles.second}>{seatQuantity}</td>
+                <td className={styles.third}>$50.00</td>
+                <td className={styles.fourth}>123ABC</td>
+                <td className={styles.fifth}></td>
+                <td className={styles.sixth}>${totalSeatPrice.toFixed(2)}</td>
+              </tr>
+              )}
+              <tr className={styles.orderHoriz}>
+                <td className={styles.first}></td>
+                <td className={styles.second}></td>
+                <td className={styles.third}></td>
+                <td className={styles.fourth}></td>
+                <td className={styles.fifth}>Subtotal</td>
+                <td className={styles.sixth}>${subtotalPrice}</td>
+              </tr>
+              <tr className={styles.orderHoriz}>
+                <td className={styles.first}></td>
+                <td className={styles.second}></td>
+                <td className={styles.third}></td>
+                <td className={styles.fourth}></td>
+                <td className={styles.fifth}>Shipping</td>
+                <td className={styles.sixth}>${shippingPrice}</td>
+              </tr>
+              <tr className={styles.orderHoriz}>
+                <td className={styles.first}></td>
+                <td className={styles.second}></td>
+                <td className={styles.third}></td>
+                <td className={styles.fourth}></td>
+                <td className={styles.fifth}>Sales Tax</td>
+                <td className={styles.sixth}>${salesTaxPrice}</td>
+              </tr>
+              <tr className={styles.orderHoriz}>
+                <td className={styles.first}></td>
+                <td className={styles.second}></td>
+                <td className={styles.third}></td>
+                <td className={styles.fourth}></td>
+                <td className={styles.fifth}></td>
+                <td className={styles.sixth}>${totalPrice.toFixed(2)}</td>
+              </tr>
+            </table>
             <footer className={styles.footer}>
               <div className={styles.verticalOriA}>
                 <strong>

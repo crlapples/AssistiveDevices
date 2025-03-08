@@ -989,6 +989,18 @@
   align-items: center;
   width: 90%;
   height: 100%;
+  margin-bottom: 5vh;
+}
+
+.caption {
+  height: 15%;
+  width: 100%;
+  font-size: 3.9vh;
+  border-top: 0.5vh solid black;
+  border-left: 0.5vh solid black;
+  border-right: 0.5vh solid black;
+  text-align: left;
+  text-indent: 3vh;
 }
 
 .orderHoriz1 {
@@ -998,27 +1010,29 @@
   align-items: flex-end;
   height: 15%;
   width: 100%;
+  margin-bottom: 2vh;
 }
 
 .orderHoriz1 .first, .orderHoriz1 .second, .orderHoriz1 .third, .orderHoriz1 .fourth, .orderHoriz1 .fifth, .orderHoriz1 .sixth {
   width: 15%;
   height: 10%;
-  font-size: 3.9vh;
+  font-size: 3vh;
   text-align: center;
 } 
 
-.orderHoriz1 {
+.orderHoriz {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 15%;
   width: 100%;
+  margin-bottom: 2vh;
 }
 
 .orderHoriz .first, .orderHoriz .second, .orderHoriz .third, .orderHoriz .fourth, .orderHoriz .fifth, .orderHoriz .sixth {
   width: 15%;
   height: 10%;
-  font-size: 3.9vh;
+  font-size: 3vh;
   text-align: center;
 } 
 
