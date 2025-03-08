@@ -99,6 +99,7 @@
 .aboutVer p {
   font-size: 3.9vh;
   padding: 7vh;
+  color: black;
 }
 
 .p {
@@ -214,7 +215,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .firstIcon2 {
+  .firstIcon {
     background-color: white;
   }
 
@@ -332,5 +333,6 @@
     
     .letters3 {
       height: 30vh !important;
+      color: black !important;
     }
 }

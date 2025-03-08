@@ -123,7 +123,6 @@ const Home: React.FC = () => {
             <h2>Our Bestsellers</h2>
             <Image src="/curved-arrow-right-to-bottom-outline-icon.png" width={512} height={512} alt="" className={styles.arrowIcon} />
           </div>
-          <div className={styles.seperatorLineB} />
           <div className={styles.productCard}>
             <Link href="/Products/Walker"><Image src="/walkerWide.png" width={902} height={1600} alt="Dakseon Mobility Walker" />
             <h3>Dakseon Mobility Walker</h3>
