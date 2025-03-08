@@ -249,7 +249,6 @@
 @media (prefers-color-scheme: dark) {
   .mainIcon {
     filter: invert(1);
-    border-top: solid white;
   }
 
   .query {

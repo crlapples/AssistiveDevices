@@ -44,7 +44,7 @@ export const generateMetadata = ({ pageName }: metadataProps): Metadata => {
       title: meta.openGraph.title,
       description: meta.openGraph.description,
       url: meta.openGraph.url,
-      type: meta.openGraph.type,
+      type: meta.openGraph.type as 'website' | 'article' | 'book' | 'profile' | 'music.song' | 'music.album' | 'music.playlist' | 'music.radio_station' | 'video.movie' | 'video.episode' | 'video.tv_show' | 'video.other',
       images: meta.openGraph.images
     },
   };
