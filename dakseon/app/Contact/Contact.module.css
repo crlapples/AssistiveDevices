@@ -256,7 +256,7 @@
   }
 
   .contactIcon {
-    filter: brightness(100%);
+    filter: invert(100%);
   }
 
   .contactForm button {
