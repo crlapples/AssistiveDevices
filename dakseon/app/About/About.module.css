@@ -113,7 +113,7 @@
   background-color: rgb(155, 248, 140);
   color: black;
   margin-bottom: -5vh;
-  z-index: 1;
+  z-index: 0;
 }
 
 .letters1 {
@@ -286,6 +286,10 @@
 
     .lastP {
       width: 100%;
+    }
+
+    .letters3 {
+      height: calc(70vh - 15vw);
     }
 
     .footer {
