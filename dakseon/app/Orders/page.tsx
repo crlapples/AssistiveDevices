@@ -452,17 +452,17 @@ const Orders = () => {
               <div className={styles.shippingCarriersContainer}>
                 <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
-                  <p className={styles.deliveryCost}>$100.00</p>
+                  <p className={styles.deliveryCost} style={{ color: selectedCarrier === "fedex" ? "black" : "inherit" }}>$100.00</p>
                   <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} className={styles.fedexLogo} />
                 </div>
                 <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
-                  <p className={styles.deliveryCost}>$100.00</p>
+                  <p className={styles.deliveryCost} style={{ color: selectedCarrier === "ups" ? "black" : "inherit" }}>$100.00</p>
                   <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={400} height={300} className={styles.upsLogo} />
                 </div>
                 <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
-                  <p className={styles.deliveryCost}>$100.00</p>
+                  <p className={styles.deliveryCost} style={{ color: selectedCarrier === "dhl" ? "black" : "inherit" }}>$100.00</p>
                   <Image src="/dhl-1.svg" alt="" width={512} height={512} />
                 </div>
               </div>

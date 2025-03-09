@@ -1133,6 +1133,14 @@
   .continueToShipping {
     box-shadow: 2px 2px 5px 1px gray;
   }
+
+  .deliveryCost {
+    color: white;
+  }
+
+  .caption {
+    border-color: white;
+  }
   
   .footer {
     border-top: solid white;
