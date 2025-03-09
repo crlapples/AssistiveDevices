@@ -1178,6 +1178,7 @@
 
     .mainContainer {
       flex-direction: column;
+      padding-bottom: 5vh;
     }
 
     .cartContainer {
