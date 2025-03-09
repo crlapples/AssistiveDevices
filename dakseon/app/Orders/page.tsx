@@ -5,6 +5,7 @@ import styles from "./Orders.module.css";
 import "./globals.css";
 import Image from "next/image";
 import Dropdown from "./Dropdown";
+import Stripe from 'stripe';
 
 const Orders = () => {
   const [noItems, setNoItems] = useState<boolean>(true);
@@ -62,7 +63,39 @@ const Orders = () => {
   const [invoiceTotal5, setInvoiceTotal5] = useState<number>(0);
   const [totalWalkerPrice, setTotalWalkerPrice] = useState<number>(0);
   const [totalSeatPrice, setTotalSeatPrice] = useState<number>(0);
-  
+  const [publishableKey, setPublishableKey] = useState<undefined>(undefined);
+
+  useEffect(() => {
+    // Fetch the publishable key from environment variables
+    setPublishableKey(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Initialize Stripe.js
+    const stripe = await Stripe(publishableKey);  // Use the publishable key here
+
+    // Create a token using the card element (ensure you have Stripe's elements in place)
+    const { token, error } = await stripe.createToken('card');
+
+    if (error) {
+      console.error(error.message);
+    } else {
+      // Send token to your API route to process the payment
+      const res = await fetch('/api/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token }),
+      });
+
+      const data = await res.json();
+      console.log(data); // Process the response from the backend
+    }
+  };
+
   if (isOnInformation || isOnShipping || isOnPayment || isOrderConfirmed) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
