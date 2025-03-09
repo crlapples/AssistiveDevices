@@ -63,6 +63,10 @@ const Orders = () => {
   const [totalWalkerPrice, setTotalWalkerPrice] = useState<number>(0);
   const [totalSeatPrice, setTotalSeatPrice] = useState<number>(0);
 
+  if (isOnInformation || isOnShipping || isOnPayment || isOrderConfirmed) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+    
   useEffect(() => {
     setTotalWalkerPrice(walkerQuantity * 100);
   }, [walkerQuantity]);
