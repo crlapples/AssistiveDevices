@@ -129,6 +129,7 @@
 .letters3 {
   height: calc(75vh - 15vw) !important;
   padding: 3vh !important;
+  margin-top: 2vh !important;
 }
 
 .letters3 p {

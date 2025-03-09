@@ -593,6 +593,10 @@
 }
 
 @media (max-width: 350px) {
+  .heroSection h1 {
+    margin-top: -5vh !important;
+  }
+
   .sixthP {
     margin-top: 7vh !important;
     height: 15% !important;
