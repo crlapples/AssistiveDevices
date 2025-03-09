@@ -175,7 +175,8 @@ const Home: React.FC = () => {
             <div className={styles.horizontalOri}>
               <Image src="/instagram.1024x1024.png" width={512} height={512} alt="" />
               <Image src="/logo-black.png" width={512} height={512} alt="" className={styles.x} />
-              <Image src="/tiktok.946x1024.png" width={512} height={512} alt="" />
+              <Image src="/LI-In-Bug.png" width={512} height={512} alt="" />
+              <Image src="/Facebook_Logo_Primary.png" width={512} height={512} alt="" />
             </div>
             <div className={styles.attributions}>
               <a href="https://www.flaticon.com/free-icons/invalid" title="invalid icons">Invalid icons created by Freepik - Flaticon</a>

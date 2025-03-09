@@ -662,6 +662,14 @@
     .letters2 {
       padding-bottom: 5vw !important;
     }
+
+    .footer {
+      align-items: flex-start;
+    }
+
+    .verticalOriB {
+      margin-top: 30% !important;
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 1024px) {

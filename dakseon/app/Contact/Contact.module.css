@@ -280,6 +280,14 @@
     .fda {
       width: 20%;
     }
+
+    .footer {
+      align-items: flex-start;
+    }
+
+    .verticalOriB {
+      margin-top: 30% !important;
+    }
   }
 
 @media (min-width: 1025px) {

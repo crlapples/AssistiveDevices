@@ -1300,6 +1300,14 @@
     .orderHoriz .first, .orderHoriz .second, .orderHoriz .third, .orderHoriz .fourth, .orderHoriz .fifth, .orderHoriz .sixth {
       font-size: 1.7vh;
     }
+
+    .footer {
+      align-items: flex-start;
+    }
+
+    .verticalOriB {
+      margin-top: 30% !important;
+    }
   }
 
 @media (min-width: 1025px) {

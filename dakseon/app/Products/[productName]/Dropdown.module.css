@@ -24,7 +24,7 @@
   position: absolute;
   flex-direction: column;
   justify-content: center;
-  border: 1vw solid black;
+  border: 0.5vh solid black;
   width: 55vw;
   height: 50vh;
   z-index: 9999;
