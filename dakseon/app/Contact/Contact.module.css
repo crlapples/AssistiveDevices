@@ -258,10 +258,6 @@
   .contactForm button {
     color: black;
   }
-
-  .contactIcon {
-    filter: invert(1);
-  }
   
   .footer {
     border-top: solid white;

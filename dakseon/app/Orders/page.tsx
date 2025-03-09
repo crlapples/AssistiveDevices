@@ -37,7 +37,7 @@ const Orders = () => {
   const [upsTime, setUpsTime] = useState<string>("");
   const [dhlPrice, setDhlPrice] = useState<number>(0);
   const [dhlTime, setDhlTime] = useState<string>("");
-  const [selectedCarrier, setSelectedCarrier] = useState<string>("");
+  const [selectedCarrier, setSelectedCarrier] = useState<string | null>("");
   const [selectedTrue, setSelectedTrue] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
   const [isOnPayment, setIsOnPayment] = useState<boolean>(false);
@@ -104,6 +104,7 @@ const Orders = () => {
   useEffect(() => {
     const newSubtotal = (prices["walker"] * walkerQuantity + prices["seat"] * seatQuantity);
     setSubtotalPrice(newSubtotal.toFixed(2).toString());
+    setSalesTaxPrice((newSubtotal + shippingPrice) * 0.11);
     setTotalPrice(newSubtotal + shippingPrice + salesTaxPrice);
   }, [walkerQuantity, seatQuantity, prices, subtotalPrice, shippingPrice, salesTaxPrice]);
   
@@ -138,16 +139,19 @@ const Orders = () => {
   };
 
   const handleFedex = () => {
+    setSelectedCarrier(null);
     setSelectedCarrier("fedex");
     sessionStorage.setItem("selectedTrue", "true");
   };
 
   const handleUps = () => {
+    setSelectedCarrier(null);
     setSelectedCarrier("ups");
     sessionStorage.setItem("selectedTrue", "true");
   };
 
   const handleDhl = () => {
+    setSelectedCarrier(null);
     setSelectedCarrier("dhl");
     sessionStorage.setItem("selectedTrue", "true");
   };
@@ -258,7 +262,7 @@ const Orders = () => {
                 )}
                 <div className={styles.entranceTotalPriceContainer}>
                   <p className={styles.entrancePriceType}>Total</p>
-                  <p className={styles.entranceTotalPrice}>{`$${totalPrice.toFixed(2)}`}</p>
+                  <p className={styles.entranceTotalPrice}>{`$${subtotalPrice}`}</p>
                 </div>
                 <button className={styles.continueToInfo} onClick={handleContinue}>Continue</button>
               </>
@@ -442,17 +446,17 @@ const Orders = () => {
                 </div>
               </div>
               <div className={styles.shippingCarriersContainer}>
-                <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "#2f7ab6" : "none" }}>
+                <div className={styles.fedexContainer} onClick={handleFedex} style={{ backgroundColor: selectedCarrier === "fedex" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
                   <p className={styles.deliveryCost}>$100.00</p>
                   <Image src="/fedex-seeklogo.png" alt="" width={512} height={512} className={styles.fedexLogo} />
                 </div>
-                <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "#2f7ab6" : "none" }}>
+                <div className={styles.upsContainer} onClick={handleUps} style={{ backgroundColor: selectedCarrier === "ups" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
                   <p className={styles.deliveryCost}>$100.00</p>
                   <Image src="/United_Parcel_Service_logo_2014.svg" alt="" width={400} height={300} className={styles.upsLogo} />
                 </div>
-                <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "#2f7ab6" : "none" }}>
+                <div className={styles.dhlContainer} onClick={handleDhl} style={{ backgroundColor: selectedCarrier === "dhl" ? "rgb(155, 248, 140)" : "inherit" }}>
                   <p className={styles.deliveryTime}>Est. Example Date</p>
                   <p className={styles.deliveryCost}>$100.00</p>
                   <Image src="/dhl-1.svg" alt="" width={512} height={512} />
@@ -623,7 +627,7 @@ const Orders = () => {
                 </div>
                 <div className={styles.itemInfo2}>
                   <p className={styles.afterItemPrice}>$100.00</p>
-                  <p className={styles.afterItemQuantity}>test</p>
+                  <p className={styles.afterItemQuantity}>Qty - {walkerQuantity}</p>
                 </div>
               </div>
             )}
@@ -635,7 +639,7 @@ const Orders = () => {
                 </div>
                 <div className={styles.itemInfo2}>
                   <p className={styles.afterItemPrice}>$50.00</p>
-                  <p className={styles.afterItemQuantity}>test</p>
+                  <p className={styles.afterItemQuantity}>Qty - {seatQuantity}</p>
                 </div>
               </div>
             )}
@@ -644,7 +648,7 @@ const Orders = () => {
               <div className={styles.afterSubAndShipCostContainer}>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Subtotal</p>
-                  <p className={styles.afterSubtotalPrice}>{newSubtotal.toFixed(2)}</p>
+                  <p className={styles.afterSubtotalPrice}>${newSubtotal.toFixed(2)}</p>
                 </div>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Shipping</p>
@@ -652,14 +656,14 @@ const Orders = () => {
                 </div>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Sales Tax</p>
-                  <p className={styles.afterTaxPrice}>{salesTaxPrice.toFixed(2)}</p>
+                  <p className={styles.afterTaxPrice}>${salesTaxPrice.toFixed(2)}</p>
                 </div>
               </div>
               <div className={styles.seperatorLineA} />
               <div className={styles.afterTypeAndPriceContainer}>
                 <div className={styles.paymentPriceHoriz}>
                   <p className={styles.afterPriceType}>Total</p>
-                  <p className={styles.afterTotalPrice}>{totalPrice.toFixed(2)}</p>
+                  <p className={styles.afterTotalPrice}>${totalPrice.toFixed(2)}</p>
                 </div>
               </div>
             </div>
@@ -675,7 +679,7 @@ const Orders = () => {
             <div className={styles.orderConfirmedMsg}>
               <Image src="/success-green-check-mark-icon.png" alt="" width={512} height={512} />
               <h2>Thank you for your order!</h2>
-              <p>`Your order #${orderId} is confirmed. You will receive an e-mail at ${bEmail} shortly.`</p>
+              <p>Your order #{orderId} is confirmed. You will receive an e-mail at {bEmail} shortly.</p>
             </div>
             <table className={styles.orderInvoice}>
               <caption className={styles.caption}>Order Details</caption>

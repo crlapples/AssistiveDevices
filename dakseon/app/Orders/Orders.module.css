@@ -235,7 +235,6 @@
   margin-top: 3vh;
   margin-left: auto;
   margin-right: auto;
-  color: white;
   background-color: #2f7ab6;
   font-weight: bold;
   width: 65%;
@@ -1288,6 +1287,18 @@
       width: 95%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .orderConfirmedMsg h2 {
+      padding-right: 7vh;
+    }
+
+    .orderHoriz1 .first, .orderHoriz1 .second, .orderHoriz1 .third, .orderHoriz1 .fourth, .orderHoriz1 .fifth, .orderHoriz1 .sixth {
+      font-size: 2vh;
+    }
+
+    .orderHoriz .first, .orderHoriz .second, .orderHoriz .third, .orderHoriz .fourth, .orderHoriz .fifth, .orderHoriz .sixth {
+      font-size: 1.7vh;
     }
   }
 
