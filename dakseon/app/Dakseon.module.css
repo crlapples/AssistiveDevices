@@ -593,17 +593,8 @@
 }
 
 @media (max-width: 350px) {
-  .heroSection h1 {
-    margin-top: -5vh !important;
-  }
-
-  .heroVer {
-    height: 100vh !important;
-  }
-
   .sixthP {
-    margin-top: 7vh !important;
-    height: 15% !important;
+    margin-top: 3vh;
   }
 
   .arrowIcon {
@@ -630,6 +621,10 @@
       width: 100%;
       margin-top: 0;
       height: 90vh;
+    }
+
+    .sixthP {
+      margin-top: 3vh !important;
     }
 
     .shopButton {
