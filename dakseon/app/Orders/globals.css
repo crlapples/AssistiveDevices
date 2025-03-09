@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'MyFont';
+  src: url('/Arsenal-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
-  font-family: 'Arsenal', sans-serif;
+  font-family: 'MyFont', sans-serif;
 }
 
 :root {
