@@ -255,6 +255,10 @@
     color: black;
   }
 
+  .contactIcon {
+    filter: invert(100%);
+  }
+
   .contactForm button {
     color: black;
   }
