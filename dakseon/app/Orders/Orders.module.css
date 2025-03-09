@@ -614,6 +614,9 @@
   height: 3.9vh;
   padding: 1.5vh;
   font-size: 3vh;
+  outline: none;
+  background: none;
+  background-color: none;
 }
 
 .shippingButtons {
@@ -693,6 +696,9 @@
 .paymentContainer2 input {
   margin-bottom: 1vh;
   font-size: 3vh !important;
+  outline: none;
+  background: none;
+  background-color: none;
 }
 
 .bFullInput {
