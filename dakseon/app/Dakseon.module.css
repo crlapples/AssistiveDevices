@@ -623,6 +623,10 @@
       height: 90vh;
     }
 
+    .buttonContainer {
+      height: 12% !important;
+    }
+
     .shopButton {
       margin-top: 6vh;
       margin-bottom: 3vh;
