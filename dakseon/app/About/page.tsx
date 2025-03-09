@@ -54,7 +54,7 @@ const About: React.FC = () => {
       <LetterFromTopAnimation className={`${styles.letters3} ${styles.thirdp}`} text="We believe that everyone deserves to move freely and feel secure in their home. Our products are designed to offer durability, ease of use, and peace of mind for individuals and caregivers alike."/>
 
       <h2>Need Help?</h2>
-      <p className={styles.lastP}>Have questions about our products? Contact our team <Link href="/contact"><span style={{ color: "#2f7ab6" }}>here</span></Link>, and we’ll be happy to assist you.</p>
+      <p className={styles.lastP}>Have questions about our products? Contact our team <Link href="mailto:alexwylee@gmail.com"><span style={{ color: "#2f7ab6" }}>here</span></Link>, and we’ll be happy to assist you.</p>
       <footer className={styles.footer}>
           <div className={styles.verticalOriA}>
             <strong>
