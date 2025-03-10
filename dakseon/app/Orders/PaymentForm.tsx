@@ -8,10 +8,30 @@ interface PaymentFormProps {
   handleShippingFormSubmit: () => void;
 }
 
+console.log(localStorage.getItem("worked"));
+console.log(localStorage.getItem("failed"));
+
 const PaymentForm = ({ totalPrice, onOrderConfirmed, handleShippingFormSubmit }: PaymentFormProps) => {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // Retrieve and log any stored logs when the page reloads
+    getLogs();
+  }, []);
+
+  const storeLog = (message: string) => {
+    // Retrieve existing logs from localStorage or start with an empty array
+    const logs = JSON.parse(localStorage.getItem('paymentLogs') || '[]');
+    logs.push(message);
+    localStorage.setItem('paymentLogs', JSON.stringify(logs));
+  };
+  
+  const getLogs = () => {
+    const logs = JSON.parse(localStorage.getItem('paymentLogs') || '[]');
+    console.log('Payment Logs:', logs);  // You can log them to the console on page reload
+  };
 
   const handlePayment = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -24,7 +44,7 @@ const PaymentForm = ({ totalPrice, onOrderConfirmed, handleShippingFormSubmit }:
 
     handleShippingFormSubmit();
 
-    const response = await fetch('/api/create-payment-intent', {
+    const response = await fetch('/api/create-payment-intent/route', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: Math.round(totalPrice * 100) })
@@ -40,9 +60,17 @@ const PaymentForm = ({ totalPrice, onOrderConfirmed, handleShippingFormSubmit }:
 
     if (result.error) {
       console.error(result.error.message);
+      console.log("paymentfailed");
+      console.log('Client Secret:', clientSecret);  // Log clientSecret
+
+    // Store log in localStorage
+    storeLog(`Client Secret: ${clientSecret}`);
+    localStorage.setItem("failed", "didnt work");
     } else {
       if (result.paymentIntent?.status === 'succeeded') {
         onOrderConfirmed();
+        console.log("paymentworked");
+        localStorage.setItem("worked", "true");
       }
     }
 
@@ -96,6 +124,7 @@ const PaymentForm = ({ totalPrice, onOrderConfirmed, handleShippingFormSubmit }:
         <div className={styles.form1}>
           <CardElement options={cardElementOptions} />
         </div>
+        <button type="submit">asdf</button>
       </form>
     </div>
   );
