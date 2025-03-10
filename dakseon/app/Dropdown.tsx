@@ -11,14 +11,12 @@ const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   console.log("Dropdown state:", isOpen);
 
-  // Toggle the dropdown menu
   const toggleDropdown = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevents the click event from propagating to the document
+    e.stopPropagation();
     console.log("Menu clicked!");
     setIsOpen((prevState) => !prevState);
   };
 
-  // Close dropdown when clicked outside
   const closeDropdown = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (!target.closest('.dropdown')) {

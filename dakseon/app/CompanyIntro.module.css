@@ -1,4 +1,3 @@
-/* Fade-in effect */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -10,7 +9,6 @@
   }
 }
 
-/* Fade-out effect */
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -38,18 +36,15 @@
   color: white;
 }
 
-/* New fade-out class for the company name */
 .fadeOut {
   animation: fadeOut 2s ease-in-out forwards;
 }
 
-/* Fade out the whole container */
 .container.hidden {
   animation: fadeOut 2.7s ease-in-out forwards;
 }
 
-/* Add styles when fade-out is fully completed */
 .container.onFadeComplete {
-  display: none; /* Or any other final styling you want */
+  display: none;
   z-index: 0;
 }

@@ -74,28 +74,20 @@ const ProductPage = ({ params }: ProductPageProps ) => {
           <Image src="/Food_and_Drug_Administration_icon_2016.svg.png" alt="" width={480} height={720} className={styles.fda} />
           <Dropdown />
         </div>
-
-       {/* Hero Section */}
         <div className={styles.hero}>
           <p className={styles.pageTitle}>Featured</p>
           <Image src={product.image} width={451} height={800} alt={product.imageAlt} className={styles.productImage} />
           <h1>{product.title}</h1>
           <p className={styles.tagline}>{product.tagline}</p>
         </div>
-
-            {/* Detailed Product Description */}
         <div className={styles.description}>
           <h2>{product.descriptionTagline}</h2>
           <LetterFromTopAnimation className={styles.letters1} text={product.description} />
         </div>
-
-                      {/* Call to Action */}
         <div className={styles.cta}>
           <BuyButton sessionKey={product.session} link={product.link} linkClassName={styles.link} buttonClassName={styles.buyButton} />
           <p className={styles.shippingInfo}>🚚 Fast Shipping | Secure Checkout</p>
         </div>
-
-      {/* Key Benefits */}
         <div className={styles.benefits}>
           <div className={styles.benefitBlock}>
             <Image src={product.icon1} width={512} height={512} alt={product.icon1Alt} className={styles.icon} />
@@ -117,8 +109,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
             <p>{product.benefit4}</p>
           </div>
         </div>
-
-      {/* Customer Reviews */}
         <div className={styles.testimonials}>
           <h2>What Our Customers Say</h2>
           <div className={styles.reviews}>
@@ -130,8 +120,6 @@ const ProductPage = ({ params }: ProductPageProps ) => {
             </div>
           </div>
         </div>
-
-      {/* FAQs */}
         <div className={styles.faq}>
           <h2>Frequently<br />Asked<br />Questions</h2>
           <div className={styles.faqVer}>

@@ -19,7 +19,7 @@ const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text, c
           setAnimate(true);
         }
       },
-      { threshold: 0.2 } // Adjust threshold for when animation should trigger
+      { threshold: 0.2 }
     );
 
     if (ref.current) {
@@ -43,7 +43,7 @@ const LetterFromTopAnimation: React.FC<LetterFromTopAnimationProps> = ({ text, c
                 {letter}
               </span>
             ))}
-            <span>&nbsp;</span> {/* Preserve space between words */}
+            <span>&nbsp;</span>
           </span>
         ))}
       </p>

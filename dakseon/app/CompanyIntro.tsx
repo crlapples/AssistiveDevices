@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./CompanyIntro.module.css"; // Import your CSS module
+import styles from "./CompanyIntro.module.css";
 
 const CompanyIntro: React.FC = () => {
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
@@ -9,20 +9,17 @@ const CompanyIntro: React.FC = () => {
   const [isFadedOut, setIsFadedOut] = useState<boolean>(false);
 
   useEffect(() => {
-    // Set a timer to mark animation as complete after 1 second (fade-in)
     const timer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 1.5); // 1s fade-in duration
+    }, 1.5);
 
-    // Set another timer to hide the content after 3 seconds (fade-out starts)
     const hideTimer = setTimeout(() => {
       setHideContent(true);
-    }, 1.5); // 4s in total (1s fade-in + 3s delay before fade-out starts)
+    }, 1.5);
 
-    // Set another timer to mark fade-out as complete after 6 seconds
     const fadeOutTimer = setTimeout(() => {
       setIsFadedOut(true);
-    }, 3999); // 7s total (1s fade-in + 3s delay + 3s fade-out)
+    }, 3999);
 
     return () => {
       clearTimeout(timer);
