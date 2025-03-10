@@ -192,6 +192,17 @@ const Orders = () => {
 
   };
 
+  useEffect(() => {
+    const button = document.getElementById('externalButton') as HTMLButtonElement | null;
+    if (button) {
+      window.paymentFormButton = button;
+    }
+
+    return () => {
+      delete window.paymentFormButton;
+    };
+  }, []);
+
   return (
     <div className={styles.mainContainer} style={{ justifyContent: entrance ? 'center' : 'space-between' }}>
       <div className={styles.topContainer}>
@@ -584,7 +595,7 @@ const Orders = () => {
                       <Image src="/arrow-thin-chevron-left-icon.png" alt="" width={512} height={512} />
                       <p>Return to shipping</p>
                     </div>
-                    <button type="submit" className={styles.orderButton}>Order</button>
+                    <button id="externalButton" type="submit" className={styles.orderButton}>Order</button>
                   </div>
                 </form>
                 </Elements>

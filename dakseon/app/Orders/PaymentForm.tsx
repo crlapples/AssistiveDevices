@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import styles from "./PaymentForm.module.css";
 
@@ -49,15 +49,53 @@ const PaymentForm = ({ totalPrice, onOrderConfirmed, handleShippingFormSubmit }:
     setLoading(false);
   };
 
+  const handleButtonClick = (event: MouseEvent) => {
+    const formEvent = {
+      preventDefault: event.preventDefault.bind(event),
+    } as React.FormEvent;
+    handlePayment(formEvent);
+  };
+
+  useEffect(() => {
+    const button = document.getElementById('externalButton') as HTMLButtonElement | null;
+    if (button) {
+      window.paymentFormButton = button;
+      window.paymentFormButton.addEventListener('click', handleButtonClick);
+    }
+
+    return () => {
+      if (window.paymentFormButton) {
+        window.paymentFormButton.removeEventListener('click', handleButtonClick);
+      }
+      delete window.paymentFormButton;
+    };
+  }, []);
+
+  const cardElementOptions = {
+    style: {
+      base: {
+        fontSize: '2rem',
+        color: '#000',
+        border: '1px solid #ccc',
+        padding: '10px',
+        borderRadius: '4px',
+        '::placeholder': {
+          color: '#888',
+        },
+      },
+      invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a',
+      },
+    },
+  };
+
   return (
     <div>
       <form onSubmit={handlePayment}>
-        <div>
-          <CardElement />
+        <div className={styles.form1}>
+          <CardElement options={cardElementOptions} />
         </div>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Processing...' : 'Order'}
-        </button>
       </form>
     </div>
   );
